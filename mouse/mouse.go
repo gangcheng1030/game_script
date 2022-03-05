@@ -1,0 +1,35 @@
+package main
+
+import (
+	"github.com/go-vgo/robotgo"
+)
+
+func main() {
+	robotgo.MouseSleep = 100
+
+	//robotgo.Scroll(0, -200)
+
+	//robotgo.Scroll(100, 0)
+
+	//robotgo.ScrollMouse(10, "up")
+	//robotgo.ScrollMouse(20, "right")
+	//
+	//robotgo.Scroll(0, -10)
+	//robotgo.Scroll(100, 0)
+	//
+	//robotgo.MilliSleep(100)
+	//robotgo.ScrollSmooth(-20, 6)
+	//robotgo.ScrollRelative(10, 10)
+	//
+	//robotgo.Move(10, 20)
+	//robotgo.MoveRelative(0, -10)
+	//robotgo.DragSmooth(10, 10)
+	//
+	//robotgo.Click("left", true)
+	//robotgo.Click("left", true)
+	//robotgo.MoveSmooth(100, 200, 1.0, 10.0)
+	robotgo.Move(100, 200)
+	//
+	//robotgo.Toggle("left")
+	//robotgo.Toggle("left", "up")
+}
