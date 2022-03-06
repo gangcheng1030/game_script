@@ -77,16 +77,12 @@ func main() {
 			}
 		case hook.KeyDown:
 			if event.Keychar == 65535 {
-				err = robotgo.KeyDown(utils.CodeToKey[event.Keycode])
+				robotgo.KeyDown(utils.CodeToKey[event.Keycode])
 			} else {
 				fmt.Println(event)
 				fmt.Println(string(event.Keychar))
 				//err = robotgo.KeyDown(string(event.Keychar))
-				err = robotgo.KeyToggle("enter")
-			}
-
-			if err != nil {
-				fmt.Printf("KeyDown err: %v", event)
+				robotgo.KeyToggle("enter")
 			}
 		default:
 			// do nothing

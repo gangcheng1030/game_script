@@ -18,7 +18,7 @@ func main() {
 	//
 
 	// 敲击键盘上的'enter'键，即回车键
-	robotgo.KeyTap("enter")
+	robotgo.KeyTap("a")
 	robotgo.TypeStr("en")
 	//robotgo.KeyTap("i", "alt", "cmd")
 	//
