@@ -2,10 +2,10 @@ package main
 
 import (
 	"bufio"
-	"chenggang.idea/game_script/utils"
 	"encoding/json"
 	"flag"
 	"fmt"
+	"github.com/gangcheng1030/game_script/utils"
 	"github.com/go-vgo/robotgo"
 	hook "github.com/robotn/gohook"
 	"io"
