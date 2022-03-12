@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/go-vgo/robotgo"
 )
 
@@ -22,7 +21,7 @@ func main() {
 	//	}
 	//}
 
-	//robotgo.ActiveName("chrome")
+	robotgo.ActiveName("chrome")
 
 	//isExist, err := robotgo.PidExists(100)
 	//if err == nil && isExist {
@@ -31,11 +30,11 @@ func main() {
 	//	robotgo.Kill(100)
 	//}
 	//
-	abool := robotgo.Alert("test", "robotgo")
-	if abool {
-		fmt.Println("ok@@@ ", "ok")
-	}
-
-	title := robotgo.GetTitle()
-	fmt.Println("title@@@ ", title)
+	//abool := robotgo.Alert("test", "robotgo")
+	//if abool {
+	//	fmt.Println("ok@@@ ", "ok")
+	//}
+	//
+	//title := robotgo.GetTitle()
+	//fmt.Println("title@@@ ", title)
 }

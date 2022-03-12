@@ -5,8 +5,9 @@ import (
 )
 
 func main() {
-	robotgo.KeyTap("a")
+	robotgo.KeyPress(robotgo.KeyF, int(11612))
 }
+
 //func main() {
 //	robotgo.TypeStr("Hello World")
 //	//robo
