@@ -1,41 +1,69 @@
 package chaojidou
 
 import (
+	"errors"
 	"fmt"
 	"github.com/go-vgo/robotgo"
 	"math/rand"
 	"time"
 )
 
-//type ClientType uint8
-//
-//const (
-//	CLIENT_TYPE_WINDOWS ClientType = iota
-//	CLIENT_TYPE_SOGOU
-//	CLIENT_TYPE_QQ
-//	CLIENT_TYPE_T360
-//	CLIENT_TYPE_CHROME
-//)
+type ClientType string
+
+const (
+	CLIENT_TYPE_OFFICIAL ClientType = "official_client"
+	CLIENT_TYPE_SOGOU    ClientType = "sogou"
+	CLIENT_TYPE_QQ       ClientType = "qq"
+	CLIENT_TYPE_T360     ClientType = "360"
+	CLIENT_TYPE_CHROME   ClientType = "chrome"
+)
 
 func init() {
 	rand.Seed(time.Now().Unix())
 }
 
 type ChaoJiDou interface {
+	// 通用
 	Active()
 	Confirm()
+	Empty()
+	Esc()
+
+	// 队员
 	GroupAccept()
 	EnterAccept()
 	ConfirmOrAccept()
-	Esc()
-	Empty()
+
+	// 队长
+}
+
+func Build(clientType ClientType) (ChaoJiDou, error) {
+	if clientType == CLIENT_TYPE_OFFICIAL {
+		return NewOfficialClientChaoJiDou(), nil
+	} else if clientType == CLIENT_TYPE_SOGOU {
+		return NewSogouChaoJiDou(), nil
+	} else if clientType == CLIENT_TYPE_QQ {
+		return NewQqChaoJiDou(), nil
+	} else if clientType == CLIENT_TYPE_T360 {
+		return NewT360ChaoJiDou(), nil
+	} else if clientType == CLIENT_TYPE_CHROME {
+		return NewChromeChaoJiDou(), nil
+	}
+
+	return nil, errors.New("clientType is invalid")
 }
 
 type chaoJiDou struct {
-	Pid               int32
-	GameWindow        robotgo.Rect
+	Pid int32
+
+	// 通用
+	GameWindow robotgo.Rect
+
+	// 队员
 	GroupAcceptButton robotgo.Rect
 	EnterAcceptButton robotgo.Rect
+
+	// 队长
 }
 
 func (c *chaoJiDou) Confirm() {
@@ -55,8 +83,8 @@ func (c *chaoJiDou) EnterAccept() {
 
 func (c *chaoJiDou) ConfirmOrAccept() {
 	c.Active()
-	c.confirm()
 	c.enterAccept()
+	c.confirm()
 }
 
 func (c *chaoJiDou) Esc() {
@@ -84,7 +112,7 @@ func (c *chaoJiDou) groupAccept() {
 	x := c.GameWindow.X + c.GroupAcceptButton.X + xr
 	y := c.GameWindow.Y + c.GroupAcceptButton.Y + yr
 
-	fmt.Printf("x: %d, y: %d", x, y)
+	//fmt.Printf("x: %d, y: %d", x, y)
 	robotgo.Move(x, y)
 	robotgo.Click()
 }

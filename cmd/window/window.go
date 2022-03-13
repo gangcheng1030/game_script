@@ -21,7 +21,8 @@ func main() {
 	//	}
 	//}
 
-	robotgo.ActiveName("chrome")
+	// 5576 5064
+	robotgo.ActivePID(5576)
 
 	//isExist, err := robotgo.PidExists(100)
 	//if err == nil && isExist {

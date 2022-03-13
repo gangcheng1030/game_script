@@ -10,7 +10,7 @@ type SogouChaoJiDou struct {
 }
 
 func NewSogouChaoJiDou() ChaoJiDou {
-	pss, _ := utils.FindProcessByName(SOGOU_PROCESS_NAME)
+	pss, _ := utils.FindProcessByTimes(SOGOU_PROCESS_NAME)
 	gameWindow := robotgo.Rect{
 		Point: robotgo.Point{X: 142, Y: 95},
 		Size:  robotgo.Size{W: 1048, H: 613},

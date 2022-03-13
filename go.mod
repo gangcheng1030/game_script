@@ -4,6 +4,7 @@ go 1.16
 
 require (
 	github.com/go-vgo/robotgo v1.0.0-beta5
+	github.com/kbinani/screenshot v0.0.0-20210720154843-7d3a670d8329 // indirect
 	github.com/lufia/plan9stats v0.0.0-20220305071607-d0b38dbe16db // indirect
 	github.com/power-devops/perfstat v0.0.0-20220216144756-c35f1ee13d7c // indirect
 	github.com/robotn/gohook v0.40.0
