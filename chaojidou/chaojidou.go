@@ -24,14 +24,18 @@ func init() {
 type ChaoJiDou interface {
 	Active()
 	Confirm()
-	Accept()
+	GroupAccept()
+	EnterAccept()
 	ConfirmOrAccept()
+	Esc()
+	Empty()
 }
 
 type chaoJiDou struct {
-	Pid int32
-	GameWindow robotgo.Rect
-	AcceptButton robotgo.Rect
+	Pid               int32
+	GameWindow        robotgo.Rect
+	GroupAcceptButton robotgo.Rect
+	EnterAcceptButton robotgo.Rect
 }
 
 func (c *chaoJiDou) Confirm() {
@@ -39,15 +43,25 @@ func (c *chaoJiDou) Confirm() {
 	c.confirm()
 }
 
-func (c *chaoJiDou) Accept()  {
+func (c *chaoJiDou) GroupAccept() {
 	c.Active()
-	c.accept()
+	c.groupAccept()
+}
+
+func (c *chaoJiDou) EnterAccept() {
+	c.Active()
+	c.enterAccept()
 }
 
 func (c *chaoJiDou) ConfirmOrAccept() {
 	c.Active()
 	c.confirm()
-	c.accept()
+	c.enterAccept()
+}
+
+func (c *chaoJiDou) Esc() {
+	c.Active()
+	c.esc()
 }
 
 func (c *chaoJiDou) Active() {
@@ -58,19 +72,42 @@ func (c *chaoJiDou) Active() {
 	robotgo.MilliSleep(WAITING_ACTIVE_PID_MILLI_SECONDS)
 }
 
-func (c *chaoJiDou) accept() {
-	xr := rand.Intn(c.AcceptButton.W)
-	yr := rand.Intn(c.AcceptButton.H)
+func (c *chaoJiDou) Empty() {
+	c.Active()
+	robotgo.Click(robotgo.Down)
+}
 
-	x := c.GameWindow.X + c.AcceptButton.X + xr
-	y := c.GameWindow.Y + c.AcceptButton.Y + yr
+func (c *chaoJiDou) groupAccept() {
+	xr := rand.Intn(c.GroupAcceptButton.W)
+	yr := rand.Intn(c.GroupAcceptButton.H)
 
-	robotgo.MoveSmooth(x, y)
+	x := c.GameWindow.X + c.GroupAcceptButton.X + xr
+	y := c.GameWindow.Y + c.GroupAcceptButton.Y + yr
+
+	fmt.Printf("x: %d, y: %d", x, y)
+	robotgo.Move(x, y)
+	robotgo.Click()
+}
+
+func (c *chaoJiDou) enterAccept() {
+	xr := rand.Intn(c.EnterAcceptButton.W)
+	yr := rand.Intn(c.EnterAcceptButton.H)
+
+	x := c.GameWindow.X + c.EnterAcceptButton.X + xr
+	y := c.GameWindow.Y + c.EnterAcceptButton.Y + yr
+
+	robotgo.Move(x, y)
 	robotgo.Click()
 }
 
 func (c *chaoJiDou) confirm() {
-	robotgo.MilliSleep(WAITING_ACTIVE_PID_MILLI_SECONDS)
+	robotgo.Click(robotgo.Down)
 	robotgo.KeyToggle(robotgo.KeyF, int(c.Pid))
 	robotgo.KeyToggle(robotgo.KeyF, int(c.Pid), robotgo.Up)
+}
+
+func (c *chaoJiDou) esc() {
+	robotgo.Click(robotgo.Down)
+	robotgo.KeyToggle(robotgo.Esc, int(c.Pid))
+	robotgo.KeyToggle(robotgo.Esc, int(c.Pid), robotgo.Up)
 }
