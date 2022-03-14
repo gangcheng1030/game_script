@@ -125,6 +125,25 @@ func add() {
 		}
 	})
 
+	fmt.Println("--- Please press shift + a to confirm or enter the first map ---")
+	hook.Register(hook.KeyDown, []string{robotgo.Shift, robotgo.KeyA}, func(e hook.Event) {
+		fmt.Println("shift-a")
+		x, y := robotgo.GetMousePos()
+		gameWindow := captain.GetGameWindow()
+		captain.LeftClick(x-gameWindow.X, y-gameWindow.Y, gameWindow.W, gameWindow.H)
+		robotgo.Sleep(1)
+		if len(members) > 0 {
+			currentPid := robotgo.GetPID()
+			members[0].Empty()
+			for i := range members {
+				members[(i+1)%len(members)].LeftClick(x-gameWindow.X, y-gameWindow.Y, gameWindow.W, gameWindow.H)
+				robotgo.Sleep(1)
+			}
+			robotgo.ActivePID(currentPid)
+			robotgo.MilliSleep(chaojidou.WAITING_ACTIVE_PID_MILLI_SECONDS)
+		}
+	})
+
 	s := hook.Start()
 	<-hook.Process(s)
 }

@@ -28,6 +28,10 @@ type ChaoJiDou interface {
 	Confirm()
 	Empty()
 	Esc()
+	// LeftClick x: 横坐标, y: 纵坐标, w: 窗口宽, h: 窗口高
+	LeftClick(x, y, w, h int)
+
+	GetGameWindow() robotgo.Rect
 
 	// 队员
 	GroupAccept()
@@ -92,6 +96,22 @@ func (c *chaoJiDou) Esc() {
 	c.esc()
 }
 
+func (c *chaoJiDou) LeftClick(x, y, w, h int) {
+	if x < 0 || x > w || y < 0 || y > h {
+		return
+	}
+
+	xx := x*c.GameWindow.W/w + c.GameWindow.X
+	yy := y*c.GameWindow.H/h + c.GameWindow.Y
+	//fmt.Printf("xx: %d, yy: %d\n", xx, yy)
+	robotgo.Move(xx, yy)
+	robotgo.Click()
+}
+
+func (c *chaoJiDou) GetGameWindow() robotgo.Rect {
+	return c.GameWindow
+}
+
 func (c *chaoJiDou) Active() {
 	err := robotgo.ActivePID(c.Pid)
 	if err != nil {
@@ -102,7 +122,7 @@ func (c *chaoJiDou) Active() {
 
 func (c *chaoJiDou) Empty() {
 	c.Active()
-	robotgo.Click(robotgo.Down)
+	robotgo.Click(robotgo.Right)
 }
 
 func (c *chaoJiDou) groupAccept() {
@@ -129,13 +149,13 @@ func (c *chaoJiDou) enterAccept() {
 }
 
 func (c *chaoJiDou) confirm() {
-	robotgo.Click(robotgo.Down)
+	robotgo.Click()
 	robotgo.KeyToggle(robotgo.KeyF, int(c.Pid))
 	robotgo.KeyToggle(robotgo.KeyF, int(c.Pid), robotgo.Up)
 }
 
 func (c *chaoJiDou) esc() {
-	robotgo.Click(robotgo.Down)
+	robotgo.Click()
 	robotgo.KeyToggle(robotgo.Esc, int(c.Pid))
 	robotgo.KeyToggle(robotgo.Esc, int(c.Pid), robotgo.Up)
 }

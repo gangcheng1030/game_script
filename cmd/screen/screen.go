@@ -1,11 +1,18 @@
 package main
 
+import (
+	"fmt"
+	"github.com/go-vgo/robotgo"
+)
+
 func main() {
-	//for {
-	//	x, y := robotgo.GetMousePos()
-	//	fmt.Println("pos: ", x, y)
-	//	robotgo.Sleep(3)
-	//}
+	for {
+		x, y := robotgo.GetMousePos()
+		fmt.Println("pos: ", x, y)
+		robotgo.Sleep(3)
+	}
+	// 1155 210  九云洞，童话镇，苏醒的传说
+	// 1155 300  迷宫
 	//color := robotgo.GetPixelColor(100, 200)
 	//fmt.Println("color---- ", color)
 	////
