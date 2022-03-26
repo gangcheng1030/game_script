@@ -125,18 +125,30 @@ func add() {
 		}
 	})
 
-	fmt.Println("--- Please press shift + a to confirm or enter the first map ---")
-	hook.Register(hook.KeyDown, []string{robotgo.Shift, robotgo.KeyA}, func(e hook.Event) {
-		fmt.Println("shift-a")
+	fmt.Println("--- Please press shift + 5 to confirm or enter the first map ---")
+	hook.Register(hook.KeyDown, []string{robotgo.Shift, robotgo.Key5}, func(e hook.Event) {
+		fmt.Println("shift-5")
 		x, y := robotgo.GetMousePos()
 		gameWindow := captain.GetGameWindow()
 		captain.LeftClick(x-gameWindow.X, y-gameWindow.Y, gameWindow.W, gameWindow.H)
 		robotgo.Sleep(1)
 		if len(members) > 0 {
 			currentPid := robotgo.GetPID()
-			members[0].Empty()
+			remain := make([]int, 0)
 			for i := range members {
-				members[(i+1)%len(members)].LeftClick(x-gameWindow.X, y-gameWindow.Y, gameWindow.W, gameWindow.H)
+				success := members[i].LeftClick(x-gameWindow.X, y-gameWindow.Y, gameWindow.W, gameWindow.H)
+				if !success {
+					remain = append(remain, i)
+					continue
+				}
+				robotgo.Sleep(1)
+			}
+
+			for _, memberId := range remain {
+				success := members[memberId].LeftClick(x-gameWindow.X, y-gameWindow.Y, gameWindow.W, gameWindow.H)
+				if !success {
+					continue
+				}
 				robotgo.Sleep(1)
 			}
 			robotgo.ActivePID(currentPid)

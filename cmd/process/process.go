@@ -12,7 +12,7 @@ func main() {
 	robotgo.MouseSleep = 100
 	robotgo.KeySleep = 100
 
-	//robotgo.ActivePID(15624)
+	robotgo.ActivePID(3672)
 
 	pses, _ := process.Processes()
 	//sogouPses := make([]*process.Process, 0)

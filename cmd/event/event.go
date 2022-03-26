@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-	//add()
-	low()
+	add()
+	//low()
 	//event()
 }
 
@@ -22,6 +22,10 @@ func add() {
 	fmt.Println("--- Please press w---")
 	hook.Register(hook.KeyDown, []string{"w"}, func(e hook.Event) {
 		fmt.Println("w")
+	})
+
+	hook.Register(hook.MouseDown, []string{}, func(e hook.Event) {
+		fmt.Println(e)
 	})
 
 	s := hook.Start()
@@ -43,10 +47,10 @@ func event() {
 		fmt.Println("add events...")
 	}
 
-	keve := hook.AddEvent("k")
-	if keve {
-		fmt.Println("you press... ", "k")
-	}
+	//keve := hook.AddEvent("k")
+	//if keve {
+	//	fmt.Println("you press... ", "k")
+	//}
 
 	mleft := hook.AddEvent("mleft")
 	if mleft {

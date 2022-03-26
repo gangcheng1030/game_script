@@ -31,3 +31,18 @@ func NewSogouChaoJiDou() ChaoJiDou {
 	}
 	return &SogouChaoJiDou{chaoJiDou: c}
 }
+
+//func (c *SogouChaoJiDou) LeftClick(x, y, w, h int) {
+//	c.Active()
+//
+//	if x < 0 || x > w || y < 0 || y > h {
+//		return
+//	}
+//
+//	xx := x*c.GameWindow.W/w + c.GameWindow.X
+//	yy := y*c.GameWindow.H/h + c.GameWindow.Y
+//	fmt.Printf("xx: %d, yy: %d\n", xx, yy)
+//	robotgo.Move(xx, yy)
+//	robotgo.Click()
+//	robotgo.Click()
+//}
