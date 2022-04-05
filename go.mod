@@ -15,5 +15,6 @@ require (
 	github.com/vcaesar/gops v0.22.0 // indirect
 	github.com/vcaesar/imgo v0.30.1
 	golang.org/x/image v0.0.0-20220302094943-723b81ca9867 // indirect
+	golang.org/x/mobile v0.0.0-20190719004257-d2bd2a29d028 // indirect
 	golang.org/x/sys v0.0.0-20220307203707-22a9840ba4d7 // indirect
 )

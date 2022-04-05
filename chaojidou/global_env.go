@@ -1,4 +1,7 @@
 package chaojidou
 
-var mouseSpeedX = 0.8
-var mouseSpeedY = 0.8
+var mouseSpeedX = 0.9
+var mouseSpeedY = 0.9
+
+var NpcWaitSecs = 30
+var ReadMapWaitSecs = 60
