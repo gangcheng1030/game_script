@@ -140,6 +140,8 @@ type MeiRiMap struct {
 	ShenHaiZhuKe    []JuQingType
 	ZuiQiangJianShi []JuQingType
 	TieBiShouWei    []JuQingType
+	YanHua          []JuQingType
+	BingFengWangGuo []JuQingType
 }
 
 type LiuLangTuanMap struct {
@@ -559,6 +561,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	robotgo.Sleep(3)
 
 	// 第10张怪物图：实际上是回到第8张
+	c.press(robotgo.F2, 1)
 	c.clickButton(c.JinBenMap.FuBenArray[0].SmallMap[9], 8)
 
 	// 第11张怪物图：boss
@@ -697,10 +700,7 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	c.press(robotgo.KeyE, 4)
 	c.press(robotgo.KeyR, 1)
 	c.press(robotgo.KeyD, 1)
-	robotgo.Sleep(15)
-	c.move(138, 654, 2, 3)
-	robotgo.KeyPress(robotgo.KeyF)
-	robotgo.Sleep(2)
+	robotgo.Sleep(20)
 }
 
 func (c *chaoJiDou) GetGameWindow() robotgo.Rect {

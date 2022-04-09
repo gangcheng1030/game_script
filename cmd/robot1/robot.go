@@ -14,6 +14,7 @@ import (
 )
 
 var captainStr = flag.String("c", "official_client", "client of captain")
+var meiriStr = flag.String("m", "shzk", "meiritiaozhan")
 
 var captain chaojidou.ChaoJiDou
 
@@ -61,7 +62,8 @@ func add() {
 		chaojidou.ReadMapWaitSecs = 60
 		captain.JinBen(chaojidou.JINBEN_TYPE_SUXING, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 2)
 		chaojidou.NpcWaitSecs = 10
-		captain.JinBen(chaojidou.JINBEN_TYPE_HEIAN, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 2)
+		captain.JinBen(chaojidou.JINBEN_TYPE_HEIAN, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
+		captain.JinBen(chaojidou.JINBEN_TYPE_HEIAN, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
 		chaojidou.NpcWaitSecs = 30
 		fmt.Println("shift-s end")
 		endTime = time.Now()
@@ -117,7 +119,7 @@ func add() {
 			return
 		}
 
-		var tp chaojidou.MeiRiType = chaojidou.MEIRI_TYPE_TIEBISHOUWEI
+		var tp chaojidou.MeiRiType = chaojidou.MeiRiType(*meiriStr)
 		chaojidou.NpcWaitSecs = 30
 		chaojidou.ReadMapWaitSecs = 80
 		captain.MeiRiTiaoZhan(tp, chaojidou.DIFFICULTY_TYPE_MAOXIAN)

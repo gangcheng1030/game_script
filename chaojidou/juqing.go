@@ -6,19 +6,27 @@ import "github.com/go-vgo/robotgo"
 type JuQingType string
 
 const (
-	JUQING_TYPE_YISHENGYUZHAOZE       = "ysyzz"  // 医生与沼泽
-	JUQING_TYPE_SHENHAIYIZU           = "shyz"   // 深海遗族
-	JUQING_TYPE_SHIJUNZHIZUI          = "sjzz"   // 弑君之罪
-	JUQING_TYPE_TONGXIANGWEIYIJIE     = "txwyj"  // 同相位异界
-	JUQING_TYPE_YEXINZHONGHE          = "yxzh"   // 野心重荷
-	JUQING_TYPE_FENGYINZHISHI         = "fyzs"   // 封印之石
-	JUQING_TYPE_YINGXIONGDEZIGE       = "yxdzg"  // 英雄的资格
-	JUQING_TYPE_TIANHE                = "th"     // 天河
-	JUQING_TYPE_TIANKONGDAPINGYUAN    = "tkdpy"  // 天空大平原
-	JUQING_TYPE_XUNNANGUANGCHANGRUKOU = "xngcrk" // 殉难广场入口
-	JUQING_TYPE_BANGONGXIUXISHI       = "bgxxs"  // 办公休息室
-	JUQING_TYPE_TIANBIANYUNXIA        = "tbyx"   // 天边云霞
-	JUQING_TYPE_ZHONGJIBINGQI         = "zjbq"   // 终极兵器
+	JUQING_TYPE_YISHENGYUZHAOZE       = "ysyzz"   // 医生与沼泽
+	JUQING_TYPE_SHENHAIYIZU           = "shyz"    // 深海遗族
+	JUQING_TYPE_SHIJUNZHIZUI          = "sjzz"    // 弑君之罪
+	JUQING_TYPE_TONGXIANGWEIYIJIE     = "txwyj"   // 同相位异界
+	JUQING_TYPE_YEXINZHONGHE          = "yxzh"    // 野心重荷
+	JUQING_TYPE_FENGYINZHISHI         = "fyzs"    // 封印之石
+	JUQING_TYPE_YINGXIONGDEZIGE       = "yxdzg"   // 英雄的资格
+	JUQING_TYPE_TIANHE                = "th"      // 天河
+	JUQING_TYPE_TIANKONGDAPINGYUAN    = "tkdpy"   // 天空大平原
+	JUQING_TYPE_XUNNANGUANGCHANGRUKOU = "xngcrk"  // 殉难广场入口
+	JUQING_TYPE_BANGONGXIUXISHI       = "bgxxs"   // 办公休息室
+	JUQING_TYPE_TIANBIANYUNXIA        = "tbyx"    // 天边云霞
+	JUQING_TYPE_ZHONGJIBINGQI         = "zjbq"    // 终极兵器
+	JUQING_TYPE_QUANJIANZUOZHAN       = "qjzz"    // 全歼作战
+	JUQING_TYPE_QTSHAMOKAIFABU        = "qtsmkfb" // QT沙漠开发部
+	JUQING_TYPE_TIANKONGZHIZHUAN      = "tkzz"    // 天空之钻
+	JUQING_TYPE_XINTIANEBAO           = "xteb"    // 新天鹅堡
+	JUQING_TYPE_BINGHE                = "bh"      // 冰河
+	JUQING_TYPE_BINGXUEBULUOMUBACUN   = "bxblmbc" // 冰雪部落姆巴村
+	JUQING_TYPE_BUGUIXIAGU            = "bgxg"    // 不归峡谷
+	JUQING_TYPE_BINGFENGCHENGBAO      = "bfcb"    // 冰封城堡
 )
 
 func (c *chaoJiDou) JuQing(jt JuQingType) {
