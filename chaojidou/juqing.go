@@ -27,6 +27,9 @@ const (
 	JUQING_TYPE_BINGXUEBULUOMUBACUN   = "bxblmbc" // 冰雪部落姆巴村
 	JUQING_TYPE_BUGUIXIAGU            = "bgxg"    // 不归峡谷
 	JUQING_TYPE_BINGFENGCHENGBAO      = "bfcb"    // 冰封城堡
+	JUQING_TYPE_JIANRUIXIAGU          = "jrxg"    // 尖锐峡谷
+	JUQING_TYPE_YUEGUANGDADAO         = "ygdd"    // 月光大道
+	JUQING_TYPE_SHIXIANZHENGYI        = "sxzy"    // 实现正义
 )
 
 func (c *chaoJiDou) JuQing(jt JuQingType) {

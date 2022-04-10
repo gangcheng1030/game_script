@@ -142,6 +142,7 @@ type MeiRiMap struct {
 	TieBiShouWei    []JuQingType
 	YanHua          []JuQingType
 	BingFengWangGuo []JuQingType
+	XiaoXinChuDian  []JuQingType
 }
 
 type LiuLangTuanMap struct {
@@ -326,6 +327,8 @@ func (c *chaoJiDou) LiuLangTuan(lt LiuLangTuanType, dt DifficultyType) {
 	// 对话
 	robotgo.KeyPress(robotgo.KeyF)
 	robotgo.Sleep(3)
+	robotgo.KeyPress(robotgo.KeyF)
+	robotgo.Sleep(3)
 
 	// 选中相应地图
 	c.clickButton(c.LiuLangTuanMap.FuBenArray[lt].Window, 3)
@@ -353,7 +356,6 @@ func (c *chaoJiDou) LiuLangTuan(lt LiuLangTuanType, dt DifficultyType) {
 	robotgo.Sleep(3)
 	robotgo.KeyPress(robotgo.KeyF)
 	robotgo.Sleep(20)
-	c.move(224, 258, 5, 3)
 }
 
 func (c *chaoJiDou) liuLangTuan1Helper() {
@@ -486,7 +488,6 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	c.clickButton(c.JinBenMap.FuBenArray[0].SmallMap[1], 6)
 	c.press(robotgo.KeyD, 1)
 	robotgo.MoveSmooth(325, 314, 0.9, 0.9)
-	c.press(robotgo.KeyA, 1)
 	c.press(robotgo.Key1, 4)
 	c.press(robotgo.KeyE, 3)
 	c.press(robotgo.KeyW, 1)
@@ -661,7 +662,6 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	robotgo.MoveSmooth(433, 143, 0.9, 0.9)
 	c.press(robotgo.Key1, 3)
 	c.press(robotgo.Key3, 2)
-	c.press(robotgo.KeyA, 1)
 	c.press(robotgo.KeyW, 1)
 	c.press(robotgo.KeyD, 1)
 	robotgo.Sleep(10)
@@ -805,7 +805,6 @@ func (c *chaoJiDou) continuedBattle(tm int) {
 	d4Timer := time.NewTimer(10 * time.Second)
 	d5Timer := time.NewTimer(13 * time.Second)
 	//d6Timer := time.NewTimer(5 * time.Second)
-	t4Timer := time.NewTimer(16 * time.Second)
 	gpTimer := time.NewTimer(5 * time.Second)
 	rTimer := time.NewTimer(15 * time.Second)
 	bTimer := time.NewTimer(15 * time.Second)
@@ -816,7 +815,6 @@ func (c *chaoJiDou) continuedBattle(tm int) {
 		d4Timer.Stop()
 		d5Timer.Stop()
 		//d6Timer.Stop()
-		t4Timer.Stop()
 		gpTimer.Stop()
 		rTimer.Stop()
 		bTimer.Stop()
@@ -857,11 +855,6 @@ func (c *chaoJiDou) continuedBattle(tm int) {
 		//	}
 		//	gpTimer.Reset(60 * time.Second)
 		//	d6Timer.Reset(60 * time.Second)
-		case <-t4Timer.C:
-			if rand.Intn(2) == 0 {
-				c.press(robotgo.KeyA, 1)
-			}
-			t4Timer.Reset(16 * time.Second)
 		case <-gpTimer.C:
 			if rand.Intn(2) == 0 {
 				c.press(robotgo.KeyQ, 4)
@@ -882,5 +875,4 @@ func (c *chaoJiDou) continuedBattle(tm int) {
 			time.Sleep(500 * time.Millisecond)
 		}
 	}
-	t4Timer.Stop()
 }

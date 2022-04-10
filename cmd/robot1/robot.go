@@ -14,7 +14,7 @@ import (
 )
 
 var captainStr = flag.String("c", "official_client", "client of captain")
-var meiriStr = flag.String("m", "shzk", "meiritiaozhan")
+var meiriStr = flag.String("m", "xxcd", "meiritiaozhan")
 
 var captain chaojidou.ChaoJiDou
 
@@ -66,6 +66,30 @@ func add() {
 		captain.JinBen(chaojidou.JINBEN_TYPE_HEIAN, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
 		chaojidou.NpcWaitSecs = 30
 		fmt.Println("shift-s end")
+		endTime = time.Now()
+	})
+
+	fmt.Println("--- Please press shift + a to confirm ---")
+	hook.Register(hook.KeyDown, []string{robotgo.Shift, robotgo.KeyA}, func(e hook.Event) {
+		fmt.Println("shift-a")
+		if endTime.Add(time.Second).After(time.Now()) {
+			fmt.Println("shift-a 相隔时间太短.")
+			return
+		}
+		chaojidou.NpcWaitSecs = 30
+		chaojidou.ReadMapWaitSecs = 120
+		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
+		chaojidou.NpcWaitSecs = 10
+		chaojidou.ReadMapWaitSecs = 30
+		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
+		chaojidou.NpcWaitSecs = 50
+		chaojidou.ReadMapWaitSecs = 60
+		captain.JinBen(chaojidou.JINBEN_TYPE_SUXING, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 2)
+		chaojidou.NpcWaitSecs = 10
+		captain.JinBen(chaojidou.JINBEN_TYPE_HEIAN, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
+		captain.JinBen(chaojidou.JINBEN_TYPE_HEIAN, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
+		chaojidou.NpcWaitSecs = 30
+		fmt.Println("shift-a end")
 		endTime = time.Now()
 	})
 
