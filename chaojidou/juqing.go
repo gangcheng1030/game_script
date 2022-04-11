@@ -33,6 +33,11 @@ const (
 	JUQING_TYPE_SHIJIANTINGYUAN       = "sjty"    // 时间庭院
 	JUQING_TYPE_HUWEIDUIXIONGMEI      = "hwdxm"   // 护卫队兄妹
 	JUQING_TYPE_TIANCAISHAONV         = "tcsn"    // 天才少女
+	JUQING_TYPE_QINGZHULIN            = "qzl"     // 青竹林
+	JUQING_TYPE_EMEIBIEYUAN           = "emby"    // 峨眉别院
+	JUQING_TYPE_GAIYAN                = "gy"      // 丐岩
+	JUQING_TYPE_BEIMANGSHAN           = "bms"     // 北邙山
+	JUQING_TYPE_BIWUDASAIJUESAI       = "bwdsjs"  // 比武大赛决赛
 )
 
 func (c *chaoJiDou) JuQing(jt JuQingType) {

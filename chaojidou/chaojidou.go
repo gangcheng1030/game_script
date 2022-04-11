@@ -144,6 +144,7 @@ type MeiRiMap struct {
 	BingFengWangGuo []JuQingType
 	XiaoXinChuDian  []JuQingType
 	RenXiaoGuiDa    []JuQingType
+	JiuYunZhiDian   []JuQingType
 }
 
 type LiuLangTuanMap struct {
@@ -878,4 +879,16 @@ func (c *chaoJiDou) continuedBattle(tm int) {
 			time.Sleep(500 * time.Millisecond)
 		}
 	}
+}
+
+func (c *chaoJiDou) prestart() {
+	c.press(robotgo.KeyS, 10)
+	c.press(robotgo.KeyQ, 4)
+	c.press(robotgo.KeyR, 1)
+	c.press(robotgo.KeyE, 3)
+	c.press(robotgo.F2, 1)
+	c.press(robotgo.KeyW, 1)
+	robotgo.KeyPress(robotgo.KeyS)
+	robotgo.KeyPress(robotgo.KeyS)
+	robotgo.Sleep(3)
 }
