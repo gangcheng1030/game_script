@@ -30,6 +30,9 @@ const (
 	JUQING_TYPE_JIANRUIXIAGU          = "jrxg"    // 尖锐峡谷
 	JUQING_TYPE_YUEGUANGDADAO         = "ygdd"    // 月光大道
 	JUQING_TYPE_SHIXIANZHENGYI        = "sxzy"    // 实现正义
+	JUQING_TYPE_SHIJIANTINGYUAN       = "sjty"    // 时间庭院
+	JUQING_TYPE_HUWEIDUIXIONGMEI      = "hwdxm"   // 护卫队兄妹
+	JUQING_TYPE_TIANCAISHAONV         = "tcsn"    // 天才少女
 )
 
 func (c *chaoJiDou) JuQing(jt JuQingType) {

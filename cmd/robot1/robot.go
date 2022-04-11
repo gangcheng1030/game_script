@@ -151,6 +151,21 @@ func add() {
 		endTime = time.Now()
 	})
 
+	fmt.Println("--- Please press shift + z to 追溯 ---")
+	hook.Register(hook.KeyDown, []string{robotgo.Shift, robotgo.KeyZ}, func(e hook.Event) {
+		fmt.Println("shift-z")
+		if endTime.Add(time.Second).After(time.Now()) {
+			fmt.Println("shift-z 相隔时间太短.")
+			return
+		}
+
+		chaojidou.NpcWaitSecs = 30
+		chaojidou.ReadMapWaitSecs = 90
+		captain.JiuYunDong(chaojidou.DIFFICULTY_TYPE_SHULIAN, 1)
+		fmt.Println("shift-z end")
+		endTime = time.Now()
+	})
+
 	s := hook.Start()
 	<-hook.Process(s)
 }

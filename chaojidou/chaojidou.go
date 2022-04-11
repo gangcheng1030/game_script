@@ -143,6 +143,7 @@ type MeiRiMap struct {
 	YanHua          []JuQingType
 	BingFengWangGuo []JuQingType
 	XiaoXinChuDian  []JuQingType
+	RenXiaoGuiDa    []JuQingType
 }
 
 type LiuLangTuanMap struct {
@@ -215,6 +216,8 @@ func (c *chaoJiDou) JiuYunDong(dt DifficultyType, times int) {
 	c.clickButton(c.BigMap.ZhuiSu, NpcWaitSecs)
 
 	// 追溯地图点击‘九云洞’
+	robotgo.KeyPress(robotgo.KeyF)
+	robotgo.Sleep(2)
 	robotgo.KeyPress(robotgo.KeyF)
 	robotgo.Sleep(3)
 	c.clickButton(c.ZhuiSuMap.JiuYunDong.Window, 3)
