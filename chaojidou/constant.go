@@ -9,3 +9,10 @@ const (
 
 	WAITING_ACTIVE_PID_MILLI_SECONDS = 1000
 )
+
+type RuleType int
+
+const (
+	RULE_TYPE_LEADER = 1
+	RULE_TYPE_SLAVE  = 2
+)

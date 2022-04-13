@@ -1662,13 +1662,14 @@ func (c *chaoJiDou) jianruixiaguMeiri() {
 	c.clickButton(fuben.SmallMap[6], 8)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.Key3, 2)
+	c.press(robotgo.F1, 1)
 	robotgo.Sleep(5)
 	c.press(robotgo.KeyD, 1)
 	robotgo.Sleep(4)
 	c.move(1185, 213, 3, 4)
 	robotgo.MoveSmooth(1085, 213, 0.9, 0.9)
 	c.press(robotgo.KeyD, 1)
-	robotgo.Sleep(6)
+	robotgo.Sleep(3)
 
 	// 第8张怪物图： boss
 	c.clickButton(fuben.SmallMap[7], 8)

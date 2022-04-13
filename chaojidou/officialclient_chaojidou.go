@@ -19,12 +19,14 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 		},
 		BigMap: BigMap{
 			ZhuiSu: robotgo.Rect{
-				Point: robotgo.Point{X: 635, Y: 322},
-				Size:  robotgo.Size{W: 7, H: 7},
+				// old: 635, 322, 7, 7
+				Point: robotgo.Point{X: 640, Y: 326},
+				Size:  robotgo.Size{W: 3, H: 3},
 			},
 			LiuLangTuan: robotgo.Rect{
-				Point: robotgo.Point{X: 765, Y: 515},
-				Size:  robotgo.Size{W: 7, H: 7},
+				// old: 765, 515, 7, 7
+				Point: robotgo.Point{X: 772, Y: 518},
+				Size:  robotgo.Size{W: 3, H: 3},
 			},
 			Hermosi: robotgo.Rect{
 				Point: robotgo.Point{X: 1121, Y: 433},
@@ -1253,7 +1255,19 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 		},
 		EnterDButton: robotgo.Rect{
 			Point: robotgo.Point{X: 585, Y: 455},
-			Size:  robotgo.Size{W: 80, H: 10},
+			Size:  robotgo.Size{W: 20, H: 10},
+		},
+		EnterSButton: robotgo.Rect{
+			Point: robotgo.Point{X: 585, Y: 416},
+			Size:  robotgo.Size{W: 20, H: 10},
+		},
+		EnterSButton2: robotgo.Rect{
+			Point: robotgo.Point{X: 585, Y: 476},
+			Size:  robotgo.Size{W: 20, H: 10},
+		},
+		EnterAcceptButton: robotgo.Rect{
+			Point: robotgo.Point{X: 622, Y: 455},
+			Size:  robotgo.Size{W: 10, H: 4},
 		},
 	}
 	return &OfficialClientChaoJiDou{chaoJiDou: c}

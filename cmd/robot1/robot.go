@@ -5,18 +5,26 @@ package main
 */
 
 import (
+	"errors"
 	"flag"
 	"fmt"
 	"github.com/gangcheng1030/game_script/chaojidou"
+	"github.com/gangcheng1030/game_script/utils/iputil"
 	"github.com/go-vgo/robotgo"
 	hook "github.com/robotn/gohook"
+	"net/http"
+	"strconv"
 	"time"
 )
 
 var captainStr = flag.String("c", "official_client", "client of captain")
 var meiriStr = flag.String("m", "xxcd", "meiritiaozhan")
+var rule = flag.Int("r", 1, "leader or follower")
+var leaderAddr = flag.String("l", "192.168.1.8:6688", "leader address")
+var port = flag.Int("p", 6688, "listen port")
 
 var captain chaojidou.ChaoJiDou
+var localIp string
 
 func initComponent() {
 	flag.Parse()
@@ -26,6 +34,29 @@ func initComponent() {
 		panic(err)
 	}
 
+	if *rule == chaojidou.RULE_TYPE_SLAVE {
+		localIp, err = iputil.GetLocalIP()
+		if err != nil {
+			panic(err)
+		}
+		err = chaojidou.Register(*leaderAddr, localIp+":"+strconv.Itoa(*port))
+		if err != nil {
+			panic(err)
+		}
+
+		go func() {
+			http.Handle("/follower", &chaojidou.FollowerHandler{})
+			http.ListenAndServe(":"+strconv.Itoa(*port), nil)
+		}()
+	} else if *rule == chaojidou.RULE_TYPE_LEADER {
+		go func() {
+			http.Handle("/leader", &chaojidou.LeaderHandler{})
+			http.ListenAndServe(":"+strconv.Itoa(*port), nil)
+		}()
+	} else {
+		err = errors.New("invalid rule type")
+		panic(err)
+	}
 }
 
 func main() {
@@ -44,6 +75,58 @@ func add() {
 		hook.End()
 	})
 
+	fmt.Println("--- Please press shift + 1 to '2流浪团 + 5追溯' ---")
+	hook.Register(hook.KeyDown, []string{robotgo.Shift, robotgo.Key1}, func(e hook.Event) {
+		fmt.Println("shift-1")
+		if endTime.Add(time.Second).After(time.Now()) {
+			fmt.Println("shift-1 相隔时间太短.")
+			return
+		}
+
+		chaojidou.NpcWaitSecs = 30
+		chaojidou.ReadMapWaitSecs = 120
+		captain.JiuYunDong(chaojidou.DIFFICULTY_TYPE_SHULIAN)
+		chaojidou.NpcWaitSecs = 10
+		chaojidou.ReadMapWaitSecs = 30
+		for i := 0; i < 4; i++ {
+			captain.JiuYunDong(chaojidou.DIFFICULTY_TYPE_SHULIAN)
+		}
+		chaojidou.NpcWaitSecs = 30
+		chaojidou.ReadMapWaitSecs = 120
+		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
+		chaojidou.NpcWaitSecs = 10
+		chaojidou.ReadMapWaitSecs = 30
+		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
+		fmt.Println("shift-1 end")
+		endTime = time.Now()
+	})
+
+	fmt.Println("--- Please press shift + 2 to '2流浪团 + 4追溯' ---")
+	hook.Register(hook.KeyDown, []string{robotgo.Shift, robotgo.Key2}, func(e hook.Event) {
+		fmt.Println("shift-2")
+		if endTime.Add(time.Second).After(time.Now()) {
+			fmt.Println("shift-2 相隔时间太短.")
+			return
+		}
+
+		chaojidou.NpcWaitSecs = 30
+		chaojidou.ReadMapWaitSecs = 120
+		captain.JiuYunDong(chaojidou.DIFFICULTY_TYPE_SHULIAN)
+		chaojidou.NpcWaitSecs = 10
+		chaojidou.ReadMapWaitSecs = 30
+		for i := 0; i < 4; i++ {
+			captain.JiuYunDong(chaojidou.DIFFICULTY_TYPE_SHULIAN)
+		}
+		chaojidou.NpcWaitSecs = 30
+		chaojidou.ReadMapWaitSecs = 120
+		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
+		chaojidou.NpcWaitSecs = 10
+		chaojidou.ReadMapWaitSecs = 30
+		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
+		fmt.Println("shift-2 end")
+		endTime = time.Now()
+	})
+
 	fmt.Println("--- Please press shift + s to confirm ---")
 	hook.Register(hook.KeyDown, []string{robotgo.Shift, robotgo.KeyS}, func(e hook.Event) {
 		fmt.Println("shift-s")
@@ -53,7 +136,7 @@ func add() {
 		}
 		chaojidou.NpcWaitSecs = 30
 		chaojidou.ReadMapWaitSecs = 120
-		captain.JiuYunDong(chaojidou.DIFFICULTY_TYPE_SHULIAN, 1)
+		captain.JiuYunDong(chaojidou.DIFFICULTY_TYPE_SHULIAN)
 		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
 		chaojidou.NpcWaitSecs = 10
 		chaojidou.ReadMapWaitSecs = 30
@@ -151,18 +234,18 @@ func add() {
 		endTime = time.Now()
 	})
 
-	fmt.Println("--- Please press shift + z to 追溯 ---")
-	hook.Register(hook.KeyDown, []string{robotgo.Shift, robotgo.KeyZ}, func(e hook.Event) {
-		fmt.Println("shift-z")
+	fmt.Println("--- Please press shift + q to 追溯 ---")
+	hook.Register(hook.KeyDown, []string{robotgo.Shift, robotgo.KeyQ}, func(e hook.Event) {
+		fmt.Println("shift-q")
 		if endTime.Add(time.Second).After(time.Now()) {
-			fmt.Println("shift-z 相隔时间太短.")
+			fmt.Println("shift-q 相隔时间太短.")
 			return
 		}
 
 		chaojidou.NpcWaitSecs = 30
 		chaojidou.ReadMapWaitSecs = 90
-		captain.JiuYunDong(chaojidou.DIFFICULTY_TYPE_SHULIAN, 1)
-		fmt.Println("shift-z end")
+		captain.JiuYunDong(chaojidou.DIFFICULTY_TYPE_SHULIAN)
+		fmt.Println("shift-q end")
 		endTime = time.Now()
 	})
 
