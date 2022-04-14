@@ -114,7 +114,7 @@ func add() {
 		captain.JiuYunDong(chaojidou.DIFFICULTY_TYPE_SHULIAN)
 		chaojidou.NpcWaitSecs = 10
 		chaojidou.ReadMapWaitSecs = 30
-		for i := 0; i < 4; i++ {
+		for i := 0; i < 3; i++ {
 			captain.JiuYunDong(chaojidou.DIFFICULTY_TYPE_SHULIAN)
 		}
 		chaojidou.NpcWaitSecs = 30

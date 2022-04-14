@@ -25,7 +25,7 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 			},
 			LiuLangTuan: robotgo.Rect{
 				// old: 765, 515, 7, 7
-				Point: robotgo.Point{X: 772, Y: 518},
+				Point: robotgo.Point{X: 774, Y: 518},
 				Size:  robotgo.Size{W: 3, H: 3},
 			},
 			Hermosi: robotgo.Rect{

@@ -256,9 +256,9 @@ func (c *chaoJiDou) JiuYunDong(dt DifficultyType) {
 	robotgo.Sleep(3)
 	robotgo.KeyPress(robotgo.KeyF)
 	c.handleFollowersPress(robotgo.KeyF, 5)
-	robotgo.Sleep(20)
-	c.handleFollowersMove(216, 218, 2, 0, 1000)
-	c.move(246, 218, 2, 3)
+	robotgo.Sleep(25)
+	c.handleFollowersMove(100, 100, 2, 0, 1000)
+	c.move(246, 218, 2, 6)
 }
 
 func (c *chaoJiDou) jiuYunDongHelper() {
@@ -294,7 +294,10 @@ func (c *chaoJiDou) jiuYunDongHelper() {
 	c.clickButton(c.ZhuiSuMap.JiuYunDong.SmallMap[2], 8)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyD, 1)
-	c.move(1086, 71, 2, 8)
+	c.move(1086, 71, 2, 5)
+	robotgo.MoveSmooth(1186, 171, 0.9, 0.9)
+	c.press(robotgo.KeyD, 1)
+	c.move(1086, 71, 2, 3)
 	for i := 0; i < len(Follwers); i += 2 {
 		c.press(robotgo.KeyD, 3)
 	}
@@ -399,7 +402,6 @@ func (c *chaoJiDou) LiuLangTuan(lt LiuLangTuanType, dt DifficultyType) {
 	robotgo.Sleep(3)
 	robotgo.KeyPress(robotgo.KeyF)
 	c.handleFollowersPress(robotgo.KeyF, 5)
-	robotgo.MoveSmooth(1100, 100, 0.9, 0.9)
 	robotgo.Sleep(20)
 }
 
