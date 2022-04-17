@@ -38,6 +38,13 @@ const (
 	JUQING_TYPE_GAIYAN                = "gy"      // 丐岩
 	JUQING_TYPE_BEIMANGSHAN           = "bms"     // 北邙山
 	JUQING_TYPE_BIWUDASAIJUESAI       = "bwdsjs"  // 比武大赛决赛
+	JUQING_TYPE_KONGZHONGANXI         = "kzax"    // 空中暗袭
+	JUQING_TYPE_DIXIATINGCHECHANG     = "dxtcc"   // 地下停车场
+	JUQING_TYPE_NIZONGSHENSHESHOU     = "nzsss"   // 匿踪神射手
+	JUQING_TYPE_YOULING               = "yl"      // 幽灵
+	JUQING_TYPE_DIXIAJIDISHIYANSHI    = "dxjdsys" // 地下基地：实验室
+	JUQING_TYPE_SHALEDUONAIHUOSHANKOU = "jldnhsk" // 沙勒多奈火山口
+	JUQING_TYPE_HAIDELUSHIYANSHI      = "hdlsys"  // 海德鲁实验室
 )
 
 func (c *chaoJiDou) JuQing(jt JuQingType) {
