@@ -155,6 +155,7 @@ type MeiRiMap struct {
 	JiuYunZhiDian   []JuQingType
 	SaRanZhiHua     []JuQingType
 	ShengWuShiYan   []JuQingType
+	QiangZhanDaSha  []JuQingType
 }
 
 type LiuLangTuanMap struct {
@@ -640,7 +641,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	c.press(robotgo.KeyW, 1)
 	c.multiMove(957, 200, 2, 1, 3)
 	robotgo.Sleep(3)
-	c.refreshD4()
+	c.refreshD4WithoutSleep()
 
 	// 第5张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[4], 1, 0, 3000, 5)
@@ -752,6 +753,20 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	c.press(robotgo.KeyD, 1)
 	c.multiMove(956, 121, 2, 1, 3)
 	c.press(robotgo.KeyW, 1)
+	var wg sync.WaitGroup
+	wg.Add(1)
+	go func() { // 为了防止卡死，需要提前走位
+		defer wg.Done()
+		for i := 0; i < 3; i++ {
+			c.handleFollowersMove(1090, 345, 2, 0, 0)
+			robotgo.Sleep(1)
+		}
+		robotgo.Sleep(2)
+		for i := 0; i < 3; i++ {
+			c.handleFollowersMove(956, 121, 2, 0, 0)
+			robotgo.Sleep(1)
+		}
+	}()
 	c.press(robotgo.F1, 1)
 	c.multiMove(158, 350, 2, 1, 1)
 	robotgo.Sleep(2)
@@ -765,12 +780,13 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	robotgo.KeyPress(robotgo.KeyS)
 	robotgo.Sleep(3)
 	c.press(robotgo.F2, 1)
-	for i := 0; i < len(Follwers); i += 2 {
-		c.press(robotgo.KeyD, 3)
+	for i := 0; i < len(Follwers); i += 1 {
+		robotgo.Sleep(3)
 	}
 
 	// 第2张怪物图
-	c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[1], 1, 0, 3000, 10)
+	wg.Wait()
+	c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[1], 1, 0, 3000, 4)
 	c.clickButton(c.JinBenMap.FuBenArray[1].SmallMap[1], 5)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyD, 1)
