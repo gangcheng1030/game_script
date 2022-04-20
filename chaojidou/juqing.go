@@ -49,6 +49,10 @@ const (
 	JUQING_TYPE_ZHUQIAO                  = "zq"       // 主桥
 	JUQING_TYPE_YOULINGCANGKU            = "ylck"     // 幽灵仓库
 	JUQING_TYPE_DIXIAJIDIZUIZHONGJUEZHAN = "dxjdzzjz" // 地下基地：最终决战
+	JUQING_TYPE_ZAICIMIANDUIWEIXIAN      = "zcmdwx"   // 再次面对危险
+	JUQING_TYPE_HEIMEIGUITINGYUAN        = "hmgty"    // 黑玫瑰庭院
+	JUQING_TYPE_BOLIZHIDI                = "blzd"     // 剥离之地
+	JUQING_TYPE_RANHEIDEWANXIA1          = "rhdwx1"   // 染黑的晚霞1
 )
 
 func (c *chaoJiDou) JuQing(jt JuQingType) {

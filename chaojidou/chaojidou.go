@@ -156,6 +156,7 @@ type MeiRiMap struct {
 	SaRanZhiHua     []JuQingType
 	ShengWuShiYan   []JuQingType
 	QiangZhanDaSha  []JuQingType
+	HeWeiAnYing     []JuQingType
 }
 
 type LiuLangTuanMap struct {
