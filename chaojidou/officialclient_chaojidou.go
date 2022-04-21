@@ -1464,6 +1464,130 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 				Point: robotgo.Point{X: 76, Y: 714},
 				Size:  robotgo.Size{W: 100, H: 10},
 			},
+			FuBens: map[ZhuiSuType]FuBen{
+				ZHUISU_TYPE_GUTU: {
+					Window: robotgo.Rect{
+						Point: robotgo.Point{X: 440, Y: 95},
+						Size:  robotgo.Size{W: 180, H: 50},
+					},
+					DifficultyTypePoses: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 480, Y: 42},
+							Size:  robotgo.Size{W: 40, H: 10},
+						},
+						{
+							Point: robotgo.Point{X: 545, Y: 42},
+							Size:  robotgo.Size{W: 40, H: 10},
+						},
+					},
+					SmallMap: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 1250, Y: 160},
+							Size:  robotgo.Size{W: 10, H: 10},
+						},
+					},
+				},
+				ZHUISU_TYPE_DADUHUI: {
+					Window: robotgo.Rect{
+						Point: robotgo.Point{X: 444, Y: 254},
+						Size:  robotgo.Size{W: 180, H: 50},
+					},
+					DifficultyTypePoses: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 480, Y: 198},
+							Size:  robotgo.Size{W: 40, H: 10},
+						},
+						{
+							Point: robotgo.Point{X: 545, Y: 198},
+							Size:  robotgo.Size{W: 40, H: 10},
+						},
+					},
+					SmallMap: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 1290, Y: 161},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1265, Y: 161},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1265, Y: 136},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1265, Y: 111},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1240, Y: 111},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1215, Y: 111},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1215, Y: 86},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1215, Y: 61},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+					},
+				},
+				ZHUISU_TYPE_JIUYUNDONG: {
+					Window: robotgo.Rect{
+						Point: robotgo.Point{X: 440, Y: 410},
+						Size:  robotgo.Size{W: 180, H: 50},
+					},
+					DifficultyTypePoses: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 480, Y: 355},
+							Size:  robotgo.Size{W: 40, H: 10},
+						},
+						{
+							Point: robotgo.Point{X: 545, Y: 355},
+							Size:  robotgo.Size{W: 40, H: 10},
+						},
+					},
+					SmallMap: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 1250, Y: 160},
+							Size:  robotgo.Size{W: 10, H: 10},
+						},
+						{
+							Point: robotgo.Point{X: 1275, Y: 160},
+							Size:  robotgo.Size{W: 10, H: 10},
+						},
+						{
+							Point: robotgo.Point{X: 1275, Y: 135},
+							Size:  robotgo.Size{W: 10, H: 10},
+						},
+						{
+							Point: robotgo.Point{X: 1275, Y: 110},
+							Size:  robotgo.Size{W: 10, H: 10},
+						},
+						{
+							Point: robotgo.Point{X: 1250, Y: 110},
+							Size:  robotgo.Size{W: 10, H: 10},
+						},
+						{
+							Point: robotgo.Point{X: 1225, Y: 110},
+							Size:  robotgo.Size{W: 10, H: 10},
+						},
+						{
+							Point: robotgo.Point{X: 1225, Y: 85},
+							Size:  robotgo.Size{W: 10, H: 10},
+						},
+						{
+							Point: robotgo.Point{X: 1225, Y: 60},
+							Size:  robotgo.Size{W: 10, H: 10},
+						},
+					},
+				},
+			},
 			JiuYunDong: FuBen{
 				Window: robotgo.Rect{
 					Point: robotgo.Point{X: 440, Y: 410},

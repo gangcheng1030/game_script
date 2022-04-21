@@ -2284,6 +2284,10 @@ func (c *chaoJiDou) qingzhulinMeiri() {
 	// 下一张图
 	c.move(858, 208, 1, 5)
 	c.press(robotgo.KeyF, 3)
+	c.move(872, 511, 1, 1)
+	c.press(robotgo.KeyF, 1)
+	c.press(robotgo.KeyF, 1)
+	c.press(robotgo.KeyF, 1)
 	robotgo.Sleep(40)
 }
 
@@ -2354,6 +2358,10 @@ func (c *chaoJiDou) emeibieyuanMeiri() {
 	// 下一张图
 	c.move(840, 190, 1, 5)
 	c.press(robotgo.KeyF, 3)
+	c.move(1073, 692, 1, 1)
+	c.press(robotgo.KeyF, 1)
+	c.press(robotgo.KeyF, 1)
+	c.press(robotgo.KeyF, 1)
 	robotgo.Sleep(40)
 }
 
@@ -2499,9 +2507,8 @@ func (c *chaoJiDou) beimangshanMeiri() {
 	robotgo.Sleep(4)
 
 	// 第6张怪物图： boss
-	c.clickButton(fuben.SmallMap[5], 4)
-	c.press(robotgo.Esc, 1)
-	c.multiMove(50, 715, 1, 1, 5)
+	c.clickButton(fuben.SmallMap[5], 7)
+	c.multiMove(50, 715, 1, 1, 9)
 	c.press(robotgo.KeyD, 1)
 	robotgo.Sleep(4)
 	c.press(robotgo.KeyD, 1)
