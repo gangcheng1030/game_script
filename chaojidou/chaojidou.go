@@ -167,6 +167,7 @@ type MeiRiMap struct {
 	ShengWuShiYan   []JuQingType
 	QiangZhanDaSha  []JuQingType
 	HeWeiAnYing     []JuQingType
+	WeiXianHuiZhuan []JuQingType
 }
 
 type LiuLangTuanMap struct {
@@ -556,7 +557,7 @@ func (c *chaoJiDou) liuLangTuan1Helper() {
 	// 开始战斗
 	c.clickButton(c.StartBattleButton, 1)
 	c.handleFollowersPress(robotgo.KeyF, 5)
-	robotgo.Sleep(7)
+	robotgo.Sleep(10)
 
 	// 技能连招
 	c.move(86, 696, 2, 2)
@@ -885,7 +886,7 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 
 	// 第1张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[0], 1, 0, 3000, 0)
-	c.clickButton(c.JinBenMap.FuBenArray[1].SmallMap[0], 8)
+	c.clickButton(c.JinBenMap.FuBenArray[1].SmallMap[0], 13)
 	c.press(robotgo.KeyS, 2)
 	robotgo.Sleep(3)
 	c.press(robotgo.Key3, 2)
@@ -930,7 +931,7 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	// 第2张怪物图
 	wg.Wait()
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[1], 1, 0, 3000, 4)
-	c.clickButton(c.JinBenMap.FuBenArray[1].SmallMap[1], 5)
+	c.clickButton(c.JinBenMap.FuBenArray[1].SmallMap[1], 8)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyD, 1)
 	c.multiMove(314, 159, 2, 1, 3)

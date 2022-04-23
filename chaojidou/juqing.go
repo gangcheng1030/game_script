@@ -53,6 +53,10 @@ const (
 	JUQING_TYPE_HEIMEIGUITINGYUAN        = "hmgty"    // 黑玫瑰庭院
 	JUQING_TYPE_BOLIZHIDI                = "blzd"     // 剥离之地
 	JUQING_TYPE_RANHEIDEWANXIA1          = "rhdwx1"   // 染黑的晚霞1
+	JUQING_TYPE_SENLINBIANJIE            = "slbj"     // 森林边界
+	JUQING_TYPE_MIGONGYUQIUTU            = "mgyqt"    // 迷宫与囚徒
+	JUQING_TYPE_DENGLULALAIYE            = "dllly"    // 登陆拉莱耶
+	JUQING_TYPE_LUOSUDEDIXIASHIJIE       = "lsddxsj"  // 罗素的地下世界
 )
 
 func (c *chaoJiDou) JuQing(jt JuQingType) {

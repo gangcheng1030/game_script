@@ -85,7 +85,7 @@ func add() {
 		}
 
 		chaojidou.NpcWaitSecs = 30
-		chaojidou.ReadMapWaitSecs = 120
+		chaojidou.ReadMapWaitSecs = 30
 		captain.ZhuiSu(chaojidou.ZhuiSuType(*zhuisuStr), chaojidou.DIFFICULTY_TYPE_SHULIAN)
 		chaojidou.NpcWaitSecs = 10
 		chaojidou.ReadMapWaitSecs = 30
@@ -93,7 +93,7 @@ func add() {
 			captain.ZhuiSu(chaojidou.ZhuiSuType(*zhuisuStr), chaojidou.DIFFICULTY_TYPE_SHULIAN)
 		}
 		chaojidou.NpcWaitSecs = 30
-		chaojidou.ReadMapWaitSecs = 120
+		chaojidou.ReadMapWaitSecs = 30
 		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
 		chaojidou.NpcWaitSecs = 10
 		chaojidou.ReadMapWaitSecs = 30
@@ -111,7 +111,7 @@ func add() {
 		}
 
 		chaojidou.NpcWaitSecs = 30
-		chaojidou.ReadMapWaitSecs = 120
+		chaojidou.ReadMapWaitSecs = 30
 		captain.ZhuiSu(chaojidou.ZhuiSuType(*zhuisuStr), chaojidou.DIFFICULTY_TYPE_SHULIAN)
 		chaojidou.NpcWaitSecs = 10
 		chaojidou.ReadMapWaitSecs = 30
@@ -119,7 +119,7 @@ func add() {
 			captain.ZhuiSu(chaojidou.ZhuiSuType(*zhuisuStr), chaojidou.DIFFICULTY_TYPE_SHULIAN)
 		}
 		chaojidou.NpcWaitSecs = 30
-		chaojidou.ReadMapWaitSecs = 120
+		chaojidou.ReadMapWaitSecs = 30
 		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
 		chaojidou.NpcWaitSecs = 10
 		chaojidou.ReadMapWaitSecs = 30
@@ -136,14 +136,14 @@ func add() {
 			return
 		}
 		chaojidou.NpcWaitSecs = 30
-		chaojidou.ReadMapWaitSecs = 120
+		chaojidou.ReadMapWaitSecs = 30
 		captain.ZhuiSu(chaojidou.ZhuiSuType(*zhuisuStr), chaojidou.DIFFICULTY_TYPE_SHULIAN)
 		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
 		chaojidou.NpcWaitSecs = 10
 		chaojidou.ReadMapWaitSecs = 30
 		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
 		chaojidou.NpcWaitSecs = 50
-		chaojidou.ReadMapWaitSecs = 60
+		chaojidou.ReadMapWaitSecs = 30
 		captain.JinBen(chaojidou.JINBEN_TYPE_SUXING, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
 		chaojidou.NpcWaitSecs = 10
 		captain.JinBen(chaojidou.JINBEN_TYPE_SUXING, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
@@ -162,13 +162,13 @@ func add() {
 			return
 		}
 		chaojidou.NpcWaitSecs = 30
-		chaojidou.ReadMapWaitSecs = 120
+		chaojidou.ReadMapWaitSecs = 30
 		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
 		chaojidou.NpcWaitSecs = 10
 		chaojidou.ReadMapWaitSecs = 30
 		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
 		chaojidou.NpcWaitSecs = 50
-		chaojidou.ReadMapWaitSecs = 60
+		chaojidou.ReadMapWaitSecs = 30
 		captain.JinBen(chaojidou.JINBEN_TYPE_SUXING, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
 		chaojidou.NpcWaitSecs = 10
 		captain.JinBen(chaojidou.JINBEN_TYPE_SUXING, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
@@ -187,7 +187,7 @@ func add() {
 			return
 		}
 		chaojidou.NpcWaitSecs = 30
-		chaojidou.ReadMapWaitSecs = 60
+		chaojidou.ReadMapWaitSecs = 30
 		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
 		fmt.Println("shift-t end")
 		endTime = time.Now()
@@ -201,7 +201,7 @@ func add() {
 			return
 		}
 		chaojidou.NpcWaitSecs = 30
-		chaojidou.ReadMapWaitSecs = 60
+		chaojidou.ReadMapWaitSecs = 30
 		captain.JinBen(chaojidou.JINBEN_TYPE_HEIAN, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
 		fmt.Println("shift-e end")
 		endTime = time.Now()
@@ -215,7 +215,7 @@ func add() {
 			return
 		}
 		chaojidou.NpcWaitSecs = 30
-		chaojidou.ReadMapWaitSecs = 60
+		chaojidou.ReadMapWaitSecs = 30
 		captain.JinBen(chaojidou.JINBEN_TYPE_SUXING, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
 		fmt.Println("shift-d end")
 		endTime = time.Now()
@@ -231,7 +231,7 @@ func add() {
 
 		var tp chaojidou.MeiRiType = chaojidou.MeiRiType(*meiriStr)
 		chaojidou.NpcWaitSecs = 30
-		chaojidou.ReadMapWaitSecs = 80
+		chaojidou.ReadMapWaitSecs = 30
 		captain.MeiRiTiaoZhan(tp, chaojidou.DIFFICULTY_TYPE_MAOXIAN)
 		fmt.Println("shift-r end")
 		endTime = time.Now()
@@ -246,7 +246,7 @@ func add() {
 		}
 
 		chaojidou.NpcWaitSecs = 30
-		chaojidou.ReadMapWaitSecs = 90
+		chaojidou.ReadMapWaitSecs = 30
 		captain.ZhuiSu(chaojidou.ZhuiSuType(*zhuisuStr), chaojidou.DIFFICULTY_TYPE_SHULIAN)
 		fmt.Println("shift-q end")
 		endTime = time.Now()
