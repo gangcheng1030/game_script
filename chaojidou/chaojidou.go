@@ -155,19 +155,20 @@ type MeiRiMap struct {
 	Window              robotgo.Rect
 	DifficultyTypePoses []robotgo.Rect
 
-	ShenHaiZhuKe    []JuQingType
-	ZuiQiangJianShi []JuQingType
-	TieBiShouWei    []JuQingType
-	YanHua          []JuQingType
-	BingFengWangGuo []JuQingType
-	XiaoXinChuDian  []JuQingType
-	RenXiaoGuiDa    []JuQingType
-	JiuYunZhiDian   []JuQingType
-	SaRanZhiHua     []JuQingType
-	ShengWuShiYan   []JuQingType
-	QiangZhanDaSha  []JuQingType
-	HeWeiAnYing     []JuQingType
-	WeiXianHuiZhuan []JuQingType
+	ShenHaiZhuKe      []JuQingType
+	ZuiQiangJianShi   []JuQingType
+	TieBiShouWei      []JuQingType
+	YanHua            []JuQingType
+	BingFengWangGuo   []JuQingType
+	XiaoXinChuDian    []JuQingType
+	RenXiaoGuiDa      []JuQingType
+	JiuYunZhiDian     []JuQingType
+	SaRanZhiHua       []JuQingType
+	ShengWuShiYan     []JuQingType
+	QiangZhanDaSha    []JuQingType
+	HeWeiAnYing       []JuQingType
+	WeiXianHuiZhuan   []JuQingType
+	WangMingTuDeDaoLu []JuQingType
 }
 
 type LiuLangTuanMap struct {
@@ -335,7 +336,7 @@ func (c *chaoJiDou) daDuHuiHelper() {
 	// 开始战斗
 	c.clickButton(c.StartBattleButton, 1)
 	c.handleFollowersPress(robotgo.KeyF, 5)
-	robotgo.Sleep(7)
+	robotgo.Sleep(10)
 
 	// 第1张怪物图
 	c.handleFollowersClick(c.ZhuiSuMap.FuBens[ZHUISU_TYPE_DADUHUI].SmallMap[0], 1, 0, 3000, 0)
@@ -419,7 +420,7 @@ func (c *chaoJiDou) jiuYunDongHelper() {
 	// 开始战斗
 	c.clickButton(c.StartBattleButton, 1)
 	c.handleFollowersPress(robotgo.KeyF, 5)
-	robotgo.Sleep(7)
+	robotgo.Sleep(10)
 
 	// 第1张怪物图
 	c.handleFollowersClick(c.ZhuiSuMap.JiuYunDong.SmallMap[0], 1, 0, 3000, 0)
@@ -1188,7 +1189,7 @@ func (c *chaoJiDou) continuedBattle(tm int) {
 	//d6Timer := time.NewTimer(5 * time.Second)
 	//gpTimer := time.NewTimer(5 * time.Second)
 	rTimer := time.NewTimer(5 * time.Second)
-	bTimer := time.NewTimer(5 * time.Second)
+	//bTimer := time.NewTimer(5 * time.Second)
 	defer func() {
 		d1Timer.Stop()
 		d2Timer.Stop()
@@ -1198,7 +1199,7 @@ func (c *chaoJiDou) continuedBattle(tm int) {
 		//d6Timer.Stop()
 		//gpTimer.Stop()
 		rTimer.Stop()
-		bTimer.Stop()
+		//bTimer.Stop()
 	}()
 
 	for {
@@ -1247,11 +1248,11 @@ func (c *chaoJiDou) continuedBattle(tm int) {
 				c.press(robotgo.F1, 1)
 			}
 			rTimer.Reset(15 * time.Second)
-		case <-bTimer.C:
-			if rand.Intn(2) == 0 {
-				c.press(robotgo.F2, 1)
-			}
-			bTimer.Reset(15 * time.Second)
+		//case <-bTimer.C:
+		//	if rand.Intn(2) == 0 {
+		//		c.press(robotgo.F2, 1)
+		//	}
+		//	bTimer.Reset(15 * time.Second)
 		default:
 			time.Sleep(500 * time.Millisecond)
 		}

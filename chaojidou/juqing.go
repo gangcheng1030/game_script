@@ -57,6 +57,9 @@ const (
 	JUQING_TYPE_MIGONGYUQIUTU            = "mgyqt"    // 迷宫与囚徒
 	JUQING_TYPE_DENGLULALAIYE            = "dllly"    // 登陆拉莱耶
 	JUQING_TYPE_LUOSUDEDIXIASHIJIE       = "lsddxsj"  // 罗素的地下世界
+	JUQING_TYPE_HAISHANGQIAOLIANG        = "hsql"     // 海上桥梁
+	JUQING_TYPE_HEIHAI                   = "hh"       // 黑海
+	JUQING_TYPE_LANGZIMOLU               = "lzml"     // 浪子末路
 )
 
 func (c *chaoJiDou) JuQing(jt JuQingType) {
