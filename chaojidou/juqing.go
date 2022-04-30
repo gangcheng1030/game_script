@@ -60,6 +60,10 @@ const (
 	JUQING_TYPE_HAISHANGQIAOLIANG        = "hsql"     // 海上桥梁
 	JUQING_TYPE_HEIHAI                   = "hh"       // 黑海
 	JUQING_TYPE_LANGZIMOLU               = "lzml"     // 浪子末路
+	JUQING_TYPE_HONGSESHAMO              = "hssm"     // 红色沙漠
+	JUQING_TYPE_XUNZHAOCHULU             = "xzcl"     // 寻找出路
+	JUQING_TYPE_YANHANXUESHAN            = "yhxs"     // 严寒雪山
+	JUQING_TYPE_BINGXUEFUGAIZHIQIANG     = "bxfgzq"   // 冰雪覆盖之墙
 )
 
 func (c *chaoJiDou) JuQing(jt JuQingType) {

@@ -169,6 +169,7 @@ type MeiRiMap struct {
 	HeWeiAnYing       []JuQingType
 	WeiXianHuiZhuan   []JuQingType
 	WangMingTuDeDaoLu []JuQingType
+	ShenMiDongWuXue   []JuQingType
 }
 
 type LiuLangTuanMap struct {
@@ -776,10 +777,11 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	for i := 0; i < len(Follwers); i += 1 {
 		robotgo.Sleep(1)
 	}
+	c.multiMove(685, 614, 1, 1, 3)
 
 	// 第4张怪物图
-	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[3], 1, 0, 3000, 4)
-	c.clickButton(c.JinBenMap.FuBenArray[0].SmallMap[3], 6)
+	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[3], 1, 0, 3000, 2)
+	c.clickButton(c.JinBenMap.FuBenArray[0].SmallMap[3], 8)
 	c.press(robotgo.KeyD, 1)
 	robotgo.MoveSmooth(957, 200, 0.9, 0.9)
 	c.press(robotgo.Key3, 2)
@@ -925,6 +927,8 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	robotgo.KeyPress(robotgo.KeyS)
 	robotgo.Sleep(3)
 	c.press(robotgo.F2, 1)
+	c.multiMove(685, 614, 1, 1, 3)
+	robotgo.Sleep(2)
 	for i := 0; i < len(Follwers); i += 1 {
 		robotgo.Sleep(3)
 	}

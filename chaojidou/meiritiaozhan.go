@@ -20,6 +20,7 @@ const (
 	MEIRI_TYPE_HEWEIANYING       MeiRiType = "hway"
 	MEIRI_TYPE_WEIXIANHUIZHUAN   MeiRiType = "wxhz"
 	MEIRI_TYPE_WANGMINGTUDEDAOLU MeiRiType = "wmtddl"
+	MEIRI_TYPE_SHENMIDONGWUXUE   MeiRiType = "smdwx"
 )
 
 func (c *chaoJiDou) MeiRiTiaoZhan(mt MeiRiType, dt DifficultyType) {
@@ -71,6 +72,8 @@ func (c *chaoJiDou) MeiRiTiaoZhan(mt MeiRiType, dt DifficultyType) {
 		c.weixianhuizhuan()
 	} else if mt == MEIRI_TYPE_WANGMINGTUDEDAOLU {
 		c.wangmingtudedaolu()
+	} else if mt == MEIRI_TYPE_SHENMIDONGWUXUE {
+		c.shenmidongwuxue()
 	}
 
 	// 返回主城
@@ -218,6 +221,16 @@ func (c *chaoJiDou) wangmingtudedaolu() {
 	c.haishangqiaoliangMeiri()
 	c.heihaiMeiri()
 	c.langzimoluMeiri()
+}
+
+func (c *chaoJiDou) shenmidongwuxue() {
+	// 开始战斗
+	c.clickButton(c.StartBattleButton, 13)
+
+	c.hongseshamoMeiri()
+	c.xunzhaochuluMeiri()
+	c.yanhanxueshanMeiri()
+	c.bingxuefugaizhiqiangMeiri()
 }
 
 func (c *chaoJiDou) shenhaiyizuMeiri() {
@@ -4188,5 +4201,330 @@ func (c *chaoJiDou) langzimoluMeiri() {
 	// 第6张怪物图: boss
 	c.press(robotgo.KeyT, 4)
 	c.clickButton(fuben.SmallMap[5], 8)
+	robotgo.Sleep(20)
+}
+
+func (c *chaoJiDou) hongseshamoMeiri() {
+	fuben := c.JuQingMap.FuBens[c.MeiRiMap.ShenMiDongWuXue[0]]
+	c.prestart()
+
+	// 第1张怪物图
+	c.clickButton(fuben.SmallMap[0], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.move(540, 47, 3, 4)
+	c.press(robotgo.KeyD, 1)
+	c.move(127, 152, 3, 4)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第2张怪物图
+	c.clickButton(fuben.SmallMap[1], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.move(54, 421, 3, 4)
+	c.press(robotgo.KeyD, 1)
+	c.multiMove(166, 645, 1, 1, 4)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第3张怪物图
+	c.clickButton(fuben.SmallMap[2], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.move(103, 425, 3, 4)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第4张怪物图
+	c.clickButton(fuben.SmallMap[3], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.multiMove(919, 623, 1, 1, 2)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	c.multiMove(233, 623, 1, 1, 2)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	c.multiMove(110, 444, 1, 1, 2)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	c.move(368, 182, 3, 4)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第5张怪物图
+	c.clickButton(fuben.SmallMap[4], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.multiMove(82, 371, 1, 1, 5)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	c.multiMove(82, 371, 1, 1, 5)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第6张怪物图
+	c.clickButton(fuben.SmallMap[5], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.multiMove(108, 349, 1, 1, 4)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	c.multiMove(653, 611, 1, 1, 2)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+	c.press(robotgo.KeyT, 4)
+
+	// 第7张怪物图: boss
+	c.clickButton(fuben.SmallMap[6], 8)
+	robotgo.Sleep(20)
+
+	// 下一张图
+	c.move(755, 190, 1, 4)
+	c.press(robotgo.KeyF, 3)
+	//c.move(367, 317, 1, 1)
+	//c.press(robotgo.KeyF, 1)
+	//c.press(robotgo.KeyF, 1)
+	//c.press(robotgo.KeyF, 1)
+	robotgo.Sleep(30)
+}
+
+func (c *chaoJiDou) xunzhaochuluMeiri() {
+	fuben := c.JuQingMap.FuBens[c.MeiRiMap.ShenMiDongWuXue[1]]
+	c.prestart()
+
+	// 第1张怪物图
+	c.clickButton(fuben.SmallMap[0], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.multiMove(1165, 360, 1, 1, 2)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第2张怪物图
+	c.clickButton(fuben.SmallMap[1], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.move(1149, 558, 3, 4)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第3张怪物图
+	c.clickButton(fuben.SmallMap[2], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.move(897, 235, 3, 4)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第4张怪物图
+	c.clickButton(fuben.SmallMap[3], 8)
+	c.move(691, 99, 1, 4)
+	c.press(robotgo.KeyF, 1)
+	robotgo.Sleep(8)
+
+	// 第5张怪物图
+	c.clickButton(fuben.SmallMap[4], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.multiMove(876, 101, 1, 1, 5)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	c.multiMove(742, 640, 1, 1, 6)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第6张怪物图
+	c.clickButton(fuben.SmallMap[5], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.move(1105, 70, 3, 4)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第7张怪物图
+	c.clickButton(fuben.SmallMap[6], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.multiMove(1028, 579, 1, 1, 2)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	c.multiMove(91, 694, 1, 1, 2)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	c.multiMove(1169, 621, 1, 1, 4)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	c.multiMove(1080, 86, 1, 1, 2)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	c.multiMove(1022, 592, 1, 1, 4)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第8张怪物图
+	c.clickButton(fuben.SmallMap[7], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.move(1220, 628, 3, 4)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第9张怪物图
+	c.clickButton(fuben.SmallMap[8], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	robotgo.Sleep(3)
+	c.move(1014, 117, 3, 4)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+	c.press(robotgo.KeyT, 4)
+
+	// 第10张怪物图: boss
+	c.clickButton(fuben.SmallMap[9], 8)
+	robotgo.Sleep(20)
+
+	// 下一张图
+	c.move(933, 277, 1, 4)
+	c.press(robotgo.KeyF, 3)
+	//c.move(367, 317, 1, 1)
+	//c.press(robotgo.KeyF, 1)
+	//c.press(robotgo.KeyF, 1)
+	//c.press(robotgo.KeyF, 1)
+	robotgo.Sleep(30)
+}
+
+func (c *chaoJiDou) yanhanxueshanMeiri() {
+	fuben := c.JuQingMap.FuBens[c.MeiRiMap.ShenMiDongWuXue[2]]
+	c.prestart()
+
+	// 第1张怪物图
+	c.clickButton(fuben.SmallMap[0], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.move(187, 93, 3, 4)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第2张怪物图
+	c.clickButton(fuben.SmallMap[1], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.move(1195, 248, 3, 4)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第3张怪物图
+	c.clickButton(fuben.SmallMap[2], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.move(1245, 693, 3, 4)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第4张怪物图
+	c.clickButton(fuben.SmallMap[3], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.move(719, 57, 3, 4)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第5张怪物图
+	c.clickButton(fuben.SmallMap[4], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(6)
+
+	// 第6张怪物图
+	c.clickButton(fuben.SmallMap[5], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.move(1281, 80, 3, 4)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+	c.press(robotgo.KeyT, 4)
+
+	// 第7张怪物图: boss
+	c.clickButton(fuben.SmallMap[6], 8)
+	robotgo.Sleep(20)
+
+	// 下一张图
+	c.move(785, 159, 1, 4)
+	c.press(robotgo.KeyF, 3)
+	c.move(942, 579, 1, 1)
+	c.press(robotgo.KeyF, 1)
+	c.press(robotgo.KeyF, 1)
+	c.press(robotgo.KeyF, 1)
+	robotgo.Sleep(30)
+}
+
+func (c *chaoJiDou) bingxuefugaizhiqiangMeiri() {
+	fuben := c.JuQingMap.FuBens[c.MeiRiMap.ShenMiDongWuXue[3]]
+	c.prestart()
+
+	// 第1张怪物图
+	c.clickButton(fuben.SmallMap[0], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.multiMove(1011, 189, 1, 1, 15)
+	robotgo.Sleep(3)
+
+	// 第2张怪物图
+	c.clickButton(fuben.SmallMap[1], 5)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.move(1118, 425, 3, 4)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第3张怪物图
+	c.clickButton(fuben.SmallMap[2], 6)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.move(754, 42, 3, 4)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第4张怪物图
+	c.clickButton(fuben.SmallMap[3], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.multiMove(1192, 626, 1, 1, 2)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第5张怪物图
+	c.clickButton(fuben.SmallMap[4], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.multiMove(664, 656, 1, 1, 2)
+	robotgo.Sleep(8)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第6张怪物图
+	c.clickButton(fuben.SmallMap[5], 8)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.multiMove(1214, 452, 1, 1, 2)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(4)
+
+	// 第7张怪物图: boss
+	c.press(robotgo.KeyT, 4)
+	c.clickButton(fuben.SmallMap[6], 8)
 	robotgo.Sleep(20)
 }

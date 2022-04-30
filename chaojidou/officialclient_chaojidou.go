@@ -1657,6 +1657,146 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 						},
 					},
 				},
+				JUQING_TYPE_HONGSESHAMO: {
+					SmallMap: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 1290, Y: 100},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1265, Y: 100},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1265, Y: 125},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1240, Y: 125},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1215, Y: 125},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1215, Y: 150},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1190, Y: 150},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+					},
+				},
+				JUQING_TYPE_XUNZHAOCHULU: {
+					SmallMap: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 1215, Y: 125},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1215, Y: 150},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1240, Y: 150},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1240, Y: 125},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1265, Y: 125},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1265, Y: 100},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1290, Y: 100},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1290, Y: 125},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1315, Y: 125},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1315, Y: 100},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+					},
+				},
+				JUQING_TYPE_YANHANXUESHAN: {
+					SmallMap: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 1240, Y: 171},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1240, Y: 141},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1270, Y: 141},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1270, Y: 111},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1240, Y: 111},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1240, Y: 81},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1270, Y: 81},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+					},
+				},
+				JUQING_TYPE_BINGXUEFUGAIZHIQIANG: {
+					SmallMap: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 1215, Y: 125},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1240, Y: 125},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1240, Y: 100},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1265, Y: 100},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1265, Y: 125},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1290, Y: 125},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1315, Y: 125},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+					},
+				},
 			},
 		},
 		ZhuiSuMap: ZhuiSuMap{
@@ -1858,6 +1998,7 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 			HeWeiAnYing:       []JuQingType{JUQING_TYPE_ZAICIMIANDUIWEIXIAN, JUQING_TYPE_HEIMEIGUITINGYUAN, JUQING_TYPE_BOLIZHIDI, JUQING_TYPE_RANHEIDEWANXIA1},
 			WeiXianHuiZhuan:   []JuQingType{JUQING_TYPE_SENLINBIANJIE, JUQING_TYPE_MIGONGYUQIUTU, JUQING_TYPE_DENGLULALAIYE, JUQING_TYPE_LUOSUDEDIXIASHIJIE},
 			WangMingTuDeDaoLu: []JuQingType{JUQING_TYPE_HAISHANGQIAOLIANG, JUQING_TYPE_HEIHAI, JUQING_TYPE_LANGZIMOLU},
+			ShenMiDongWuXue:   []JuQingType{JUQING_TYPE_HONGSESHAMO, JUQING_TYPE_XUNZHAOCHULU, JUQING_TYPE_YANHANXUESHAN, JUQING_TYPE_BINGXUEFUGAIZHIQIANG},
 		},
 		LiuLangTuanMap: LiuLangTuanMap{
 			EnterButton: robotgo.Rect{
