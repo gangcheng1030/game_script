@@ -61,6 +61,14 @@ type ChaoJiDou interface {
 	Confirm()
 	Empty()
 	Esc()
+	SignIn(account string, password string)
+	SelectRole(n int, first bool)
+	RepairEquipment()
+	ClearBag()
+	CardsUp()
+	CardsDown()
+	QuitRole() // 返回到角色选择界面
+	Quit()     // 退出游戏
 	// LeftClick x: 横坐标, y: 纵坐标, w: 窗口宽, h: 窗口高
 	LeftClick(x, y, w, h int) bool
 	JuQing(jt JuQingType)
@@ -68,9 +76,11 @@ type ChaoJiDou interface {
 	ZhuiSu(zt ZhuiSuType, dt DifficultyType)
 	MeiRiTiaoZhan(mt MeiRiType, dt DifficultyType)
 	LiuLangTuan(lt LiuLangTuanType, dt DifficultyType)
+	AoDeSai(dt DifficultyType)
 	JinBen(jt JinBenType, dt DifficultyType, times int)
 
 	GetGameWindow() robotgo.Rect
+	GetPid() int32
 
 	// 队员
 	GroupAccept()
@@ -104,13 +114,21 @@ type chaoJiDou struct {
 	Pid int32
 
 	// 通用
+	AccountBox     robotgo.Rect
+	PasswordBox    robotgo.Rect
+	SignInButton   robotgo.Rect
 	GameWindow     robotgo.Rect
+	RoleMap        RoleMap
+	ShouChongMap   ShouChongMap
+	ActivityMap    ActivityMap
 	BigMap         BigMap
+	MenuMap        MenuMap
 	RenWuMap       RenWuMap
 	JuQingMap      JuQingMap
 	ZhuiSuMap      ZhuiSuMap
 	MeiRiMap       MeiRiMap
 	LiuLangTuanMap LiuLangTuanMap
+	AoDeSaiMap     AoDeSaiMap
 	JinBenMap      JinBenMap
 
 	StartBattleButton robotgo.Rect
@@ -126,11 +144,37 @@ type chaoJiDou struct {
 	// 队长
 }
 
+type RoleMap struct {
+	PageButtonsOrigin []robotgo.Rect
+	RoleButtonsOrigin []robotgo.Rect
+
+	PageButtons []robotgo.Rect
+	RoleButtons []robotgo.Rect
+}
+
+type ShouChongMap struct {
+	CloseButtonOrigin robotgo.Rect
+}
+
+type ActivityMap struct {
+	CloseButtonOrigin robotgo.Rect
+}
+
 type BigMap struct {
-	ZhuiSu      robotgo.Rect
-	MeiRi       robotgo.Rect
-	LiuLangTuan robotgo.Rect
-	Hermosi     robotgo.Rect
+	ZhuiSu          robotgo.Rect
+	MeiRi           robotgo.Rect
+	LiuLangTuan     robotgo.Rect
+	Hermosi         robotgo.Rect
+	CiYuanChuanSong robotgo.Rect
+
+	ZhuangBeiFenJie robotgo.Rect
+	ShangDian       robotgo.Rect
+}
+
+type MenuMap struct {
+	BaseSettingsButtonOrigin robotgo.Rect
+	SelectRoleButton         robotgo.Rect
+	QuitButton               robotgo.Rect
 }
 
 type RenWuMap struct {
@@ -170,12 +214,17 @@ type MeiRiMap struct {
 	WeiXianHuiZhuan   []JuQingType
 	WangMingTuDeDaoLu []JuQingType
 	ShenMiDongWuXue   []JuQingType
+	HuoZhiJiDian      []JuQingType
 }
 
 type LiuLangTuanMap struct {
 	EnterButton robotgo.Rect
 
 	FuBenArray []FuBen
+}
+
+type AoDeSaiMap struct {
+	AoDeSaiFuBen FuBen
 }
 
 type JinBenMap struct {
@@ -215,6 +264,207 @@ func (c *chaoJiDou) ConfirmOrAccept() {
 func (c *chaoJiDou) Esc() {
 	c.Active()
 	c.esc()
+}
+
+func (c *chaoJiDou) SignIn(account string, password string) {
+	c.clickButton(c.AccountBox, 2)
+	c.clickButton(c.AccountBox, 2)
+	for i := 0; i < 40; i++ {
+		robotgo.KeyPress(robotgo.Backspace)
+	}
+	robotgo.Sleep(2)
+	robotgo.TypeStr(account)
+	robotgo.Sleep(3)
+
+	c.clickButton(c.PasswordBox, 2)
+	c.clickButton(c.PasswordBox, 2)
+	robotgo.TypeStr(password)
+	robotgo.Sleep(1)
+
+	c.clickButton(c.SignInButton, 45)
+}
+
+func (c *chaoJiDou) SelectRole(n int, first bool) {
+	if first {
+		pageNum := n / 6
+		c.clickButton(c.RoleMap.PageButtonsOrigin[pageNum], 5)
+
+		roleNum := n % 6
+		c.clickButton(c.RoleMap.RoleButtonsOrigin[roleNum], 3)
+
+		c.press(robotgo.KeyF, 80)
+
+		// 关闭首充窗口
+		c.clickButton(c.ShouChongMap.CloseButtonOrigin, 4)
+
+		// 关闭活动窗口
+		c.clickButton(c.ActivityMap.CloseButtonOrigin, 3)
+
+		// 调整窗口位置和大小
+		c.press(robotgo.F8, 3)
+		robotgo.MoveSmooth(942, 349, mouseSpeedX, mouseSpeedY)
+		robotgo.Click()
+		robotgo.Sleep(2)
+		robotgo.MoveSmooth(926, 390, mouseSpeedX, mouseSpeedY)
+		robotgo.Click()
+		robotgo.Sleep(2)
+		robotgo.MoveSmooth(960, 723, mouseSpeedX, mouseSpeedY)
+		robotgo.Click()
+		robotgo.Sleep(8)
+		c.press(robotgo.KeyF, 5)
+
+		robotgo.MoveSmooth(569, 166, mouseSpeedX, mouseSpeedY)
+		robotgo.Click()
+		robotgo.Sleep(2)
+		robotgo.MoveSmooth(569, 186, mouseSpeedX, mouseSpeedY)
+		robotgo.Click()
+		robotgo.Sleep(2)
+		robotgo.MoveSmooth(569, 197, mouseSpeedX, mouseSpeedY)
+		robotgo.Click()
+		robotgo.Sleep(2)
+		robotgo.MoveSmooth(544, 249, mouseSpeedX, mouseSpeedY)
+		robotgo.Click()
+		robotgo.Sleep(2)
+		robotgo.MoveSmooth(585, 489, mouseSpeedX, mouseSpeedY)
+		robotgo.Click()
+		robotgo.Sleep(8)
+
+		// 调整移动方式
+		robotgo.MoveSmooth(621, 134, mouseSpeedX, mouseSpeedY)
+		robotgo.Click()
+		robotgo.Sleep(2)
+		robotgo.MoveSmooth(658, 225, mouseSpeedX, mouseSpeedY)
+		robotgo.Click()
+		robotgo.Sleep(2)
+		robotgo.MoveSmooth(679, 565, mouseSpeedX, mouseSpeedY)
+		robotgo.Click()
+		robotgo.Sleep(2)
+
+		c.press(robotgo.F8, 3)
+	} else {
+		pageNum := n / 6
+		c.clickButton(c.RoleMap.PageButtons[pageNum], 5)
+
+		roleNum := n % 6
+		c.clickButton(c.RoleMap.RoleButtons[roleNum], 3)
+
+		c.press(robotgo.KeyF, 45)
+	}
+}
+
+func (c *chaoJiDou) RepairEquipment() {
+	// 修理装备
+	robotgo.MoveSmooth(999, 612, mouseSpeedX, mouseSpeedY)
+	robotgo.Click()
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyF, 3)
+}
+
+func (c *chaoJiDou) ClearBag() {
+	// 排序背包
+	c.press(robotgo.KeyI, 3)
+	robotgo.MoveSmooth(1307, 457, mouseSpeedX, mouseSpeedY)
+	robotgo.Click()
+	robotgo.Sleep(3)
+	robotgo.MoveSmooth(1330, 102, mouseSpeedX, mouseSpeedY)
+	robotgo.Click()
+	robotgo.Sleep(3)
+
+	// 分解装备
+	c.press(robotgo.KeyM, 3)
+	c.clickButton(c.BigMap.ZhuangBeiFenJie, 20)
+	robotgo.MoveSmooth(875, 424, mouseSpeedX, mouseSpeedY)
+	robotgo.Click()
+	robotgo.Sleep(3)
+	robotgo.MoveSmooth(724, 582, mouseSpeedX, mouseSpeedY)
+	robotgo.Click()
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyF, 4)
+	c.press(robotgo.KeyF, 3)
+	robotgo.MoveSmooth(1292, 737, mouseSpeedX, mouseSpeedY)
+	robotgo.Click()
+	robotgo.Sleep(3)
+
+	// 卖装备
+	c.press(robotgo.KeyM, 3)
+	c.clickButton(c.BigMap.ShangDian, 20)
+	robotgo.KeyDown(robotgo.Shift)
+	startX := 982
+	startY := 491
+	width := 37
+	for i := 0; i < 4; i++ {
+		for j := 0; j < 10; j++ {
+			if i == 0 && j < 5 {
+				continue
+			}
+			robotgo.MoveSmooth(startX+j*width, startY+i*width, mouseSpeedX, mouseSpeedY)
+			robotgo.Click("right")
+			robotgo.MilliSleep(400)
+		}
+	}
+	robotgo.KeyUp(robotgo.Shift)
+	robotgo.Sleep(3)
+	robotgo.MoveSmooth(1292, 737, mouseSpeedX, mouseSpeedY)
+	robotgo.Click()
+	robotgo.Sleep(3)
+}
+
+func (c *chaoJiDou) CardsUp() {
+	c.press(robotgo.KeyJ, 3)
+	robotgo.MoveSmooth(430, 150, mouseSpeedX, mouseSpeedY)
+	robotgo.Click("right")
+	robotgo.Sleep(1)
+	robotgo.MoveSmooth(510, 150, mouseSpeedX, mouseSpeedY)
+	robotgo.Click("right")
+	robotgo.Sleep(1)
+	robotgo.MoveSmooth(590, 150, mouseSpeedX, mouseSpeedY)
+	robotgo.Click("right")
+	robotgo.Sleep(1)
+	robotgo.MoveSmooth(670, 150, mouseSpeedX, mouseSpeedY)
+	robotgo.Click("right")
+	robotgo.Sleep(1)
+	robotgo.MoveSmooth(750, 150, mouseSpeedX, mouseSpeedY)
+	robotgo.Click("right")
+	robotgo.Sleep(1)
+	robotgo.MoveSmooth(430, 230, mouseSpeedX, mouseSpeedY)
+	robotgo.Click("right")
+	robotgo.Sleep(1)
+	robotgo.MoveSmooth(510, 230, mouseSpeedX, mouseSpeedY)
+	robotgo.Click("right")
+	robotgo.Sleep(1)
+	robotgo.MoveSmooth(590, 230, mouseSpeedX, mouseSpeedY)
+	robotgo.Click("right")
+	robotgo.Sleep(1)
+	c.press(robotgo.KeyJ, 3)
+}
+
+func (c *chaoJiDou) CardsDown() {
+	c.press(robotgo.KeyJ, 3)
+	robotgo.MoveSmooth(186, 240, mouseSpeedX, mouseSpeedY)
+	robotgo.Click("right")
+	robotgo.Sleep(1)
+	robotgo.MoveSmooth(100, 328, mouseSpeedX, mouseSpeedY)
+	robotgo.Click("right")
+	robotgo.Sleep(1)
+	robotgo.MoveSmooth(270, 325, mouseSpeedX, mouseSpeedY)
+	robotgo.Click("right")
+	robotgo.Sleep(1)
+	robotgo.MoveSmooth(185, 415, mouseSpeedX, mouseSpeedY)
+	robotgo.Click("right")
+	robotgo.Sleep(1)
+	c.press(robotgo.KeyJ, 3)
+}
+
+func (c *chaoJiDou) QuitRole() {
+	c.press(robotgo.Esc, 3)
+	c.clickButton(c.MenuMap.SelectRoleButton, 3)
+	c.press(robotgo.KeyF, 15)
+}
+
+func (c *chaoJiDou) Quit() {
+	c.press(robotgo.Esc, 3)
+	c.clickButton(c.MenuMap.QuitButton, 3)
+	c.press(robotgo.KeyF, 15)
 }
 
 func (c *chaoJiDou) LeftClick(x, y, w, h int) bool {
@@ -656,6 +906,80 @@ func (c *chaoJiDou) liuLangTuan1Helper() {
 	}
 }
 
+func (c *chaoJiDou) AoDeSai(dt DifficultyType) {
+	c.press(robotgo.KeyM, 2)
+
+	// 大地图点次元传送
+	c.clickButton(c.BigMap.CiYuanChuanSong, NpcWaitSecs)
+
+	// 对话
+	//robotgo.KeyPress(robotgo.KeyF)
+	//robotgo.Sleep(4)
+
+	// 选中奥德赛地图
+	c.clickButton(c.AoDeSaiMap.AoDeSaiFuBen.Window, 2)
+
+	// 选难度
+	c.clickButton(c.AoDeSaiMap.AoDeSaiFuBen.DifficultyTypePoses[dt], 2)
+
+	// 入场
+	c.clickButton(c.EnterButton, 2)
+	c.clickButton(c.EnterDButton, 1) // 这个入场老是出bug，所以点2次
+	c.clickButton(c.EnterDButton, 3)
+	c.clickButton(c.EnterSButton, 1) // 这个入场老是出bug，所以点2次
+	c.clickButton(c.EnterSButton, 3)
+	c.clickButton(c.EnterSButton2, 1) // 这个入场老是出bug，所以点2次
+	c.clickButton(c.EnterSButton2, 1)
+	c.handleFollowersClick(c.EnterAcceptButton, 2, 5, 5000, 0)
+	robotgo.Sleep(ReadMapWaitSecs)
+
+	// 打怪
+	c.aoDeSaiHelper()
+
+	// 返回主城
+	robotgo.KeyPress(robotgo.F12)
+	robotgo.Sleep(5)
+	robotgo.KeyPress(robotgo.KeyF)
+	robotgo.Sleep(3)
+	robotgo.KeyPress(robotgo.KeyF)
+	c.handleFollowersPress(robotgo.KeyF, 5)
+	robotgo.Sleep(20)
+}
+
+func (c *chaoJiDou) aoDeSaiHelper() {
+	// 开始战斗
+	c.clickButton(c.StartBattleButton, 1)
+	c.handleFollowersPress(robotgo.KeyF, 5)
+	robotgo.Sleep(11)
+
+	robotgo.MoveSmooth(904, 518, mouseSpeedX, mouseSpeedY)
+	c.press(robotgo.KeyS, 12)
+	c.press(robotgo.KeyR, 1)
+	c.press(robotgo.KeyE, 3)
+	c.press(robotgo.F2, 1)
+	c.press(robotgo.Key3, 3)
+	c.press(robotgo.KeyW, 1)
+	robotgo.KeyPress(robotgo.KeyS)
+	robotgo.KeyPress(robotgo.KeyS)
+	robotgo.Sleep(3)
+	c.move(632, 132, 1, 6)
+
+	robotgo.MoveSmooth(1001, 175, mouseSpeedX, mouseSpeedY)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.KeyQ, 4)
+	c.move(1001, 175, 3, 4)
+	robotgo.MoveSmooth(650, 340, mouseSpeedX, mouseSpeedY)
+	ts := 15 + len(Follwers)*3
+	c.continuedBattle(ts)
+	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
+	c.press(robotgo.F2, 1)
+	c.press(robotgo.KeyT, 4)
+	ts = 30 + len(Follwers)*4
+	c.continuedBattle(ts)
+}
+
 func (c *chaoJiDou) JinBen(jt JinBenType, dt DifficultyType, times int) {
 	c.press(robotgo.KeyM, 1)
 
@@ -1091,6 +1415,10 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 
 func (c *chaoJiDou) GetGameWindow() robotgo.Rect {
 	return c.GameWindow
+}
+
+func (c *chaoJiDou) GetPid() int32 {
+	return c.Pid
 }
 
 func (c *chaoJiDou) Active() bool {

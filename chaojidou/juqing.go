@@ -64,6 +64,10 @@ const (
 	JUQING_TYPE_XUNZHAOCHULU             = "xzcl"     // 寻找出路
 	JUQING_TYPE_YANHANXUESHAN            = "yhxs"     // 严寒雪山
 	JUQING_TYPE_BINGXUEFUGAIZHIQIANG     = "bxfgzq"   // 冰雪覆盖之墙
+	JUQING_TYPE_DIXIAJIDIJINJIZUOZHAN    = "dxjdjjzz" // 地下基地：紧急作战
+	JUQING_TYPE_HUOYANZHUISUIZHE         = "hyzsz"    // 火焰追随者
+	JUQING_TYPE_FEIQIRONGLU              = "fqrl"     // 废弃熔炉
+	JUQING_TYPE_HUOYANZHINV              = "hyzn"     // 火焰之女
 )
 
 func (c *chaoJiDou) JuQing(jt JuQingType) {
