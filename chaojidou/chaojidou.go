@@ -1058,7 +1058,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 
 	// 第1张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[0], 1, 0, 3000, 0)
-	c.clickButton(c.JinBenMap.FuBenArray[0].SmallMap[0], 10)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[0], 10)
 	c.press(robotgo.KeyD, 1)
 	robotgo.MoveSmooth(336, 345, 0.9, 0.9)
 	c.press(robotgo.Key3, 2)
@@ -1078,7 +1078,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 
 	// 第2张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[1], 1, 0, 3000, 5)
-	c.clickButton(c.JinBenMap.FuBenArray[0].SmallMap[1], 6)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[1], 6)
 	c.press(robotgo.KeyD, 1)
 	robotgo.MoveSmooth(325, 314, 0.9, 0.9)
 	c.press(robotgo.Key1, 4)
@@ -1090,7 +1090,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 
 	// 第3张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[2], 1, 0, 3000, 2)
-	c.clickButton(c.JinBenMap.FuBenArray[0].SmallMap[2], 6)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[2], 6)
 	c.press(robotgo.KeyD, 1)
 	robotgo.MoveSmooth(1055, 299, 0.9, 0.9)
 	c.press(robotgo.Key3, 2)
@@ -1105,7 +1105,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 
 	// 第4张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[3], 1, 0, 3000, 2)
-	c.clickButton(c.JinBenMap.FuBenArray[0].SmallMap[3], 8)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[3], 8)
 	c.press(robotgo.KeyD, 1)
 	robotgo.MoveSmooth(957, 200, 0.9, 0.9)
 	c.press(robotgo.Key3, 2)
@@ -1116,7 +1116,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 
 	// 第5张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[4], 1, 0, 3000, 5)
-	c.clickButton(c.JinBenMap.FuBenArray[0].SmallMap[4], 6)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[4], 6)
 	c.press(robotgo.KeyD, 1)
 	robotgo.MoveSmooth(1057, 319, 0.9, 0.9)
 	c.multiMove(1057, 319, 2, 1, 3)
@@ -1135,7 +1135,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 
 	// 第6张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[5], 1, 0, 3000, 6)
-	c.clickButton(c.JinBenMap.FuBenArray[0].SmallMap[5], 6)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[5], 6)
 	c.press(robotgo.KeyD, 1)
 	robotgo.MoveSmooth(841, 496, 0.9, 0.9)
 	c.press(robotgo.Key3, 2)
@@ -1148,7 +1148,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 
 	// 第7张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[6], 1, 0, 3000, 4)
-	c.clickButton(c.JinBenMap.FuBenArray[0].SmallMap[6], 5)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[6], 5)
 	robotgo.MoveSmooth(216, 389, 0.9, 0.9)
 	c.press(robotgo.KeyT, 4)
 	c.press(robotgo.KeyD, 1)
@@ -1162,7 +1162,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 
 	// 第8张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[7], 1, 0, 3000, 2)
-	c.clickButton(c.JinBenMap.FuBenArray[0].SmallMap[7], 8)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[7], 8)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.Key3, 2)
 	robotgo.MoveSmooth(673, 550, 0.9, 0.9)
@@ -1172,7 +1172,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 
 	// 第9张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[8], 1, 0, 3000, 4)
-	c.clickButton(c.JinBenMap.FuBenArray[0].SmallMap[8], 6)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[8], 6)
 	c.press(robotgo.KeyD, 1)
 	robotgo.MoveSmooth(942, 242, 0.9, 0.9)
 	c.press(robotgo.Key3, 2)
@@ -1185,11 +1185,11 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	// 第10张怪物图：实际上是回到第8张
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[9], 1, 0, 3000, 0)
 	c.press(robotgo.F2, 1)
-	c.clickButton(c.JinBenMap.FuBenArray[0].SmallMap[9], 8)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[9], 8)
 
 	// 第11张怪物图：boss
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[10], 1, 0, 3000, 1)
-	c.clickButton(c.JinBenMap.FuBenArray[0].SmallMap[10], 13)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[10], 13)
 	robotgo.MoveSmooth(490, 320, 0.9, 0.9)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.KeyS, 2)
@@ -1213,7 +1213,7 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 
 	// 第1张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[0], 1, 0, 3000, 0)
-	c.clickButton(c.JinBenMap.FuBenArray[1].SmallMap[0], 13)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[1].SmallMap[0], 13)
 	c.press(robotgo.KeyS, 2)
 	robotgo.Sleep(3)
 	c.press(robotgo.Key3, 2)
@@ -1260,7 +1260,7 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	// 第2张怪物图
 	wg.Wait()
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[1], 1, 0, 3000, 4)
-	c.clickButton(c.JinBenMap.FuBenArray[1].SmallMap[1], 8)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[1].SmallMap[1], 8)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyD, 1)
 	c.multiMove(314, 159, 2, 1, 3)
@@ -1278,7 +1278,7 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 
 	// 第3张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[2], 1, 0, 3000, 6)
-	c.clickButton(c.JinBenMap.FuBenArray[1].SmallMap[2], 4)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[1].SmallMap[2], 4)
 	robotgo.MoveSmooth(392, 370, 0.9, 0.9)
 	c.press(robotgo.KeyQ, 4)
 	c.press(robotgo.KeyD, 1)
@@ -1292,7 +1292,7 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 
 	// 第4张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[3], 1, 0, 3000, 4)
-	c.clickButton(c.JinBenMap.FuBenArray[1].SmallMap[3], 6)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[1].SmallMap[3], 6)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.Key3, 2)
 	c.multiMove(595, 167, 2, 1, 4)
@@ -1308,7 +1308,7 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 
 	// 第5张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[4], 1, 0, 3000, 7)
-	c.clickButton(c.JinBenMap.FuBenArray[1].SmallMap[4], 5)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[1].SmallMap[4], 5)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyW, 1)
@@ -1320,28 +1320,28 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	robotgo.Sleep(3)
 	c.refreshD4WithoutSleep()
 
-	// 第6张怪物图
-	c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[5], 1, 0, 3000, 2)
-	c.clickButton(c.JinBenMap.FuBenArray[1].SmallMap[5], 10)
-	c.press(robotgo.KeyD, 1)
-	c.press(robotgo.Key3, 2)
-	c.multiMove(1121, 490, 2, 1, 3)
-	robotgo.Sleep(2)
-	c.press(robotgo.KeyD, 1)
-	c.press(robotgo.KeyD, 4)
-	c.press(robotgo.KeyD, 3)
-	for i := 0; i < len(Follwers); i += 1 {
-		robotgo.Sleep(1)
-	}
-
-	// 第7张怪物图
-	c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[6], 1, 0, 3000, 0)
-	c.clickButton(c.JinBenMap.FuBenArray[1].SmallMap[6], 10)
+	//// 第6张怪物图
+	//c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[5], 1, 0, 3000, 2)
+	//c.clickButtonWithAlt(c.JinBenMap.FuBenArray[1].SmallMap[5], 10)
+	//c.press(robotgo.KeyD, 1)
+	//c.press(robotgo.Key3, 2)
+	//c.multiMove(1121, 490, 2, 1, 3)
+	//robotgo.Sleep(2)
+	//c.press(robotgo.KeyD, 1)
+	//c.press(robotgo.KeyD, 4)
+	//c.press(robotgo.KeyD, 3)
+	//for i := 0; i < len(Follwers); i += 1 {
+	//	robotgo.Sleep(1)
+	//}
+	//
+	//// 第7张怪物图
+	//c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[6], 1, 0, 3000, 0)
+	//c.clickButtonWithAlt(c.JinBenMap.FuBenArray[1].SmallMap[6], 10)
 
 	// 第8张怪物图
 	robotgo.Sleep(3)
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[7], 1, 0, 3000, 0)
-	c.clickButton(c.JinBenMap.FuBenArray[1].SmallMap[7], 10)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[1].SmallMap[7], 10)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.F1, 1)
 	robotgo.MoveSmooth(433, 143, 0.9, 0.9)
@@ -1354,7 +1354,7 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 
 	// 第9张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[8], 1, 0, 3000, 0)
-	c.clickButton(c.JinBenMap.FuBenArray[1].SmallMap[8], 6)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[1].SmallMap[8], 6)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyW, 1)
@@ -1375,7 +1375,7 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 
 	// 第10张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[9], 1, 0, 3000, 6)
-	c.clickButton(c.JinBenMap.FuBenArray[1].SmallMap[9], 5)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[1].SmallMap[9], 5)
 	c.press(robotgo.F2, 1)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.Key3, 2)
@@ -1395,7 +1395,7 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[10], 1, 0, 3000, 10)
 	c.press(robotgo.F1, 1)
 	c.press(robotgo.F2, 1)
-	c.clickButton(c.JinBenMap.FuBenArray[1].SmallMap[10], 8)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[1].SmallMap[10], 8)
 	c.press(robotgo.KeyT, 1)
 	c.press(robotgo.KeyT, 1)
 	c.press(robotgo.KeyT, 1)
@@ -1480,6 +1480,19 @@ func (c *chaoJiDou) clickButton(button robotgo.Rect, tm int) {
 	robotgo.MoveSmooth(tmpPoint.X+c.GameWindow.X, tmpPoint.Y+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.MilliSleep(200)
 	robotgo.Click()
+	if tm > 0 {
+		robotgo.Sleep(tm)
+	}
+}
+
+// tm单位：秒
+func (c *chaoJiDou) clickButtonWithAlt(button robotgo.Rect, tm int) {
+	tmpPoint := utils.GetRandomPointInRect(button)
+	robotgo.KeyDown(robotgo.Alt)
+	robotgo.MoveSmooth(tmpPoint.X+c.GameWindow.X, tmpPoint.Y+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MilliSleep(200)
+	robotgo.Click()
+	robotgo.KeyUp(robotgo.Alt)
 	if tm > 0 {
 		robotgo.Sleep(tm)
 	}
