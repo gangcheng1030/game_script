@@ -66,6 +66,7 @@ type ChaoJiDou interface {
 	RepairEquipment()
 	ClearBag()
 	CardsUp()
+	CreateGroup(followerFunTuanNames []string)
 	CardsDown()
 	QuitRole() // 返回到角色选择界面
 	Quit()     // 退出游戏
@@ -436,6 +437,63 @@ func (c *chaoJiDou) CardsUp() {
 	robotgo.Click("right")
 	robotgo.Sleep(1)
 	c.press(robotgo.KeyJ, 3)
+}
+
+func (c *chaoJiDou) CreateGroup(followerFunTuanNames []string) {
+	c.press(robotgo.KeyP, 3)
+	robotgo.MoveSmooth(621, 561, mouseSpeedX, mouseSpeedY)
+	robotgo.Click()
+	robotgo.Sleep(2)
+	robotgo.MoveSmooth(172, 522, mouseSpeedX, mouseSpeedY)
+	robotgo.Click()
+	robotgo.Sleep(2)
+
+	rects := []robotgo.Rect{
+		{
+			Point: robotgo.Point{X: 611, Y: 502},
+			Size:  robotgo.Size{W: 4, H: 2},
+		},
+		{
+			Point: robotgo.Point{X: 745, Y: 502},
+			Size:  robotgo.Size{W: 4, H: 2},
+		},
+		{
+			Point: robotgo.Point{X: 882, Y: 502},
+			Size:  robotgo.Size{W: 4, H: 2},
+		},
+	}
+	c.clickButton(rects[0], 2)
+
+	for i := range followerFunTuanNames {
+		robotgo.MoveSmooth(1001, 569, mouseSpeedX, mouseSpeedY)
+		robotgo.Click()
+		robotgo.Sleep(1)
+		robotgo.MoveSmooth(1001, 569, mouseSpeedX, mouseSpeedY)
+		robotgo.Click()
+		robotgo.Sleep(1)
+
+		robotgo.TypeStr(followerFunTuanNames[i])
+		robotgo.Sleep(1)
+
+		robotgo.MoveSmooth(1152, 567, mouseSpeedX, mouseSpeedY)
+		robotgo.Click()
+		robotgo.Sleep(5)
+
+		tmpPoint := utils.GetRandomPointInRect(c.GroupAcceptButton)
+		e := &hook.Event{
+			Kind:   hook.MouseDown,
+			X:      int16(tmpPoint.X),
+			Y:      int16(tmpPoint.Y),
+			Clicks: 1,
+		}
+		err := SendEvent(Follwers[i], e)
+		if err != nil {
+			panic(err)
+		}
+		robotgo.Sleep(2)
+	}
+
+	c.press(robotgo.KeyP, 3)
 }
 
 func (c *chaoJiDou) CardsDown() {
@@ -1148,8 +1206,11 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 
 	// 第7张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[6], 1, 0, 3000, 4)
-	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[6], 5)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[6], 3)
 	robotgo.MoveSmooth(216, 389, 0.9, 0.9)
+	c.press(robotgo.KeyT, 1)
+	c.press(robotgo.KeyT, 1)
+	c.press(robotgo.KeyT, 1)
 	c.press(robotgo.KeyT, 4)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.Key3, 2)
@@ -1167,7 +1228,9 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	c.press(robotgo.Key3, 2)
 	robotgo.MoveSmooth(673, 550, 0.9, 0.9)
 	c.multiMove(673, 550, 2, 1, 5)
-	robotgo.Sleep(7)
+	c.press(robotgo.KeyD, 5)
+	c.press(robotgo.KeyD, 5)
+	c.press(robotgo.KeyD, 1)
 	c.refreshD4WithoutSleep()
 
 	// 第9张怪物图
@@ -1196,7 +1259,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	c.press(robotgo.KeyQ, 4)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyD, 1)
-	robotgo.Sleep(20)
+	c.continuedBattle(20)
 	for i := 0; i < len(Follwers); i += 1 {
 		c.press(robotgo.KeyD, 3)
 	}

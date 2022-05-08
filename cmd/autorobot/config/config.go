@@ -14,11 +14,17 @@ type Account struct {
 	AccountName string
 	Password    string
 	Roles       []Role
+
+	FollowerAddrs        []string
+	FollowerAccountNames []string
+	FollowerPasswords    []string
 }
 
 type Role struct {
-	Id     int
-	Fubens []FuBen
+	Id                   int
+	FollowerRoleIds      []int
+	FollowerJunTuanNames []string
+	Fubens               []FuBen
 }
 
 type FuBen struct {

@@ -2472,6 +2472,10 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 			Point: robotgo.Point{X: 622, Y: 455},
 			Size:  robotgo.Size{W: 10, H: 4},
 		},
+		GroupAcceptButton: robotgo.Rect{
+			Point: robotgo.Point{X: 677, Y: 423},
+			Size:  robotgo.Size{W: 4, H: 2},
+		},
 	}
 	return &OfficialClientChaoJiDou{chaoJiDou: c}
 }

@@ -7,19 +7,26 @@ package main
 import (
 	"flag"
 	"github.com/gangcheng1030/game_script/chaojidou"
+	"github.com/gangcheng1030/game_script/cmd/autorobot/client"
 	"github.com/gangcheng1030/game_script/cmd/autorobot/config"
+	"github.com/gangcheng1030/game_script/cmd/autorobot/server"
 	"github.com/gangcheng1030/game_script/utils/robotgoutil"
 	"github.com/go-vgo/robotgo"
 	"github.com/shirou/gopsutil/v3/process"
+	"net/http"
 	"os"
 	"os/exec"
 	"path/filepath"
+	"strconv"
 	"strings"
 )
 
 var captainStr = flag.String("c", "official_client", "client of captain")
+var mode = flag.Int("m", 1, "模式：1 表示 单人模式；2 表示 组队模式")
+var rule = flag.Int("r", 1, "leader or follower")
 var cjdDir = flag.String("d", "G:\\Netease\\CJDMJ", "cjd dir")
 var configPath = flag.String("conf", "autorobot.json", "config")
+var port = flag.Int("p", 6688, "listen port")
 
 var cfg *config.AutoRobotConfig
 var captain chaojidou.ChaoJiDou
@@ -35,9 +42,11 @@ func initComponent() {
 		panic(err)
 	}
 
-	cfg, err = config.InitConfig(robotDir + "\\" + *configPath)
-	if err != nil {
-		panic(err)
+	if *mode == 1 || *rule == chaojidou.RULE_TYPE_LEADER {
+		cfg, err = config.InitConfig(robotDir + "\\" + *configPath)
+		if err != nil {
+			panic(err)
+		}
 	}
 
 	err = os.Chdir(*cjdDir)
@@ -53,7 +62,16 @@ func initComponent() {
 
 func main() {
 	initComponent()
-	start()
+	if *mode != 1 && *rule == chaojidou.RULE_TYPE_SLAVE {
+		robotgo.KeySleep = 100
+		robotgo.MouseSleep = 100
+
+		http.Handle("/follower/autorobot", &server.FollowerHandler{CjdDir: *cjdDir, StartGameButton: startGameButton})
+		http.Handle("/follower", &chaojidou.FollowerHandler{})
+		http.ListenAndServe(":"+strconv.Itoa(*port), nil)
+	} else {
+		start()
+	}
 }
 
 func start() {
@@ -61,6 +79,26 @@ func start() {
 	robotgo.MouseSleep = 100
 
 	for i := 0; i < len(cfg.Accounts); i++ {
+		account := cfg.Accounts[i]
+
+		if *mode != 1 {
+			chaojidou.Follwers = account.FollowerAddrs
+			for j := range account.FollowerAddrs {
+				accountTmp := server.Account{
+					AccountName: account.FollowerAccountNames[j],
+					Password:    account.FollowerPasswords[j],
+				}
+				for {
+					err := client.SendEvent(account.FollowerAddrs[j], "signin", accountTmp)
+					if err == nil {
+						break
+					}
+					robotgo.Sleep(3)
+				}
+			}
+			robotgo.Sleep(6)
+		}
+
 		cjd := exec.Command(*cjdDir + "\\Launcher.exe")
 		err := cjd.Run()
 		if err != nil {
@@ -68,10 +106,8 @@ func start() {
 		}
 		robotgo.Sleep(45)
 
-		account := cfg.Accounts[i]
-
 		// 开始游戏
-		robotgoutil.ClickButton(startGameButton, 110)
+		robotgoutil.ClickButton(startGameButton, 100)
 
 		captain, err = chaojidou.Build(chaojidou.ClientType(*captainStr))
 		if err != nil {
@@ -112,16 +148,40 @@ func start() {
 }
 
 func handleOneRole(role config.Role, first bool, last bool) {
+	if *mode != 1 {
+		for i := range role.FollowerRoleIds {
+			roleTmp := server.Role{
+				Id:    role.FollowerRoleIds[i],
+				First: first,
+				Last:  last,
+			}
+			for {
+				err := client.SendEvent(chaojidou.Follwers[i], "select_role", roleTmp)
+				if err == nil {
+					break
+				}
+				robotgo.Sleep(3)
+			}
+		}
+		robotgo.Sleep(6)
+	}
+
 	captain.SelectRole(role.Id-1, first)
 
 	captain.RepairEquipment()
 	captain.ClearBag()
 	captain.CardsUp()
 
+	if *mode != 1 {
+		captain.CreateGroup(role.FollowerJunTuanNames)
+	}
+
 	if len(role.Fubens) == 0 {
 		chaojidou.NpcWaitSecs = 20
-		captain.MeiRiTiaoZhan(chaojidou.MeiRiType(cfg.MeiRi), chaojidou.DIFFICULTY_TYPE_MAOXIAN)
-		captain.ClearBag()
+		if *mode == 1 {
+			captain.MeiRiTiaoZhan(chaojidou.MeiRiType(cfg.MeiRi), chaojidou.DIFFICULTY_TYPE_MAOXIAN)
+			captain.ClearBag()
+		}
 		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
 		chaojidou.NpcWaitSecs = 10
 		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
@@ -152,6 +212,24 @@ func handleOneRole(role config.Role, first bool, last bool) {
 				captain.JinBen(chaojidou.JINBEN_TYPE_HEIAN, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
 			}
 		}
+	}
+
+	if *mode != 1 {
+		for i := range role.FollowerRoleIds {
+			roleTmp := server.Role{
+				Id:    role.FollowerRoleIds[i],
+				First: first,
+				Last:  last,
+			}
+			for {
+				err := client.SendEvent(chaojidou.Follwers[i], "quit", roleTmp)
+				if err == nil {
+					break
+				}
+				robotgo.Sleep(3)
+			}
+		}
+		robotgo.Sleep(6)
 	}
 
 	captain.RepairEquipment()
