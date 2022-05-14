@@ -373,7 +373,7 @@ func (c *chaoJiDou) ClearBag() {
 
 	// 分解装备
 	c.press(robotgo.KeyM, 3)
-	c.clickButton(c.BigMap.ZhuangBeiFenJie, 20)
+	c.clickButton(c.BigMap.ZhuangBeiFenJie, NpcWaitSecs)
 	robotgo.MoveSmooth(875, 424, mouseSpeedX, mouseSpeedY)
 	robotgo.Click()
 	robotgo.Sleep(3)
@@ -388,7 +388,7 @@ func (c *chaoJiDou) ClearBag() {
 
 	// 卖装备
 	c.press(robotgo.KeyM, 3)
-	c.clickButton(c.BigMap.ShangDian, 20)
+	c.clickButton(c.BigMap.ShangDian, 5)
 	robotgo.KeyDown(robotgo.Shift)
 	startX := 982
 	startY := 491
@@ -887,7 +887,6 @@ func (c *chaoJiDou) liuLangTuan1Helper() {
 	c.press(robotgo.KeyS, 2)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyD, 1)
-	c.press(robotgo.F2, 1)
 	c.continuedBattle(10)
 	c.press(robotgo.F2, 1)
 	robotgo.KeyPress(robotgo.KeyS)
@@ -926,7 +925,6 @@ func (c *chaoJiDou) liuLangTuan1Helper() {
 	c.press(robotgo.KeyS, 2)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyD, 1)
-	c.press(robotgo.F2, 1)
 	c.continuedBattle(10)
 	c.press(robotgo.F2, 1)
 	robotgo.KeyPress(robotgo.KeyS)
@@ -1206,7 +1204,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 
 	// 第7张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[6], 1, 0, 3000, 4)
-	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[6], 3)
+	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[6], 4)
 	robotgo.MoveSmooth(216, 389, 0.9, 0.9)
 	c.press(robotgo.KeyT, 1)
 	c.press(robotgo.KeyT, 1)
@@ -1247,7 +1245,6 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 
 	// 第10张怪物图：实际上是回到第8张
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[9], 1, 0, 3000, 0)
-	c.press(robotgo.F2, 1)
 	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[9], 8)
 
 	// 第11张怪物图：boss
@@ -1457,7 +1454,6 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	// 第11张怪物图：boss
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[10], 1, 0, 3000, 10)
 	c.press(robotgo.F1, 1)
-	c.press(robotgo.F2, 1)
 	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[1].SmallMap[10], 8)
 	c.press(robotgo.KeyT, 1)
 	c.press(robotgo.KeyT, 1)

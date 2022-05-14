@@ -25,6 +25,8 @@ type Role struct {
 	FollowerRoleIds      []int
 	FollowerJunTuanNames []string
 	Fubens               []FuBen
+
+	PostClearBag bool
 }
 
 type FuBen struct {

@@ -154,6 +154,8 @@ func handleOneRole(role config.Role, first bool, last bool) {
 				Id:    role.FollowerRoleIds[i],
 				First: first,
 				Last:  last,
+
+				PostClearBag: role.PostClearBag,
 			}
 			for {
 				err := client.SendEvent(chaojidou.Follwers[i], "select_role", roleTmp)
@@ -169,7 +171,9 @@ func handleOneRole(role config.Role, first bool, last bool) {
 	captain.SelectRole(role.Id-1, first)
 
 	captain.RepairEquipment()
+	chaojidou.NpcWaitSecs = 20
 	captain.ClearBag()
+	chaojidou.NpcWaitSecs = 30
 	captain.CardsUp()
 
 	if *mode != 1 {
@@ -180,6 +184,7 @@ func handleOneRole(role config.Role, first bool, last bool) {
 		chaojidou.NpcWaitSecs = 20
 		if *mode == 1 {
 			captain.MeiRiTiaoZhan(chaojidou.MeiRiType(cfg.MeiRi), chaojidou.DIFFICULTY_TYPE_MAOXIAN)
+			captain.RepairEquipment()
 			captain.ClearBag()
 		}
 		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
@@ -220,6 +225,8 @@ func handleOneRole(role config.Role, first bool, last bool) {
 				Id:    role.FollowerRoleIds[i],
 				First: first,
 				Last:  last,
+
+				PostClearBag: role.PostClearBag,
 			}
 			for {
 				err := client.SendEvent(chaojidou.Follwers[i], "quit", roleTmp)
@@ -233,7 +240,11 @@ func handleOneRole(role config.Role, first bool, last bool) {
 	}
 
 	captain.RepairEquipment()
-	captain.ClearBag()
+	if role.PostClearBag {
+		chaojidou.NpcWaitSecs = 8
+		captain.ClearBag()
+		chaojidou.NpcWaitSecs = 30
+	}
 	captain.CardsDown()
 
 	if !last {

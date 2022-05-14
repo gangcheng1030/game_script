@@ -73,13 +73,19 @@ func (fh *FollowerHandler) selectRole(role Role) {
 	fh.Captain.SelectRole(role.Id-1, role.First)
 
 	fh.Captain.RepairEquipment()
+	chaojidou.NpcWaitSecs = 20
 	fh.Captain.ClearBag()
+	chaojidou.NpcWaitSecs = 30
 	fh.Captain.CardsUp()
 }
 
 func (fh *FollowerHandler) quit(role Role) {
 	fh.Captain.RepairEquipment()
-	fh.Captain.ClearBag()
+	if role.PostClearBag {
+		chaojidou.NpcWaitSecs = 8
+		fh.Captain.ClearBag()
+		chaojidou.NpcWaitSecs = 30
+	}
 	fh.Captain.CardsDown()
 
 	if !role.Last {
@@ -118,4 +124,6 @@ type Role struct {
 	Id    int
 	First bool
 	Last  bool
+
+	PostClearBag bool
 }
