@@ -147,6 +147,10 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 				Point: robotgo.Point{X: 652, Y: 208},
 				Size:  robotgo.Size{W: 2, H: 2},
 			},
+			DaiXi: robotgo.Rect{
+				Point: robotgo.Point{X: 791, Y: 566},
+				Size:  robotgo.Size{W: 2, H: 2},
+			},
 		},
 		MenuMap: MenuMap{
 			BaseSettingsButtonOrigin: robotgo.Rect{
@@ -1201,7 +1205,7 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 							Size:  robotgo.Size{W: 4, H: 4},
 						},
 						{
-							Point: robotgo.Point{X: 1285, Y: 81},
+							Point: robotgo.Point{X: 1195, Y: 81},
 							Size:  robotgo.Size{W: 4, H: 4},
 						},
 					},
@@ -2172,7 +2176,174 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 						},
 					},
 				},
+				ZHUISU_TYPE_TONGHUAZHEN: {
+					Window: robotgo.Rect{
+						Point: robotgo.Point{X: 440, Y: 570},
+						Size:  robotgo.Size{W: 180, H: 50},
+					},
+					DifficultyTypePoses: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 480, Y: 511},
+							Size:  robotgo.Size{W: 40, H: 10},
+						},
+						{
+							Point: robotgo.Point{X: 545, Y: 511},
+							Size:  robotgo.Size{W: 40, H: 10},
+						},
+					},
+					SmallMap: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 1235, Y: 185},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1265, Y: 185},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1265, Y: 155},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1265, Y: 125},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1295, Y: 125},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1295, Y: 95},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1265, Y: 95},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1265, Y: 65},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+					},
+				},
+				ZHUISU_TYPE_KAERJIAYIZHI: {
+					Window: robotgo.Rect{
+						Point: robotgo.Point{X: 780, Y: 95},
+						Size:  robotgo.Size{W: 180, H: 50},
+					},
+					DifficultyTypePoses: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 823, Y: 42},
+							Size:  robotgo.Size{W: 40, H: 10},
+						},
+						{
+							Point: robotgo.Point{X: 888, Y: 42},
+							Size:  robotgo.Size{W: 40, H: 10},
+						},
+					},
+					SmallMap: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 1255, Y: 188},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1285, Y: 188},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1285, Y: 158},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1255, Y: 158},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1255, Y: 128},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1285, Y: 128},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1285, Y: 98},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1285, Y: 68},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+					},
+				},
+				ZHUISU_TYPE_GELAXIYA: {
+					Window: robotgo.Rect{
+						Point: robotgo.Point{X: 780, Y: 254},
+						Size:  robotgo.Size{W: 180, H: 50},
+					},
+					DifficultyTypePoses: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 823, Y: 198},
+							Size:  robotgo.Size{W: 40, H: 10},
+						},
+						{
+							Point: robotgo.Point{X: 888, Y: 198},
+							Size:  robotgo.Size{W: 40, H: 10},
+						},
+					},
+					SmallMap: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 1250, Y: 160},
+							Size:  robotgo.Size{W: 10, H: 10},
+						},
+					},
+				},
+				ZHUISU_TYPE_BULINDIXI: {
+					Window: robotgo.Rect{
+						Point: robotgo.Point{X: 780, Y: 410},
+						Size:  robotgo.Size{W: 180, H: 50},
+					},
+					DifficultyTypePoses: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 823, Y: 355},
+							Size:  robotgo.Size{W: 40, H: 10},
+						},
+						{
+							Point: robotgo.Point{X: 888, Y: 355},
+							Size:  robotgo.Size{W: 40, H: 10},
+						},
+					},
+					SmallMap: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 1250, Y: 160},
+							Size:  robotgo.Size{W: 10, H: 10},
+						},
+					},
+				},
+				ZHUISU_TYPE_LALAIYE: {
+					Window: robotgo.Rect{
+						Point: robotgo.Point{X: 780, Y: 570},
+						Size:  robotgo.Size{W: 180, H: 50},
+					},
+					DifficultyTypePoses: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 823, Y: 511},
+							Size:  robotgo.Size{W: 40, H: 10},
+						},
+						{
+							Point: robotgo.Point{X: 888, Y: 511},
+							Size:  robotgo.Size{W: 40, H: 10},
+						},
+					},
+					SmallMap: []robotgo.Rect{
+						{
+							Point: robotgo.Point{X: 1250, Y: 160},
+							Size:  robotgo.Size{W: 10, H: 10},
+						},
+					},
+				},
 			},
+
 			JiuYunDong: FuBen{
 				Window: robotgo.Rect{
 					Point: robotgo.Point{X: 440, Y: 410},

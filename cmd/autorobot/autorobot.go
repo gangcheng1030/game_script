@@ -19,6 +19,7 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+	"time"
 )
 
 var captainStr = flag.String("c", "official_client", "client of captain")
@@ -27,6 +28,8 @@ var rule = flag.Int("r", 1, "leader or follower")
 var cjdDir = flag.String("d", "G:\\Netease\\CJDMJ", "cjd dir")
 var configPath = flag.String("conf", "autorobot.json", "config")
 var port = flag.Int("p", 6688, "listen port")
+var fullScreenMode = flag.Int("f", 0, "全屏模式： 0 - 1176 * 664; 1 - 1920 * 1080")
+var begin = flag.String("s", "", "开始时间，格式: 2006-01-02 15:04:05")
 
 var cfg *config.AutoRobotConfig
 var captain chaojidou.ChaoJiDou
@@ -62,11 +65,23 @@ func initComponent() {
 
 func main() {
 	initComponent()
+	if len(*begin) > 0 {
+		beginTime, err := time.ParseInLocation("2006-01-02 15:04:05", *begin, time.Local)
+		if err != nil {
+			panic(err)
+		}
+		for {
+			if beginTime.Before(time.Now()) {
+				break
+			}
+			time.Sleep(time.Minute)
+		}
+	}
 	if *mode != 1 && *rule == chaojidou.RULE_TYPE_SLAVE {
 		robotgo.KeySleep = 100
 		robotgo.MouseSleep = 100
 
-		http.Handle("/follower/autorobot", &server.FollowerHandler{CjdDir: *cjdDir, StartGameButton: startGameButton})
+		http.Handle("/follower/autorobot", &server.FollowerHandler{CjdDir: *cjdDir, StartGameButton: startGameButton, FullScreenMode: *fullScreenMode})
 		http.Handle("/follower", &chaojidou.FollowerHandler{})
 		http.ListenAndServe(":"+strconv.Itoa(*port), nil)
 	} else {
@@ -107,7 +122,7 @@ func start() {
 		robotgo.Sleep(45)
 
 		// 开始游戏
-		robotgoutil.ClickButton(startGameButton, 100)
+		robotgoutil.ClickButton(startGameButton, 92)
 
 		captain, err = chaojidou.Build(chaojidou.ClientType(*captainStr))
 		if err != nil {
@@ -168,16 +183,16 @@ func handleOneRole(role config.Role, first bool, last bool) {
 		robotgo.Sleep(6)
 	}
 
-	captain.SelectRole(role.Id-1, first)
+	captain.SelectRole(role.Id-1, first, *fullScreenMode)
 
 	captain.RepairEquipment()
 	chaojidou.NpcWaitSecs = 20
-	captain.ClearBag()
+	captain.ClearBag(true)
 	chaojidou.NpcWaitSecs = 30
 	captain.CardsUp()
 
 	if *mode != 1 {
-		captain.CreateGroup(role.FollowerJunTuanNames)
+		captain.CreateGroup(role.FollowerJunTuanNames, first)
 	}
 
 	if len(role.Fubens) == 0 {
@@ -185,7 +200,7 @@ func handleOneRole(role config.Role, first bool, last bool) {
 		if *mode == 1 {
 			captain.MeiRiTiaoZhan(chaojidou.MeiRiType(cfg.MeiRi), chaojidou.DIFFICULTY_TYPE_MAOXIAN)
 			captain.RepairEquipment()
-			captain.ClearBag()
+			captain.ClearBag(true)
 		}
 		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
 		chaojidou.NpcWaitSecs = 10
@@ -203,7 +218,7 @@ func handleOneRole(role config.Role, first bool, last bool) {
 			if fuben.Name == "meiri" {
 				captain.MeiRiTiaoZhan(chaojidou.MeiRiType(cfg.MeiRi), chaojidou.DIFFICULTY_TYPE_MAOXIAN)
 				if i < len(role.Fubens)-1 {
-					captain.ClearBag()
+					captain.ClearBag(true)
 				}
 			} else if fuben.Name == chaojidou.ZHUISU_TYPE_JIUYUNDONG {
 				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_JIUYUNDONG, chaojidou.DIFFICULTY_TYPE_SHULIAN)
@@ -242,7 +257,7 @@ func handleOneRole(role config.Role, first bool, last bool) {
 	captain.RepairEquipment()
 	if role.PostClearBag {
 		chaojidou.NpcWaitSecs = 8
-		captain.ClearBag()
+		captain.ClearBag(false)
 		chaojidou.NpcWaitSecs = 30
 	}
 	captain.CardsDown()

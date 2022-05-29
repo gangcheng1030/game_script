@@ -14,6 +14,7 @@ type FollowerHandler struct {
 	CjdDir          string
 	StartGameButton robotgo.Rect
 	Captain         chaojidou.ChaoJiDou
+	FullScreenMode  int
 }
 
 func (fh *FollowerHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
@@ -70,11 +71,11 @@ func (fh *FollowerHandler) signIn(account Account) {
 }
 
 func (fh *FollowerHandler) selectRole(role Role) {
-	fh.Captain.SelectRole(role.Id-1, role.First)
+	fh.Captain.SelectRole(role.Id-1, role.First, fh.FullScreenMode)
 
 	fh.Captain.RepairEquipment()
 	chaojidou.NpcWaitSecs = 20
-	fh.Captain.ClearBag()
+	fh.Captain.ClearBag(true)
 	chaojidou.NpcWaitSecs = 30
 	fh.Captain.CardsUp()
 }
@@ -83,7 +84,7 @@ func (fh *FollowerHandler) quit(role Role) {
 	fh.Captain.RepairEquipment()
 	if role.PostClearBag {
 		chaojidou.NpcWaitSecs = 8
-		fh.Captain.ClearBag()
+		fh.Captain.ClearBag(false)
 		chaojidou.NpcWaitSecs = 30
 	}
 	fh.Captain.CardsDown()
