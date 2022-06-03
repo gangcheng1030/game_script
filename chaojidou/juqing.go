@@ -68,6 +68,10 @@ const (
 	JUQING_TYPE_HUOYANZHUISUIZHE         = "hyzsz"    // 火焰追随者
 	JUQING_TYPE_FEIQIRONGLU              = "fqrl"     // 废弃熔炉
 	JUQING_TYPE_HUOYANZHINV              = "hyzn"     // 火焰之女
+	JUQING_TYPE_DAYANGSHOUHUZHE          = "dyshz"    // 大洋守护者
+	JUQING_TYPE_QIUZHUXINHAO             = "qzxh"     // 求助信号
+	JUQING_TYPE_MENGMAMUDI               = "mmmd"     // 猛犸墓地
+	JUQING_TYPE_DUNYUESHENGDI            = "dysd"     // 钝月圣地
 )
 
 func (c *chaoJiDou) JuQing(jt JuQingType) {
