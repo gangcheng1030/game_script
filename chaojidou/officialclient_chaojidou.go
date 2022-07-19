@@ -32,6 +32,10 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 		RoleMap: RoleMap{
 			PageButtonsOrigin: []robotgo.Rect{
 				{
+					Point: robotgo.Point{X: 1419, Y: 188},
+					Size:  robotgo.Size{W: 8, H: 2},
+				},
+				{
 					Point: robotgo.Point{X: 1501, Y: 188},
 					Size:  robotgo.Size{W: 8, H: 2},
 				},
@@ -67,6 +71,10 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 				},
 			},
 			PageButtons: []robotgo.Rect{
+				{
+					Point: robotgo.Point{X: 1135, Y: 33},
+					Size:  robotgo.Size{W: 8, H: 2},
+				},
 				{
 					Point: robotgo.Point{X: 1219, Y: 33},
 					Size:  robotgo.Size{W: 8, H: 2},
@@ -137,6 +145,10 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 			CiYuanChuanSong: robotgo.Rect{
 				Point: robotgo.Point{X: 582, Y: 259},
 				Size:  robotgo.Size{W: 3, H: 3},
+			},
+			BeiYi: robotgo.Rect{
+				Point: robotgo.Point{X: 760, Y: 246},
+				Size:  robotgo.Size{W: 2, H: 2},
 			},
 
 			ZhuangBeiFenJie: robotgo.Rect{
@@ -2479,8 +2491,36 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 					},
 					SmallMap: []robotgo.Rect{
 						{
-							Point: robotgo.Point{X: 1250, Y: 160},
-							Size:  robotgo.Size{W: 10, H: 10},
+							Point: robotgo.Point{X: 1295, Y: 155},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1265, Y: 155},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1265, Y: 125},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1265, Y: 95},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1235, Y: 95},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1205, Y: 95},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1205, Y: 65},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1235, Y: 65},
+							Size:  robotgo.Size{W: 4, H: 4},
 						},
 					},
 				},
@@ -2501,8 +2541,36 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 					},
 					SmallMap: []robotgo.Rect{
 						{
-							Point: robotgo.Point{X: 1250, Y: 160},
-							Size:  robotgo.Size{W: 10, H: 10},
+							Point: robotgo.Point{X: 1195, Y: 158},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1195, Y: 128},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1225, Y: 128},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1225, Y: 98},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1255, Y: 98},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1285, Y: 98},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1315, Y: 98},
+							Size:  robotgo.Size{W: 4, H: 4},
+						},
+						{
+							Point: robotgo.Point{X: 1315, Y: 68},
+							Size:  robotgo.Size{W: 4, H: 4},
 						},
 					},
 				},
@@ -2563,6 +2631,24 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 			Window: robotgo.Rect{
 				Point: robotgo.Point{X: 629, Y: 319},
 				Size:  robotgo.Size{W: 100, H: 20},
+			},
+			DifficultyTypePoses: []robotgo.Rect{
+				{
+					Point: robotgo.Point{X: 579, Y: 265},
+					Size:  robotgo.Size{W: 10, H: 4},
+				},
+				{
+					Point: robotgo.Point{X: 641, Y: 265},
+					Size:  robotgo.Size{W: 10, H: 4},
+				},
+				{
+					Point: robotgo.Point{X: 702, Y: 265},
+					Size:  robotgo.Size{W: 10, H: 4},
+				},
+				{
+					Point: robotgo.Point{X: 767, Y: 265},
+					Size:  robotgo.Size{W: 10, H: 4},
+				},
 			},
 			ShenHaiZhuKe:      []JuQingType{JUQING_TYPE_SHENHAIYIZU, JUQING_TYPE_SHIJUNZHIZUI, JUQING_TYPE_TONGXIANGWEIYIJIE, JUQING_TYPE_YEXINZHONGHE},
 			ZuiQiangJianShi:   []JuQingType{JUQING_TYPE_FENGYINZHISHI, JUQING_TYPE_YINGXIONGDEZIGE, JUQING_TYPE_TIANHE, JUQING_TYPE_TIANKONGDAPINGYUAN},
@@ -2784,6 +2870,15 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 				},
 			},
 		},
+		JiZhanYanSuanMap: JiZhanYanSuanMap{
+			JiZhanYanSuanFuBen: FuBen{
+				Window: robotgo.Rect{
+					Point: robotgo.Point{X: 670, Y: 325},
+					Size:  robotgo.Size{W: 20, H: 10},
+				},
+			},
+		},
+
 		StartBattleButton: robotgo.Rect{
 			Point: robotgo.Point{X: 620, Y: 510},
 			Size:  robotgo.Size{W: 110, H: 10},

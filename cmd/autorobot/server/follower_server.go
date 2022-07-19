@@ -15,12 +15,14 @@ type FollowerHandler struct {
 	StartGameButton robotgo.Rect
 	Captain         chaojidou.ChaoJiDou
 	FullScreenMode  int
+	IsRunning       bool
 }
 
 func (fh *FollowerHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	eventType := r.Form.Get("eventType")
 	if eventType == "signin" {
+		fh.IsRunning = true
 		data := r.Form.Get("data")
 		account := Account{}
 		json.Unmarshal([]byte(data), &account)
@@ -75,7 +77,9 @@ func (fh *FollowerHandler) selectRole(role Role) {
 
 	fh.Captain.RepairEquipment()
 	chaojidou.NpcWaitSecs = 20
-	fh.Captain.ClearBag(true)
+	if !role.DisablePreClearBag {
+		fh.Captain.ClearBag(true)
+	}
 	chaojidou.NpcWaitSecs = 30
 	fh.Captain.CardsUp()
 }
@@ -93,6 +97,7 @@ func (fh *FollowerHandler) quit(role Role) {
 		fh.Captain.QuitRole()
 	} else {
 		fh.Captain.Quit()
+		fh.IsRunning = false
 	}
 }
 
@@ -126,5 +131,6 @@ type Role struct {
 	First bool
 	Last  bool
 
-	PostClearBag bool
+	DisablePreClearBag bool
+	PostClearBag       bool
 }

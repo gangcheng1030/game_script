@@ -267,6 +267,21 @@ func add() {
 		endTime = time.Now()
 	})
 
+	fmt.Println("--- Please press shift + 3 to jzys ---")
+	hook.Register(hook.KeyDown, []string{robotgo.Shift, robotgo.Key3}, func(e hook.Event) {
+		fmt.Println("shift-3")
+		if endTime.Add(time.Second).After(time.Now()) {
+			fmt.Println("shift-3 相隔时间太短.")
+			return
+		}
+
+		chaojidou.NpcWaitSecs = 30
+		chaojidou.ReadMapWaitSecs = 30
+		captain.JiZhanYanSuan()
+		fmt.Println("shift-3 end")
+		endTime = time.Now()
+	})
+
 	s := hook.Start()
 	<-hook.Process(s)
 }

@@ -39,6 +39,7 @@ func (c *chaoJiDou) MeiRiTiaoZhan(mt MeiRiType, dt DifficultyType) {
 
 	// 点中地图
 	c.clickButton(c.MeiRiMap.Window, 3)
+	c.clickButton(c.MeiRiMap.DifficultyTypePoses[dt], 3)
 
 	// 入场
 	c.clickButton(c.EnterButton, 3)
@@ -402,7 +403,7 @@ func (c *chaoJiDou) shijunzhizuiMeiri() {
 	c.multiMove(223, 675, 1, 1, 2)
 	robotgo.Sleep(3)
 	c.press(robotgo.KeyD, 1)
-	c.multiMove(1170, 549, 1, 1, 6)
+	c.multiMove(1070, 449, 1, 1, 6)
 	robotgo.Sleep(3)
 	c.press(robotgo.KeyD, 1)
 	c.multiMove(160, 539, 1, 1, 3)
@@ -2757,8 +2758,10 @@ func (c *chaoJiDou) kongzhonganxiMeiri() {
 	// 下一张图
 	c.move(897, 225, 1, 4)
 	c.press(robotgo.KeyF, 3)
-	//c.move(872, 550, 1, 4)
-	//c.press(robotgo.KeyF, 3)
+	c.move(910, 561, 1, 1)
+	c.press(robotgo.KeyF, 1)
+	c.press(robotgo.KeyF, 1)
+	c.press(robotgo.KeyF, 1)
 	robotgo.Sleep(40)
 }
 
@@ -2867,15 +2870,12 @@ func (c *chaoJiDou) nizongshensheshouMeiri() {
 	robotgo.Sleep(4)
 
 	// 第3张怪物图
-	c.clickButtonWithAlt(fuben.SmallMap[2], 8)
+	c.clickButtonWithAlt(fuben.SmallMap[2], 6)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.Key3, 2)
 	c.multiMove(236, 363, 1, 1, 4)
-	c.press(robotgo.KeyD, 1)
-	c.multiMove(404, 659, 1, 1, 5)
-	c.press(robotgo.KeyD, 1)
-	c.multiMove(156, 63, 1, 1, 4)
-	c.press(robotgo.KeyD, 1)
+	c.multiMove(404, 659, 1, 1, 9)
+	c.multiMove(156, 63, 1, 1, 6)
 	c.move(1146, 309, 3, 4)
 	c.press(robotgo.KeyD, 1)
 	robotgo.Sleep(4)
@@ -2914,13 +2914,9 @@ func (c *chaoJiDou) nizongshensheshouMeiri() {
 	c.press(robotgo.KeyD, 1)
 	c.multiMove(1099, 358, 1, 1, 3)
 	robotgo.Sleep(2)
-	c.press(robotgo.KeyD, 1)
 	c.multiMove(1131, 456, 1, 1, 3)
 	robotgo.Sleep(2)
-	c.press(robotgo.KeyD, 1)
-	c.multiMove(926, 169, 8, 1, 7)
-	robotgo.Sleep(2)
-	c.press(robotgo.KeyD, 1)
+	c.multiMove(926, 169, 8, 1, 13)
 	robotgo.Sleep(4)
 
 	// 第7张怪物图： boss

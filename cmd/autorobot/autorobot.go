@@ -12,13 +12,11 @@ import (
 	"github.com/gangcheng1030/game_script/cmd/autorobot/server"
 	"github.com/gangcheng1030/game_script/utils/robotgoutil"
 	"github.com/go-vgo/robotgo"
-	"github.com/shirou/gopsutil/v3/process"
 	"net/http"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"strconv"
-	"strings"
 	"time"
 )
 
@@ -148,16 +146,6 @@ func start() {
 			handleOneRole(account.Roles[j], first, last)
 			first = false
 		}
-
-		// 退出启动器
-		pses, _ := process.Processes()
-		for _, pss := range pses {
-			name, _ := pss.Name()
-			if strings.HasPrefix(name, "LootHoarder.exe") {
-				pss.Terminate()
-			}
-		}
-		robotgo.Sleep(15)
 	}
 
 }
@@ -187,7 +175,9 @@ func handleOneRole(role config.Role, first bool, last bool) {
 
 	captain.RepairEquipment()
 	chaojidou.NpcWaitSecs = 20
-	captain.ClearBag(true)
+	if !role.DisablePreClearBag {
+		captain.ClearBag(true)
+	}
 	chaojidou.NpcWaitSecs = 30
 	captain.CardsUp()
 
@@ -216,20 +206,34 @@ func handleOneRole(role config.Role, first bool, last bool) {
 		chaojidou.NpcWaitSecs = 30
 		for i, fuben := range role.Fubens {
 			if fuben.Name == "meiri" {
-				captain.MeiRiTiaoZhan(chaojidou.MeiRiType(cfg.MeiRi), chaojidou.DIFFICULTY_TYPE_MAOXIAN)
+				captain.MeiRiTiaoZhan(chaojidou.MeiRiType(cfg.MeiRi), chaojidou.DifficultyType(fuben.Difficulty))
 				if i < len(role.Fubens)-1 {
 					captain.ClearBag(true)
 				}
+			} else if fuben.Name == chaojidou.ZHUISU_TYPE_GUTU {
+				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_GUTU, chaojidou.DifficultyType(fuben.Difficulty))
 			} else if fuben.Name == chaojidou.ZHUISU_TYPE_JIUYUNDONG {
-				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_JIUYUNDONG, chaojidou.DIFFICULTY_TYPE_SHULIAN)
+				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_JIUYUNDONG, chaojidou.DifficultyType(fuben.Difficulty))
 			} else if fuben.Name == chaojidou.ZHUISU_TYPE_DADUHUI {
-				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_DADUHUI, chaojidou.DIFFICULTY_TYPE_SHULIAN)
+				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_DADUHUI, chaojidou.DifficultyType(fuben.Difficulty))
+			} else if fuben.Name == chaojidou.ZHUISU_TYPE_TONGHUAZHEN {
+				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_TONGHUAZHEN, chaojidou.DifficultyType(fuben.Difficulty))
+			} else if fuben.Name == chaojidou.ZHUISU_TYPE_KAERJIAYIZHI {
+				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_KAERJIAYIZHI, chaojidou.DifficultyType(fuben.Difficulty))
+			} else if fuben.Name == chaojidou.ZHUISU_TYPE_GELAXIYA {
+				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_GELAXIYA, chaojidou.DifficultyType(fuben.Difficulty))
+			} else if fuben.Name == chaojidou.ZHUISU_TYPE_BULINDIXI {
+				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_BULINDIXI, chaojidou.DifficultyType(fuben.Difficulty))
+			} else if fuben.Name == chaojidou.ZHUISU_TYPE_LALAIYE {
+				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_LALAIYE, chaojidou.DifficultyType(fuben.Difficulty))
 			} else if fuben.Name == "llt1" {
 				captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
 			} else if fuben.Name == "sxdcs" {
 				captain.JinBen(chaojidou.JINBEN_TYPE_SUXING, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
 			} else if fuben.Name == "haqszh" {
 				captain.JinBen(chaojidou.JINBEN_TYPE_HEIAN, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
+			} else if fuben.Name == "jzys" {
+				captain.JiZhanYanSuan()
 			}
 		}
 	}
@@ -241,7 +245,8 @@ func handleOneRole(role config.Role, first bool, last bool) {
 				First: first,
 				Last:  last,
 
-				PostClearBag: role.PostClearBag,
+				DisablePreClearBag: role.DisablePreClearBag,
+				PostClearBag:       role.PostClearBag,
 			}
 			for {
 				err := client.SendEvent(chaojidou.Follwers[i], "quit", roleTmp)

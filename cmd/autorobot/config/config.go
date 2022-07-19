@@ -26,7 +26,8 @@ type Role struct {
 	FollowerJunTuanNames []string
 	Fubens               []FuBen
 
-	PostClearBag bool
+	DisablePreClearBag bool
+	PostClearBag       bool
 }
 
 type FuBen struct {
