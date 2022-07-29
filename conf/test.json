@@ -1,0 +1,30 @@
+{
+  "Events": [
+    {
+      "NodeId": "node4",
+      "GroupId": "1",
+      "MeiRi": "hway",
+      "Account":  {
+        "AccountName": "yan7955@126.com",
+        "Roles": [
+          {
+            "Id": 3,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 9,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

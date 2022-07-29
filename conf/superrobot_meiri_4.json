@@ -1,0 +1,62 @@
+{
+  "Events": [
+    {
+      "NodeId": "node2",
+      "GroupId": "1",
+      "MeiRi": "shzk",
+      "Account": {
+        "AccountName": "gangcheng11224@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 8,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

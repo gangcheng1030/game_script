@@ -24,7 +24,7 @@ func main() {
 		panic(err)
 	}
 
-	file, err := ioutil.ReadFile(binDir + "\\" + *configPath)
+	file, err := ioutil.ReadFile(filepath.Join(binDir, *configPath))
 	if err != nil {
 		panic(err)
 	}
