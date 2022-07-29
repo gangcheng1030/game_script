@@ -2041,6 +2041,7 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	c.press(robotgo.F2, 1)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.Key3, 2)
+	c.press(robotgo.KeyW, 1)
 	c.multiMove(942, 205, 2, 1, 5)
 	c.press(robotgo.KeyD, 1)
 	for i := 0; i < len(Follwers); i += 1 {
@@ -2082,9 +2083,9 @@ func (c *chaoJiDou) JiZhanYanSuan() {
 
 	// 对话
 	robotgo.KeyPress(robotgo.KeyF)
-	robotgo.Sleep(2)
+	robotgo.Sleep(8)
 	robotgo.KeyPress(robotgo.KeyF)
-	robotgo.Sleep(2)
+	robotgo.Sleep(4)
 
 	// 选中地图
 	c.clickButton(c.JiZhanYanSuanMap.JiZhanYanSuanFuBen.Window, 2)

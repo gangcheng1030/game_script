@@ -158,7 +158,8 @@ func handleOneRole(role config.Role, first bool, last bool) {
 				First: first,
 				Last:  last,
 
-				PostClearBag: role.PostClearBag,
+				DisablePreClearBag: role.DisablePreClearBag,
+				PostClearBag:       role.PostClearBag,
 			}
 			for {
 				err := client.SendEvent(chaojidou.Follwers[i], "select_role", roleTmp)

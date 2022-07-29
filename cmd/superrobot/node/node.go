@@ -28,6 +28,7 @@ var cfg *model.NodeConfig
 var startGameButton robotgo.Rect
 var autoRobotFollowerHandler *server.FollowerHandler
 var captain chaojidou.ChaoJiDou
+var event *model.Event
 
 func initComponent() {
 	flag.Parse()
@@ -73,6 +74,12 @@ func initComponent() {
 			switch s {
 			case syscall.SIGHUP, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT:
 				log.Println("Program Exit...", s)
+				if event != nil {
+					err = client.FinishEvent(*controllerAddr, event)
+					if err != nil {
+						log.Printf("finishEvent %d err: %v", event.Id, err)
+					}
+				}
 				err = client.OfflineNode(*controllerAddr, *id, cfg)
 				if err != nil {
 					log.Printf("offlineNode err: %v", err)
@@ -95,7 +102,8 @@ func main() {
 			continue
 		}
 
-		event, err := client.PickEvent(*controllerAddr, *id, cfg)
+		var err error
+		event, err = client.PickEvent(*controllerAddr, *id, cfg)
 		if err != nil {
 			log.Printf("pickEvent err: %v", err)
 			if err.Error() == quitErrMsg && !autoRobotFollowerHandler.IsRunning {
@@ -116,6 +124,7 @@ func main() {
 				}
 				break
 			}
+			event = nil
 		}
 
 		time.Sleep(30 * time.Second)
@@ -187,7 +196,8 @@ func handleOneRole(role model.Role, meiri string, first bool, last bool) {
 				First: first,
 				Last:  last,
 
-				PostClearBag: role.PostClearBag,
+				DisablePreClearBag: role.DisablePreClearBag,
+				PostClearBag:       role.PostClearBag,
 			}
 			for {
 				err := autorobot_client.SendEvent(chaojidou.Follwers[i], "select_role", roleTmp)
@@ -204,7 +214,9 @@ func handleOneRole(role model.Role, meiri string, first bool, last bool) {
 
 	captain.RepairEquipment()
 	chaojidou.NpcWaitSecs = 20
-	captain.ClearBag(true)
+	if !role.DisablePreClearBag {
+		captain.ClearBag(true)
+	}
 	chaojidou.NpcWaitSecs = 30
 	captain.CardsUp()
 
@@ -258,7 +270,8 @@ func handleOneRole(role model.Role, meiri string, first bool, last bool) {
 				First: first,
 				Last:  last,
 
-				PostClearBag: role.PostClearBag,
+				DisablePreClearBag: role.DisablePreClearBag,
+				PostClearBag:       role.PostClearBag,
 			}
 			for {
 				err := autorobot_client.SendEvent(chaojidou.Follwers[i], "quit", roleTmp)
