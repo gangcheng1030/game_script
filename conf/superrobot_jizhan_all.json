@@ -454,42 +454,6 @@
       "NodeId": "",
       "GroupId": "1",
       "Account": {
-        "AccountName": "chenggang092101@163.com",
-        "Roles": [
-          {
-            "Id": 2,
-            "DisablePreClearBag": true,
-            "Fubens": [
-              {
-                "Name": "jzys"
-              }
-            ]
-          },
-          {
-            "Id": 3,
-            "DisablePreClearBag": true,
-            "Fubens": [
-              {
-                "Name": "jzys"
-              }
-            ]
-          },
-          {
-            "Id": 4,
-            "DisablePreClearBag": true,
-            "Fubens": [
-              {
-                "Name": "jzys"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "NodeId": "",
-      "GroupId": "1",
-      "Account": {
         "AccountName": "yjh179614936@163.com",
         "Roles": [
           {
@@ -539,6 +503,42 @@
           },
           {
             "Id": 6,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "chenggang092101@163.com",
+        "Roles": [
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 4,
             "DisablePreClearBag": true,
             "Fubens": [
               {
