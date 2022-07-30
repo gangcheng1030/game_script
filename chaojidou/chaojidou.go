@@ -2066,7 +2066,7 @@ func (c *chaoJiDou) JiZhanYanSuan() {
 
 	// 对话
 	robotgo.KeyPress(robotgo.KeyF)
-	robotgo.Sleep(8)
+	robotgo.Sleep(15)
 	robotgo.KeyPress(robotgo.KeyF)
 	robotgo.Sleep(4)
 

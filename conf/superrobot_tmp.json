@@ -1,35 +1,18 @@
 {
   "Events": [
     {
-      "NodeId": "",
+      "NodeId": "node3",
       "GroupId": "1",
       "MeiRi": "wxhz",
-      "Account":  {
-        "AccountName": "gangcheng11223@163.com",
+      "Account": {
+        "AccountName": "gangcheng11227@163.com",
         "Roles": [
           {
-            "Id": 1,
+            "Id": 2,
             "Fubens": [
               {
-                "Name": "meiri"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "NodeId": "",
-      "GroupId": "1",
-      "MeiRi": "wxhz",
-      "Account":  {
-        "AccountName": "gangcheng11225@163.com",
-        "Roles": [
-          {
-            "Id": 3,
-            "Fubens": [
-              {
-                "Name": "meiri"
+                "Name": "meiri",
+                "Difficulty": 1,
               }
             ]
           }
