@@ -3,55 +3,60 @@
     {
       "NodeId": "node2",
       "GroupId": "1",
-      "MeiRi": "shzk",
       "Account": {
         "AccountName": "gangcheng11224@163.com",
         "Roles": [
           {
             "Id": 1,
+            "DisablePreClearBag": true,
             "Fubens": [
               {
-                "Name": "meiri"
+                "Name": "bldx"
               }
             ]
           },
           {
             "Id": 2,
+            "DisablePreClearBag": true,
             "Fubens": [
               {
-                "Name": "meiri"
+                "Name": "lly"
               }
             ]
           },
           {
             "Id": 4,
+            "DisablePreClearBag": true,
             "Fubens": [
               {
-                "Name": "meiri"
+                "Name": "glxy"
               }
             ]
           },
           {
             "Id": 5,
+            "DisablePreClearBag": true,
             "Fubens": [
               {
-                "Name": "meiri"
+                "Name": "bldx"
               }
             ]
           },
           {
             "Id": 6,
+            "DisablePreClearBag": true,
             "Fubens": [
               {
-                "Name": "meiri"
+                "Name": "kejyz"
               }
             ]
           },
           {
             "Id": 8,
+            "DisablePreClearBag": true,
             "Fubens": [
               {
-                "Name": "meiri"
+                "Name": "kejyz"
               }
             ]
           }

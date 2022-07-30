@@ -192,6 +192,7 @@ func AddEvent(addr string, event *model.Event) error {
 		return errors.New(string(body))
 	}
 
+	log.Printf("add event success. event: %s\n", string(dataBytes))
 	return nil
 }
 

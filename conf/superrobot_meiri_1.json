@@ -3,7 +3,7 @@
     {
       "NodeId": "node2",
       "GroupId": "1",
-      "MeiRi": "shzk",
+      "MeiRi": "wxhz",
       "Account": {
         "AccountName": "gangcheng11223@163.com",
         "Roles": [
@@ -45,7 +45,7 @@
     {
       "NodeId": "node2",
       "GroupId": "1",
-      "MeiRi": "shzk",
+      "MeiRi": "wxhz",
       "Account":  {
         "AccountName": "diandian092301@163.com",
         "Roles": [
@@ -79,7 +79,7 @@
     {
       "NodeId": "node5",
       "GroupId": "1",
-      "MeiRi": "shzk",
+      "MeiRi": "wxhz",
       "Account":  {
         "AccountName": "yan7955@126.com",
         "Roles": [
@@ -111,7 +111,7 @@
       }
     },
     {
-      "NodeId": "node5",
+      "NodeId": "wxhz",
       "GroupId": "1",
       "MeiRi": "shzk",
       "Account":  {

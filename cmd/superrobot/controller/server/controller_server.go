@@ -63,6 +63,7 @@ func (ch *ControllerHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		}
 		if event != nil {
 			resp, _ := json.Marshal(event)
+			log.Printf("pick event success, groupId: %s, nodeId: %s, resp: %s", node.Config.Group, node.Id, string(resp))
 			w.Write(resp)
 		}
 	} else if eventType == "finishEvent" {

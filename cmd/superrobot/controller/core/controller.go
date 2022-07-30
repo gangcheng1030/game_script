@@ -80,11 +80,15 @@ func (c *controller) AddEvent(event *model.Event) error {
 		event.Type = model.EVENT_TYPE_FIXEDID
 		c.fixedIdEvents[event.NodeId] = append(c.fixedIdEvents[event.NodeId], event)
 	} else if len(event.GroupId) > 0 {
+		if len(event.FollowerNodeIds) > 0 {
+			return errors.New("组队模式必须指定 nodeId")
+		}
 		event.Type = model.EVENT_TYPE_FIXEDGROUP
 		c.fixedGroupEvents[event.GroupId] = append(c.fixedGroupEvents[event.GroupId], event)
 	} else {
-		event.Type = model.EVENT_TYPE_COMMON
-		c.events = append(c.events, event)
+		return errors.New("必须指定 nodeId 或 groupId")
+		//event.Type = model.EVENT_TYPE_COMMON
+		//c.events = append(c.events, event)
 	}
 
 	return nil
@@ -133,10 +137,23 @@ func (c *controller) PickEvent(group string, id string) (*model.Event, error) {
 		}
 	}
 
-	//// fix group event
-	//if len(c.fixedGroupEvents[group]) > 0 {
-	//
-	//}
+	// fix group event
+	if len(c.fixedGroupEvents[group]) > 0 {
+		log.Printf("start pickFixedGroupEvent %s", group)
+		events := c.fixedGroupEvents[group]
+		for i := 0; i < len(events); i++ {
+			err := c.checkStatusForPickEvent(events[i], nodeManager)
+			if err != nil {
+				log.Printf("pickFixedIdEvent %d failed: %v", events[i].Id, err)
+				continue
+			}
+
+			events[i].NodeId = id
+			event := c.supplementEvent(events[i], nodeManager)
+			c.updateStatusForPickEvent(events[i], nodeManager)
+			return event, nil
+		}
+	}
 
 	return nil, nil
 }
@@ -158,6 +175,7 @@ func (c *controller) FinishEvent(event *model.Event) error {
 		if c.fixedIdEvents[nodeId][idx].Status != model.EVENT_STATUS_PROCESSING {
 			return errors.New("event " + strconv.FormatInt(eventId, 10) + " 状态不符")
 		}
+		event = c.fixedIdEvents[nodeId][idx]
 		c.fixedIdEvents[nodeId] = append(c.fixedIdEvents[nodeId][:idx], c.fixedIdEvents[nodeId][(idx+1):]...)
 	} else if eventType == model.EVENT_TYPE_FIXEDGROUP {
 		idx = model.FindEventIndex(c.fixedGroupEvents[groupId], eventId)
@@ -167,6 +185,7 @@ func (c *controller) FinishEvent(event *model.Event) error {
 		if c.fixedGroupEvents[groupId][idx].Status != model.EVENT_STATUS_PROCESSING {
 			return errors.New("event " + strconv.FormatInt(eventId, 10) + " 状态不符")
 		}
+		event = c.fixedGroupEvents[groupId][idx]
 		c.fixedGroupEvents[groupId] = append(c.fixedGroupEvents[groupId][:idx], c.fixedGroupEvents[groupId][(idx+1):]...)
 	} else {
 		idx = model.FindEventIndex(c.events, eventId)
@@ -176,6 +195,7 @@ func (c *controller) FinishEvent(event *model.Event) error {
 		if c.events[idx].Status != model.EVENT_STATUS_PROCESSING {
 			return errors.New("event " + strconv.FormatInt(eventId, 10) + " 状态不符")
 		}
+		event = c.events[idx]
 		c.events = append(c.events[:idx], c.events[(idx+1):]...)
 	}
 
@@ -296,21 +316,23 @@ func (c *controller) checkStatusForPickEvent(event *model.Event, nm *NodeManager
 		return errors.New("event " + strconv.FormatInt(event.Id, 10) + " 状态不符")
 	}
 
-	leaderNode, ok := nm.nodes[event.NodeId]
-	if !ok {
-		return errors.New("node " + event.NodeId + " 不存在")
-	}
-	if leaderNode.Status != model.NODE_STATUS_IDLE {
-		return errors.New("node " + event.NodeId + " 状态不符")
-	}
-
-	for _, nodeId := range event.FollowerNodeIds {
-		node, ok := nm.nodes[nodeId]
+	if len(event.NodeId) > 0 {
+		leaderNode, ok := nm.nodes[event.NodeId]
 		if !ok {
-			return errors.New("node " + nodeId + " 不存在")
+			return errors.New("node " + event.NodeId + " 不存在")
 		}
-		if node.Status != model.NODE_STATUS_IDLE {
-			return errors.New("node " + nodeId + " 状态不符")
+		if leaderNode.Status != model.NODE_STATUS_IDLE {
+			return errors.New("node " + event.NodeId + " 状态不符")
+		}
+
+		for _, nodeId := range event.FollowerNodeIds {
+			node, ok := nm.nodes[nodeId]
+			if !ok {
+				return errors.New("node " + nodeId + " 不存在")
+			}
+			if node.Status != model.NODE_STATUS_IDLE {
+				return errors.New("node " + nodeId + " 状态不符")
+			}
 		}
 	}
 
