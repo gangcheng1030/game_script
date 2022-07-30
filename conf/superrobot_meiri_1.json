@@ -111,9 +111,9 @@
       }
     },
     {
-      "NodeId": "wxhz",
+      "NodeId": "node5",
       "GroupId": "1",
-      "MeiRi": "shzk",
+      "MeiRi": "wxhz",
       "Account":  {
         "AccountName": "chenggang092101@163.com",
         "Roles": [

@@ -1,0 +1,30 @@
+{
+  "Events": [
+    {
+      "NodeId": "node5",
+      "GroupId": "1",
+      "MeiRi": "wxhz",
+      "Account":  {
+        "AccountName": "chenggang092101@163.com",
+        "Roles": [
+          {
+            "Id": 2,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

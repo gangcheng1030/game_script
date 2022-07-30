@@ -1,30 +1,122 @@
-{
-  "Events": [
-    {
-      "NodeId": "node4",
-      "GroupId": "1",
-      "MeiRi": "hway",
-      "Account":  {
-        "AccountName": "yan7955@126.com",
-        "Roles": [
-          {
-            "Id": 3,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 9,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          }
-        ]
-      }
+[
+  {
+    "Id": 29,
+    "Status": 1,
+    "Type": 1,
+    "NodeId": "node4",
+    "FollowerNodeIds": [
+      "node1",
+      "node3"
+    ],
+    "GroupId": "1",
+    "MeiRi": "",
+    "Account": {
+      "AccountName": "yjh179614936@163.com",
+      "Password": "277426225bb",
+      "Roles": [
+        {
+          "Id": 3,
+          "FollowerRoleIds": [
+            2,
+            3
+          ],
+          "FollowerJunTuanNames": [
+            "TMR点点",
+            "天与地cg"
+          ],
+          "Fubens": [
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            }
+          ],
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 3,
+          "FollowerRoleIds": [
+            6,
+            5
+          ],
+          "FollowerJunTuanNames": [
+            "TMR点点",
+            "天与地cg"
+          ],
+          "Fubens": [
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            }
+          ],
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": [
+        "192.168.1.8:6688",
+        "192.168.1.103:6688"
+      ],
+      "FollowerAccountNames": [
+        "diandian092301@163.com",
+        "gangcheng11223@163.com"
+      ],
+      "FollowerPasswords": [
+        "cjdmj092301",
+        "cjdmj092301"
+      ]
     }
-  ]
-}
+  },
+  {
+    "Id": 30,
+    "Status": 1,
+    "Type": 1,
+    "NodeId": "node5",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "wxhz",
+    "Account": {
+      "AccountName": "chenggang092101@163.com",
+      "Password": "cjdmj092101",
+      "Roles": [
+        {
+          "Id": 2,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 4,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  }
+]
