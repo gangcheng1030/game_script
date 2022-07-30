@@ -1844,13 +1844,10 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	c.press(robotgo.KeyQ, 4)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyD, 1)
-	c.continuedBattle(20)
+	c.continuedBattle(25)
 	for i := 0; i < len(Follwers); i += 1 {
 		c.press(robotgo.KeyD, 3)
 	}
-	c.move(138, 654, 2, 3)
-	robotgo.KeyPress(robotgo.KeyF)
-	robotgo.Sleep(2)
 }
 
 func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
