@@ -320,7 +320,7 @@ func (c *chaoJiDou) SelectRole(n int, first bool, fullScreenMode int) {
 		c.clickButton(c.ShouChongMap.CloseButtonOrigin, 4)
 
 		// 关闭活动窗口
-		c.clickButton(c.ActivityMap.CloseButtonOrigin, 3)
+		c.press(robotgo.F7, 3)
 
 		// 调整窗口位置和大小
 		c.press(robotgo.F8, 3)
