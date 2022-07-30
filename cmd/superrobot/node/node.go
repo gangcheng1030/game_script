@@ -284,7 +284,6 @@ func handleOneRole(role model.Role, meiri string, first bool, last bool) {
 		robotgo.Sleep(6)
 	}
 
-	captain.RepairEquipment()
 	if role.PostClearBag {
 		chaojidou.NpcWaitSecs = 8
 		captain.ClearBag(false)

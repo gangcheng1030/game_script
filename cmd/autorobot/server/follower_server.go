@@ -85,7 +85,6 @@ func (fh *FollowerHandler) selectRole(role Role) {
 }
 
 func (fh *FollowerHandler) quit(role Role) {
-	fh.Captain.RepairEquipment()
 	if role.PostClearBag {
 		chaojidou.NpcWaitSecs = 8
 		fh.Captain.ClearBag(false)
