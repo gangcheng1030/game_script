@@ -31,7 +31,7 @@ var AccountCache = map[string]*model.AccountConfig{
 	"gangcheng11227@163.com": {
 		AccountName: "gangcheng11227@163.com",
 		Password:    "Cjdmj112233",
-		JunTuanName: "TMR刚神5号",
+		JunTuanName: "美眉",
 	},
 	"yan7955@126.com": {
 		AccountName: "yan7955@126.com",

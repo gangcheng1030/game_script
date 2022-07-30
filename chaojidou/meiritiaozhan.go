@@ -3940,7 +3940,11 @@ func (c *chaoJiDou) migongyuqiutuMeiri() {
 	c.press(robotgo.KeyF, 1)
 	c.press(robotgo.KeyF, 1)
 	c.press(robotgo.KeyF, 1)
-	robotgo.Sleep(30)
+	c.move(802, 525, 1, 1)
+	c.press(robotgo.KeyF, 1)
+	c.press(robotgo.KeyF, 1)
+	c.press(robotgo.KeyF, 1)
+	robotgo.Sleep(25)
 }
 
 func (c *chaoJiDou) denglulalaiyeMeiri() {
