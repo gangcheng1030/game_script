@@ -1,7 +1,6 @@
 package chaojidou
 
 import (
-	"github.com/gangcheng1030/game_script/utils"
 	"github.com/go-vgo/robotgo"
 )
 
@@ -10,9 +9,9 @@ type OfficialClientChaoJiDou struct {
 }
 
 func NewOfficialClientChaoJiDou() ChaoJiDou {
-	pss, _ := utils.FindProcessByName(OFFICIALCLIENT_PROCESS_NAME)
+	//pss, _ := utils.FindProcessByName(OFFICIALCLIENT_PROCESS_NAME)
 	c := chaoJiDou{
-		Pid: pss.Pid,
+		//Pid: pss.Pid,
 		AccountBox: robotgo.Rect{
 			Point: robotgo.Point{X: 1551, Y: 482},
 			Size:  robotgo.Size{W: 4, H: 4},

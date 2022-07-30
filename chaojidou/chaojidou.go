@@ -75,6 +75,7 @@ type ChaoJiDou interface {
 	CardsUp()
 	CreateGroup(followerFunTuanNames []string, first bool)
 	CardsDown()
+	LaoDie()
 	QuitRole() // 返回到角色选择界面
 	Quit()     // 退出游戏
 	// LeftClick x: 横坐标, y: 纵坐标, w: 窗口宽, h: 窗口高
@@ -566,6 +567,16 @@ func (c *chaoJiDou) CardsDown() {
 	c.press(robotgo.KeyJ, 3)
 }
 
+func (c *chaoJiDou) LaoDie() {
+	c.press(robotgo.KeyF, 2)
+	c.press(robotgo.KeyF, 3)
+	c.move(571, 210, 0, 3)
+	c.press(robotgo.KeyF, 2)
+	robotgo.MoveSmooth(1292, 737, mouseSpeedX, mouseSpeedY)
+	robotgo.Click()
+	robotgo.Sleep(2)
+}
+
 func (c *chaoJiDou) QuitRole() {
 	c.press(robotgo.Esc, 3)
 	c.clickButton(c.MenuMap.SelectRoleButton, 3)
@@ -654,6 +665,12 @@ func (c *chaoJiDou) ZhuiSu(zt ZhuiSuType, dt DifficultyType) {
 		fmt.Println("invalid zhuisutype.")
 		return
 	}
+
+	// 老爹
+	go func() {
+		c.handleFollowersLaoDie()
+	}()
+	c.LaoDie()
 
 	// 返回主城
 	robotgo.KeyPress(robotgo.F12)
@@ -1412,6 +1429,12 @@ func (c *chaoJiDou) LiuLangTuan(lt LiuLangTuanType, dt DifficultyType) {
 		// do nothing
 	}
 
+	// 老爹
+	go func() {
+		c.handleFollowersLaoDie()
+	}()
+	c.LaoDie()
+
 	// 返回主城
 	robotgo.KeyPress(robotgo.F12)
 	robotgo.Sleep(7)
@@ -1636,6 +1659,12 @@ func (c *chaoJiDou) JinBen(jt JinBenType, dt DifficultyType, times int) {
 	default:
 		// do nothing
 	}
+
+	// 老爹
+	go func() {
+		c.handleFollowersLaoDie()
+	}()
+	c.LaoDie()
 
 	// 重复刷
 	for remain := times - 1; remain > 0; remain-- {
@@ -2168,8 +2197,12 @@ func (c *chaoJiDou) multiMove(x, y int, errors int, tm int, nums int) {
 
 // errors：误差
 func (c *chaoJiDou) move(x, y int, errors int, tm int) {
-	tmpPoint := utils.GetRandomPointInRect1(x-errors, y-errors, 2*errors, 2*errors)
-	robotgo.MoveSmooth(tmpPoint.X+c.GameWindow.X, tmpPoint.Y+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	if errors <= 0 {
+		robotgo.MoveSmooth(x+c.GameWindow.X, y+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	} else {
+		tmpPoint := utils.GetRandomPointInRect1(x-errors, y-errors, 2*errors, 2*errors)
+		robotgo.MoveSmooth(tmpPoint.X+c.GameWindow.X, tmpPoint.Y+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	}
 	robotgo.Click("right")
 	if tm > 0 {
 		rtm := tm*1000 + rand.Intn(400) - 200
@@ -2403,6 +2436,30 @@ func (c *chaoJiDou) handleFollowersPress(key string, st int) {
 			e := &hook.Event{
 				Kind:    hook.KeyDown,
 				Keychar: []rune(key)[0],
+			}
+			err := SendEvent(tmpAddr, e)
+			if err != nil {
+				panic(err)
+			}
+		}()
+	}
+
+	waitGroup.Wait()
+}
+
+func (c *chaoJiDou) handleFollowersLaoDie() {
+	if len(Follwers) == 0 {
+		return
+	}
+
+	var waitGroup sync.WaitGroup
+	for _, addr := range Follwers {
+		tmpAddr := addr
+		waitGroup.Add(1)
+		go func() {
+			defer waitGroup.Done()
+			e := &hook.Event{
+				Kind: 101,
 			}
 			err := SendEvent(tmpAddr, e)
 			if err != nil {
