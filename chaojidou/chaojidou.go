@@ -2068,7 +2068,9 @@ func (c *chaoJiDou) JiZhanYanSuan() {
 	robotgo.KeyPress(robotgo.KeyF)
 	robotgo.Sleep(10)
 	robotgo.KeyPress(robotgo.KeyF)
-	robotgo.Sleep(8)
+	robotgo.Sleep(5)
+	robotgo.KeyPress(robotgo.KeyF)
+	robotgo.Sleep(4)
 
 	// 选中地图
 	c.clickButton(c.JiZhanYanSuanMap.JiZhanYanSuanFuBen.Window, 2)
