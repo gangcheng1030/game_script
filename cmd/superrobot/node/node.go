@@ -226,11 +226,6 @@ func handleOneRole(role model.Role, meiri string, first bool, last bool) {
 
 	if len(role.Fubens) == 0 {
 		chaojidou.NpcWaitSecs = 20
-		if len(role.FollowerRoleIds) == 0 {
-			captain.MeiRiTiaoZhan(chaojidou.MeiRiType(meiri), chaojidou.DIFFICULTY_TYPE_MAOXIAN)
-			captain.RepairEquipment()
-			captain.ClearBag(true)
-		}
 		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
 		chaojidou.NpcWaitSecs = 10
 		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
@@ -249,16 +244,30 @@ func handleOneRole(role model.Role, meiri string, first bool, last bool) {
 				if i < len(role.Fubens)-1 {
 					captain.ClearBag(true)
 				}
+			} else if fuben.Name == chaojidou.ZHUISU_TYPE_GUTU {
+				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_GUTU, chaojidou.DifficultyType(fuben.Difficulty))
 			} else if fuben.Name == chaojidou.ZHUISU_TYPE_JIUYUNDONG {
-				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_JIUYUNDONG, chaojidou.DIFFICULTY_TYPE_SHULIAN)
+				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_JIUYUNDONG, chaojidou.DifficultyType(fuben.Difficulty))
 			} else if fuben.Name == chaojidou.ZHUISU_TYPE_DADUHUI {
-				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_DADUHUI, chaojidou.DIFFICULTY_TYPE_SHULIAN)
+				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_DADUHUI, chaojidou.DifficultyType(fuben.Difficulty))
+			} else if fuben.Name == chaojidou.ZHUISU_TYPE_TONGHUAZHEN {
+				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_TONGHUAZHEN, chaojidou.DifficultyType(fuben.Difficulty))
+			} else if fuben.Name == chaojidou.ZHUISU_TYPE_KAERJIAYIZHI {
+				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_KAERJIAYIZHI, chaojidou.DifficultyType(fuben.Difficulty))
+			} else if fuben.Name == chaojidou.ZHUISU_TYPE_GELAXIYA {
+				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_GELAXIYA, chaojidou.DifficultyType(fuben.Difficulty))
+			} else if fuben.Name == chaojidou.ZHUISU_TYPE_BULINDIXI {
+				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_BULINDIXI, chaojidou.DifficultyType(fuben.Difficulty))
+			} else if fuben.Name == chaojidou.ZHUISU_TYPE_LALAIYE {
+				captain.ZhuiSu(chaojidou.ZHUISU_TYPE_LALAIYE, chaojidou.DifficultyType(fuben.Difficulty))
 			} else if fuben.Name == "llt1" {
 				captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
 			} else if fuben.Name == "sxdcs" {
 				captain.JinBen(chaojidou.JINBEN_TYPE_SUXING, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
 			} else if fuben.Name == "haqszh" {
 				captain.JinBen(chaojidou.JINBEN_TYPE_HEIAN, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
+			} else if fuben.Name == "jzys" {
+				captain.JiZhanYanSuan()
 			}
 		}
 	}

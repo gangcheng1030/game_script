@@ -39,6 +39,8 @@ func (fh *FollowerHandler) handleEvent(e *hook.Event) {
 		robotgo.MoveSmooth(int(e.X), int(e.Y), 0.9, 0.9)
 		robotgo.MilliSleep(300)
 		robotgo.Click("right")
+	case 101: // 老爹
+		DefaultCaptain.LaoDie()
 	default:
 	}
 }

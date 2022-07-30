@@ -83,8 +83,11 @@ func (c *chaoJiDou) MeiRiTiaoZhan(mt MeiRiType, dt DifficultyType) {
 		c.shengdixunli()
 	}
 
+	// 老爹
+	c.LaoDie()
+
 	// 返回主城
-	robotgo.Sleep(90)
+	robotgo.Sleep(60)
 	robotgo.KeyPress(robotgo.F12)
 	robotgo.Sleep(5)
 	c.press(robotgo.KeyF, 3)
