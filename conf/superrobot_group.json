@@ -1,0 +1,299 @@
+{
+  "Events": [
+    {
+      "NodeId": "node4",
+      "FollowerNodeIds": [
+        "node1",
+        "node3"
+      ],
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11223@163.com",
+        "FollowerAccountNames": [
+          "gangcheng11224@163.com",
+          "gangcheng11225@163.com"
+        ],
+        "Roles": [
+          {
+            "Id": 6,
+            "FollowerRoleIds": [
+              8,
+              8
+            ]
+          },
+          {
+            "Id": 10,
+            "FollowerRoleIds": [
+              3,
+              2
+            ]
+          },
+          {
+            "Id": 11,
+            "FollowerRoleIds": [
+              6,
+              6
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "node4",
+      "FollowerNodeIds": [
+        "node1",
+        "node3"
+      ],
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "diandian092301@163.com",
+        "FollowerAccountNames": [
+          "gangcheng11224@163.com",
+          "gangcheng11225@163.com"
+        ],
+        "Roles": [
+          {
+            "Id": 5,
+            "FollowerRoleIds": [
+              5,
+              5
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "node4",
+      "FollowerNodeIds": [
+        "node1",
+        "node3"
+      ],
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "chenggang092101@163.com",
+        "FollowerAccountNames": [
+          "diandian092301@163.com",
+          "gangcheng11223@163.com"
+        ],
+        "Roles": [
+          {
+            "Id": 2,
+            "FollowerRoleIds": [
+              8,
+              1
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "node4",
+      "FollowerNodeIds": [
+        "node1",
+        "node3"
+      ],
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "diandian092301@163.com",
+        "FollowerAccountNames": [
+          "gangcheng11226@163.com",
+          "gangcheng11227@163.com"
+        ],
+        "Roles": [
+          {
+            "Id": 9,
+            "FollowerRoleIds": [
+              5,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "node4",
+      "FollowerNodeIds": [
+        "node1",
+        "node3"
+      ],
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "yan7955@126.com",
+        "FollowerAccountNames": [
+          "gangcheng11226@163.com",
+          "gangcheng11227@163.com"
+        ],
+        "Roles": [
+          {
+            "Id": 3,
+            "FollowerRoleIds": [
+              1,
+              1
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "node4",
+      "FollowerNodeIds": [
+        "node1",
+        "node3"
+      ],
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "yjh179614936@163.com",
+        "FollowerAccountNames": [
+          "diandian092301@163.com",
+          "gangcheng11223@126.com"
+        ],
+        "Roles": [
+          {
+            "Id": 3,
+            "FollowerRoleIds": [
+              2,
+              3
+            ],
+            "Fubens": [
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "FollowerRoleIds": [
+              6,
+              5
+            ],
+            "Fubens": [
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "node4",
+      "FollowerNodeIds": [
+        "node1",
+        "node3"
+      ],
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "yjh179614936@163.com",
+        "FollowerAccountNames": [
+          "diandian092301@163.com",
+          "yan7955@126.com"
+        ],
+        "Roles": [
+          {
+            "Id": 3,
+            "FollowerRoleIds": [
+              1,
+              4
+            ],
+            "Fubens": [
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "FollowerRoleIds": [
+              4,
+              5
+            ],
+            "Fubens": [
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "node4",
+      "FollowerNodeIds": [
+        "node1",
+        "node3"
+      ],
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "chenggang092101@163.com",
+        "FollowerAccountNames": [
+          "gangcheng11226@163.com",
+          "yjh179614936@163.com"
+        ],
+        "Roles": [
+          {
+            "Id": 4,
+            "FollowerRoleIds": [
+              6,
+              1
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "node4",
+      "FollowerNodeIds": [
+        "node3"
+      ],
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "yjh179614936@163.com",
+        "FollowerAccountNames": [
+          "chenggang092101@163.com"
+        ],
+        "Roles": [
+          {
+            "Id": 4,
+            "FollowerRoleIds": [
+              1
+            ],
+            "Fubens": [
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "FollowerRoleIds": [
+              3
+            ],
+            "Fubens": [
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "Events": [
+    {
+      "NodeId": "node5",
+      "GroupId": "1",
+      "MeiRi": "wxhz",
+      "Account": {
+        "AccountName": "gangcheng11227@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "node5",
+      "GroupId": "1",
+      "MeiRi": "wxhz",
+      "Account": {
+        "AccountName": "yjh179614936@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "node5",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11227@163.com",
+        "Roles": [
+          {
+            "Id": 2,
+            "Fubens": [
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "node5",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "yjh179614936@163.com",
+        "Roles": [
+          {
+            "Id": 5,
+            "Fubens": [
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "haqszh"
+              },
+              {
+                "Name": "haqszh"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
