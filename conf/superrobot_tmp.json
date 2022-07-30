@@ -1,22 +1,32 @@
 {
   "Events": [
     {
-      "NodeId": "node5",
+      "NodeId": "",
       "GroupId": "1",
       "MeiRi": "wxhz",
       "Account":  {
-        "AccountName": "chenggang092101@163.com",
+        "AccountName": "gangcheng11223@163.com",
         "Roles": [
           {
-            "Id": 2,
+            "Id": 1,
             "Fubens": [
               {
                 "Name": "meiri"
               }
             ]
-          },
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "MeiRi": "wxhz",
+      "Account":  {
+        "AccountName": "gangcheng11225@163.com",
+        "Roles": [
           {
-            "Id": 4,
+            "Id": 3,
             "Fubens": [
               {
                 "Name": "meiri"
