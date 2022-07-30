@@ -95,10 +95,18 @@ func initComponent() {
 func main() {
 	initComponent()
 	quitErrMsg := fmt.Sprintf("node %s 不存在", *id)
+	follower := false
 
 	for {
 		if autoRobotFollowerHandler.IsRunning {
-			time.Sleep(30 * time.Second)
+			follower = true
+			time.Sleep(60 * time.Second)
+			continue
+		}
+
+		if follower {
+			follower = false
+			time.Sleep(60 * time.Second)
 			continue
 		}
 
