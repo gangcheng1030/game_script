@@ -47,6 +47,7 @@ type Role struct {
 	FollowerJunTuanNames []string
 	Fubens               []FuBen
 
+	DisableCardsUp     bool
 	DisablePreClearBag bool
 	PostClearBag       bool
 }

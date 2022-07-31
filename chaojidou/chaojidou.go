@@ -320,8 +320,8 @@ func (c *chaoJiDou) SelectRole(n int, first bool, fullScreenMode int) {
 		c.press(robotgo.KeyF, 80)
 
 		// 关闭首充窗口
-		c.clickButton(c.ShouChongMap.CloseButtonOrigin, 1)
-		c.clickButton(c.ShouChongMap.CloseButtonOrigin, 4)
+		c.clickButton(c.ShouChongMap.CloseButtonOrigin, 3)
+		c.clickButton(c.ShouChongMap.CloseButtonOrigin, 3)
 
 		// 关闭活动窗口
 		c.press(robotgo.F7, 3)
@@ -693,11 +693,11 @@ func (c *chaoJiDou) ZhuiSu(zt ZhuiSuType, dt DifficultyType) {
 		return
 	}
 
-	// 老爹
-	go func() {
-		c.handleFollowersLaoDie()
-	}()
-	c.LaoDie()
+	// 老爹: 追溯的老爹会有bug
+	//go func() {
+	//	c.handleFollowersLaoDie()
+	//}()
+	//c.LaoDie()
 
 	// 返回主城
 	robotgo.KeyPress(robotgo.F12)
