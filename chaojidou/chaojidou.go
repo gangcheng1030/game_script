@@ -76,6 +76,7 @@ type ChaoJiDou interface {
 	CreateGroup(followerFunTuanNames []string, first bool)
 	CardsDown()
 	LaoDie()
+	XingYunBi(difficulty int)
 	QuitRole() // 返回到角色选择界面
 	Quit()     // 退出游戏
 	// LeftClick x: 横坐标, y: 纵坐标, w: 窗口宽, h: 窗口高
@@ -146,6 +147,7 @@ type chaoJiDou struct {
 	EnterDButton      robotgo.Rect // 推荐难度，确认入场按钮
 	EnterSButton      robotgo.Rect // 分数不够，确认入场按钮
 	EnterSButton2     robotgo.Rect // 分数不够2，确认入场按钮
+	LeaveButton       robotgo.Rect // 右下角的离开按钮
 
 	// 队员
 	GroupAcceptButton robotgo.Rect
@@ -177,6 +179,7 @@ type BigMap struct {
 	Hermosi         robotgo.Rect
 	CiYuanChuanSong robotgo.Rect
 	BeiYi           robotgo.Rect
+	XingYunXiang    robotgo.Rect
 
 	ZhuangBeiFenJie robotgo.Rect
 	ShangDian       robotgo.Rect
@@ -407,6 +410,10 @@ func (c *chaoJiDou) ClearBag(sellToDaiXi bool) {
 	robotgo.MoveSmooth(1307, 457, mouseSpeedX, mouseSpeedY)
 	robotgo.Click()
 	robotgo.Sleep(3)
+	// 如果有过期物品需要点“确定”
+	robotgo.MoveSmooth(626, 423, mouseSpeedX, mouseSpeedY)
+	robotgo.Click()
+	robotgo.Sleep(3)
 	robotgo.MoveSmooth(1330, 102, mouseSpeedX, mouseSpeedY)
 	robotgo.Click()
 	robotgo.Sleep(3)
@@ -575,6 +582,26 @@ func (c *chaoJiDou) LaoDie() {
 	robotgo.MoveSmooth(1292, 737, mouseSpeedX, mouseSpeedY)
 	robotgo.Click()
 	robotgo.Sleep(2)
+}
+
+func (c *chaoJiDou) XingYunBi(difficulty int) {
+	c.press(robotgo.KeyM, 3)
+	c.clickButton(c.BigMap.XingYunXiang, 20)
+	c.press(robotgo.KeyF, 2)
+	c.press(robotgo.KeyF, 8)
+
+	num := (difficulty + 1) * 20
+	for i := 0; i < num; i++ {
+		robotgo.MoveSmooth(677, 727, mouseSpeedX, mouseSpeedY)
+		robotgo.MilliSleep(200)
+		robotgo.Click()
+		robotgo.Sleep(5)
+	}
+
+	robotgo.MoveSmooth(1290, 738, mouseSpeedX, mouseSpeedY)
+	robotgo.MilliSleep(200)
+	robotgo.Click()
+	robotgo.Sleep(3)
 }
 
 func (c *chaoJiDou) QuitRole() {
