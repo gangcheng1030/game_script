@@ -81,9 +81,7 @@ func (fh *FollowerHandler) selectRole(role Role) {
 		fh.Captain.ClearBag(true)
 	}
 	chaojidou.NpcWaitSecs = 30
-	if !role.DisablePreClearBag {
-		fh.Captain.CardsUp()
-	}
+	fh.Captain.CardsUp()
 }
 
 func (fh *FollowerHandler) quit(role Role) {
