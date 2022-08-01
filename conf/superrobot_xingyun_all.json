@@ -1,0 +1,553 @@
+{
+  "Events": [
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11224@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 8,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11225@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 8,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11226@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11227@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11223@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 10,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 11,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "diandian092301@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 8,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 9,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "yan7955@126.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 9,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "yjh179614936@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "chenggang092101@163.com",
+        "Roles": [
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "xyb"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

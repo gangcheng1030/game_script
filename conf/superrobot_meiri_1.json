@@ -1,9 +1,9 @@
 {
   "Events": [
     {
-      "NodeId": "node2",
+      "NodeId": "",
       "GroupId": "1",
-      "MeiRi": "wxhz",
+      "MeiRi": "tbsw",
       "Account": {
         "AccountName": "gangcheng11223@163.com",
         "Roles": [
@@ -43,9 +43,9 @@
       }
     },
     {
-      "NodeId": "node2",
+      "NodeId": "",
       "GroupId": "1",
-      "MeiRi": "wxhz",
+      "MeiRi": "tbsw",
       "Account":  {
         "AccountName": "diandian092301@163.com",
         "Roles": [
@@ -77,9 +77,9 @@
       }
     },
     {
-      "NodeId": "node5",
+      "NodeId": "",
       "GroupId": "1",
-      "MeiRi": "wxhz",
+      "MeiRi": "tbsw",
       "Account":  {
         "AccountName": "yan7955@126.com",
         "Roles": [
@@ -111,9 +111,9 @@
       }
     },
     {
-      "NodeId": "node5",
+      "NodeId": "",
       "GroupId": "1",
-      "MeiRi": "wxhz",
+      "MeiRi": "tbsw",
       "Account":  {
         "AccountName": "chenggang092101@163.com",
         "Roles": [

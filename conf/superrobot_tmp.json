@@ -1,18 +1,30 @@
 {
   "Events": [
     {
-      "NodeId": "node3",
       "GroupId": "1",
-      "MeiRi": "wxhz",
       "Account": {
-        "AccountName": "gangcheng11227@163.com",
+        "AccountName": "gangcheng11224@163.com",
         "Roles": [
           {
             "Id": 2,
             "Fubens": [
               {
-                "Name": "meiri",
-                "Difficulty": 1,
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "haqszh"
+              },
+              {
+                "Name": "haqszh"
               }
             ]
           }

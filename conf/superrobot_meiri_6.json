@@ -3,60 +3,55 @@
     {
       "NodeId": "",
       "GroupId": "1",
+      "MeiRi": "tbsw",
       "Account": {
-        "AccountName": "gangcheng11224@163.com",
+        "AccountName": "gangcheng11226@163.com",
         "Roles": [
           {
             "Id": 1,
-            "DisablePreClearBag": true,
             "Fubens": [
               {
-                "Name": "bldx"
+                "Name": "meiri"
               }
             ]
           },
           {
             "Id": 2,
-            "DisablePreClearBag": true,
             "Fubens": [
               {
-                "Name": "lly"
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "Fubens": [
+              {
+                "Name": "meiri"
               }
             ]
           },
           {
             "Id": 4,
-            "DisablePreClearBag": true,
             "Fubens": [
               {
-                "Name": "lly"
+                "Name": "meiri"
               }
             ]
           },
           {
             "Id": 5,
-            "DisablePreClearBag": true,
             "Fubens": [
               {
-                "Name": "bldx"
+                "Name": "meiri"
               }
             ]
           },
           {
             "Id": 6,
-            "DisablePreClearBag": true,
             "Fubens": [
               {
-                "Name": "kejyz"
-              }
-            ]
-          },
-          {
-            "Id": 8,
-            "DisablePreClearBag": true,
-            "Fubens": [
-              {
-                "Name": "kejyz"
+                "Name": "meiri"
               }
             ]
           }
