@@ -149,6 +149,10 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 				Point: robotgo.Point{X: 760, Y: 246},
 				Size:  robotgo.Size{W: 2, H: 2},
 			},
+			XingYunXiang: robotgo.Rect{
+				Point: robotgo.Point{X: 753, Y: 458},
+				Size:  robotgo.Size{W: 2, H: 2},
+			},
 
 			ZhuangBeiFenJie: robotgo.Rect{
 				Point: robotgo.Point{X: 700, Y: 554},
@@ -2897,6 +2901,10 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 		EnterSButton2: robotgo.Rect{
 			Point: robotgo.Point{X: 585, Y: 476},
 			Size:  robotgo.Size{W: 20, H: 10},
+		},
+		LeaveButton: robotgo.Rect{
+			Point: robotgo.Point{X: 1290, Y: 736},
+			Size:  robotgo.Size{W: 2, H: 2},
 		},
 		EnterAcceptButton: robotgo.Rect{
 			Point: robotgo.Point{X: 622, Y: 455},

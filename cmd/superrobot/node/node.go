@@ -276,6 +276,8 @@ func handleOneRole(role model.Role, meiri string, first bool, last bool) {
 				captain.JinBen(chaojidou.JINBEN_TYPE_HEIAN, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
 			} else if fuben.Name == "jzys" {
 				captain.JiZhanYanSuan()
+			} else if fuben.Name == "xyb" {
+				captain.XingYunBi(fuben.Difficulty)
 			}
 		}
 	}
