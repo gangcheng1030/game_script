@@ -77,8 +77,10 @@ type ChaoJiDou interface {
 	CardsDown()
 	LaoDie()
 	XingYunBi(difficulty int)
+	IsOnline(isLeader bool) bool
 	QuitRole() // 返回到角色选择界面
 	Quit()     // 退出游戏
+	ForceQuit(isLeader bool)
 	// LeftClick x: 横坐标, y: 纵坐标, w: 窗口宽, h: 窗口高
 	LeftClick(x, y, w, h int) bool
 	JuQing(jt JuQingType)
@@ -317,7 +319,12 @@ func (c *chaoJiDou) SelectRole(n int, first bool, fullScreenMode int) {
 		roleNum := n % 6
 		c.clickButton(c.RoleMap.RoleButtonsOrigin[roleNum], 3)
 
-		c.press(robotgo.KeyF, 80)
+		c.press(robotgo.KeyF, 3)
+		// 有未完成的任务，从主城开始
+		robotgo.MoveSmooth(1013, 580, mouseSpeedX, mouseSpeedY)
+		robotgo.MilliSleep(200)
+		robotgo.Click()
+		c.press(robotgo.KeyF, 74)
 
 		// 关闭首充窗口
 		c.clickButton(c.ShouChongMap.CloseButtonOrigin, 3)
@@ -604,6 +611,49 @@ func (c *chaoJiDou) XingYunBi(difficulty int) {
 	robotgo.Sleep(3)
 }
 
+func (c *chaoJiDou) IsOnline(isLeader bool) bool {
+	var wg sync.WaitGroup
+	isOnline := true
+	if isLeader && len(Follwers) > 0 {
+		for _, addr := range Follwers {
+			tmpAddr := addr
+			wg.Add(1)
+			go func() {
+				defer wg.Done()
+				e := &hook.Event{
+					Kind: 102,
+				}
+				err := SendEvent(tmpAddr, e)
+				if err != nil {
+					isOnline = false
+				}
+			}()
+		}
+	}
+
+	if !c.isOnlineHelper() {
+		isOnline = false
+	}
+	wg.Wait()
+	return isOnline
+}
+
+func (c *chaoJiDou) isOnlineHelper() bool {
+	c.press(robotgo.KeyF, 6)
+
+	isOnline := false
+	pses, _ := process.Processes()
+	for _, pss := range pses {
+		name, _ := pss.Name()
+		if strings.HasPrefix(name, "NightmareBreaker.exe") {
+			isOnline = true
+			break
+		}
+	}
+
+	return isOnline
+}
+
 func (c *chaoJiDou) QuitRole() {
 	c.press(robotgo.Esc, 3)
 	c.clickButton(c.MenuMap.SelectRoleButton, 3)
@@ -619,7 +669,49 @@ func (c *chaoJiDou) Quit() {
 	pses, _ := process.Processes()
 	for _, pss := range pses {
 		name, _ := pss.Name()
-		if strings.HasPrefix(name, "LootHoarder.exe") || strings.HasPrefix(name, "NightmareBreaker.exe") {
+		if strings.HasPrefix(name, "LootHoarder.exe") || strings.HasPrefix(name, "NightmareBreaker.exe") ||
+			strings.HasPrefix(name, "SystemSettings.exe") || strings.HasPrefix(name, "msedge.exe") ||
+			strings.HasPrefix(name, CHROME_PROCESS_NAME) || strings.HasPrefix(name, "liebao.exe") ||
+			strings.HasPrefix(name, T360_PROCESS_NAME) {
+			pss.Terminate()
+		}
+	}
+	robotgo.Sleep(15)
+}
+
+func (c *chaoJiDou) ForceQuit(isLeader bool) {
+	var wg sync.WaitGroup
+	if isLeader && len(Follwers) > 0 {
+		for _, addr := range Follwers {
+			tmpAddr := addr
+			wg.Add(1)
+			go func() {
+				defer wg.Done()
+				e := &hook.Event{
+					Kind: 103,
+				}
+				err := SendEvent(tmpAddr, e)
+				if err != nil {
+					panic(err)
+				}
+			}()
+		}
+	}
+
+	c.forceQuitHelper()
+	wg.Wait()
+	robotgo.Sleep(3)
+}
+
+func (c *chaoJiDou) forceQuitHelper() {
+	// 退出启动器
+	pses, _ := process.Processes()
+	for _, pss := range pses {
+		name, _ := pss.Name()
+		if strings.HasPrefix(name, "LootHoarder.exe") || strings.HasPrefix(name, "NightmareBreaker.exe") ||
+			strings.HasPrefix(name, "SystemSettings.exe") || strings.HasPrefix(name, "msedge.exe") ||
+			strings.HasPrefix(name, CHROME_PROCESS_NAME) || strings.HasPrefix(name, "liebao.exe") ||
+			strings.HasPrefix(name, T360_PROCESS_NAME) {
 			pss.Terminate()
 		}
 	}
@@ -671,6 +763,10 @@ func (c *chaoJiDou) ZhuiSu(zt ZhuiSuType, dt DifficultyType) {
 	c.handleFollowersClick(c.EnterAcceptButton, 2, 5, 5000, 0)
 	robotgo.Sleep(ReadMapWaitSecs)
 
+	if !c.IsOnline(true) {
+		return
+	}
+
 	// 打怪
 	if zt == ZHUISU_TYPE_JIUYUNDONG {
 		c.jiuYunDongHelper()
@@ -709,6 +805,8 @@ func (c *chaoJiDou) ZhuiSu(zt ZhuiSuType, dt DifficultyType) {
 	robotgo.Sleep(25)
 	c.handleFollowersMove(100, 100, 2, 0, 1000)
 	c.move(246, 218, 2, 6)
+
+	return
 }
 
 func (c *chaoJiDou) guTuHelper() {
@@ -1085,7 +1183,7 @@ func (c *chaoJiDou) buLinDiXiHelper() {
 	c.clickButtonWithAlt(c.ZhuiSuMap.FuBens[ZHUISU_TYPE_BULINDIXI].SmallMap[0], 6)
 	c.press(robotgo.Key3, 1)
 	c.press(robotgo.Key3, 2)
-	c.press(robotgo.KeyS, 3)
+	c.press(robotgo.KeyS, 1)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.KeyR, 1)
 	c.press(robotgo.KeyE, 3)
@@ -1143,7 +1241,7 @@ func (c *chaoJiDou) buLinDiXiHelper() {
 	c.move(82, 58, 2, 6)
 	c.press(robotgo.KeyD, 1)
 	robotgo.Sleep(4)
-	c.refreshD4()
+	c.refreshD4WithoutSleep()
 
 	// 第5张怪物图
 	c.handleFollowersClick(c.ZhuiSuMap.FuBens[ZHUISU_TYPE_BULINDIXI].SmallMap[4], 1, 0, 3000, 6)
@@ -1212,7 +1310,7 @@ func (c *chaoJiDou) laLaiYeHelper() {
 	c.clickButtonWithAlt(c.ZhuiSuMap.FuBens[ZHUISU_TYPE_LALAIYE].SmallMap[0], 6)
 	c.press(robotgo.Key3, 1)
 	c.press(robotgo.Key3, 2)
-	c.press(robotgo.KeyS, 3)
+	c.press(robotgo.KeyS, 1)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.KeyR, 1)
 	c.press(robotgo.KeyE, 3)
@@ -1261,7 +1359,7 @@ func (c *chaoJiDou) laLaiYeHelper() {
 	c.move(268, 128, 2, 4)
 	c.press(robotgo.KeyD, 1)
 	robotgo.Sleep(4)
-	c.refreshD4()
+	c.refreshD4WithoutSleep()
 
 	// 第5张怪物图
 	c.handleFollowersClick(c.ZhuiSuMap.FuBens[ZHUISU_TYPE_LALAIYE].SmallMap[4], 1, 0, 3000, 4)
@@ -1448,6 +1546,10 @@ func (c *chaoJiDou) LiuLangTuan(lt LiuLangTuanType, dt DifficultyType) {
 	c.handleFollowersClick(c.EnterAcceptButton, 2, 5, 5000, 0)
 	robotgo.Sleep(ReadMapWaitSecs)
 
+	if !c.IsOnline(true) {
+		return
+	}
+
 	// 打怪
 	switch lt {
 	case LIULANGTUAN_TYPE_1:
@@ -1493,7 +1595,7 @@ func (c *chaoJiDou) liuLangTuan1Helper() {
 		c.press(robotgo.KeyD, 1)
 		c.continuedBattle(6)
 	}
-	c.press(robotgo.KeyS, 2)
+	c.press(robotgo.KeyS, 1)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyD, 1)
 	c.continuedBattle(10)
@@ -1512,7 +1614,7 @@ func (c *chaoJiDou) liuLangTuan1Helper() {
 			c.handleFollowersMove(1077, 534, 3, 0, 200)
 			robotgo.MilliSleep(800)
 		}
-		for i := 0; i < 5; i++ {
+		for i := 0; i < 6; i++ {
 			c.handleFollowersMove(931, 111, 3, 0, 200)
 			robotgo.MilliSleep(800)
 		}
@@ -1520,7 +1622,7 @@ func (c *chaoJiDou) liuLangTuan1Helper() {
 	for i := 0; i < 5; i++ {
 		c.move(1077, 534, 1, 1)
 	}
-	for i := 0; i < 5; i++ {
+	for i := 0; i < 6; i++ {
 		c.move(931, 111, 1, 1)
 	}
 	c.press(robotgo.Key3, 2)
@@ -1531,7 +1633,7 @@ func (c *chaoJiDou) liuLangTuan1Helper() {
 		c.press(robotgo.KeyD, 1)
 		c.continuedBattle(6)
 	}
-	c.press(robotgo.KeyS, 2)
+	c.press(robotgo.KeyS, 1)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyD, 1)
 	c.continuedBattle(10)
@@ -1618,7 +1720,7 @@ func (c *chaoJiDou) aoDeSaiHelper() {
 	robotgo.Sleep(11)
 
 	robotgo.MoveSmooth(904, 518, mouseSpeedX, mouseSpeedY)
-	c.press(robotgo.KeyS, 12)
+	c.press(robotgo.KeyS, 1)
 	c.press(robotgo.KeyR, 1)
 	c.press(robotgo.KeyE, 3)
 	c.press(robotgo.F2, 1)
@@ -1633,6 +1735,7 @@ func (c *chaoJiDou) aoDeSaiHelper() {
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.KeyQ, 4)
+	c.press(robotgo.KeyW, 1)
 	c.move(1001, 175, 3, 4)
 	robotgo.MoveSmooth(650, 340, mouseSpeedX, mouseSpeedY)
 	ts := 15 + len(Follwers)*3
@@ -1676,6 +1779,10 @@ func (c *chaoJiDou) JinBen(jt JinBenType, dt DifficultyType, times int) {
 	c.clickButton(c.EnterSButton2, 1)
 	c.handleFollowersClick(c.EnterAcceptButton, 2, 5, 5000, 0)
 	robotgo.Sleep(ReadMapWaitSecs)
+
+	if !c.IsOnline(true) {
+		return
+	}
 
 	// 打怪
 	switch jt {
@@ -1738,11 +1845,12 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	robotgo.Sleep(2)
 	c.press(robotgo.KeyD, 1)
 	c.move(602, 620, 2, 3)
-	c.press(robotgo.KeyS, 12)
+	c.press(robotgo.KeyS, 1)
 	c.press(robotgo.KeyR, 1)
 	c.press(robotgo.KeyE, 3)
 	c.press(robotgo.F2, 1)
 	c.press(robotgo.KeyW, 1)
+	robotgo.KeyPress(robotgo.KeyS)
 	robotgo.KeyPress(robotgo.KeyS)
 	robotgo.KeyPress(robotgo.KeyS)
 	robotgo.Sleep(3)
@@ -1763,6 +1871,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[2], 1, 0, 3000, 2)
 	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[2], 6)
 	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.KeyW, 1)
 	robotgo.MoveSmooth(1055, 299, 0.9, 0.9)
 	c.press(robotgo.Key3, 2)
 	c.multiMove(1055, 299, 2, 1, 3)
@@ -1780,7 +1889,6 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	c.press(robotgo.KeyD, 1)
 	robotgo.MoveSmooth(957, 200, 0.9, 0.9)
 	c.press(robotgo.Key3, 2)
-	c.press(robotgo.KeyW, 1)
 	c.multiMove(957, 200, 2, 1, 3)
 	robotgo.Sleep(3)
 	c.refreshD4WithoutSleep()
@@ -1867,7 +1975,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[10], 13)
 	robotgo.MoveSmooth(490, 320, 0.9, 0.9)
 	c.press(robotgo.KeyD, 1)
-	c.press(robotgo.KeyS, 2)
+	c.press(robotgo.KeyS, 1)
 	c.press(robotgo.KeyQ, 4)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyD, 1)
@@ -1886,10 +1994,9 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	// 第1张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[0], 1, 0, 3000, 0)
 	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[1].SmallMap[0], 13)
-	c.press(robotgo.KeyS, 2)
-	robotgo.Sleep(3)
-	c.press(robotgo.Key3, 2)
+	c.press(robotgo.KeyS, 1)
 	c.press(robotgo.KeyD, 1)
+	c.press(robotgo.Key3, 2)
 	c.multiMove(1090, 345, 2, 1, 3)
 	robotgo.MoveSmooth(956, 121, 0.9, 0.9)
 	c.press(robotgo.KeyR, 1)
@@ -1917,11 +2024,11 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	robotgo.KeyPress(robotgo.KeyS)
 	robotgo.KeyPress(robotgo.KeyS)
 	robotgo.KeyPress(robotgo.KeyS)
-	robotgo.Sleep(3)
+	robotgo.Sleep(4)
 	robotgo.KeyPress(robotgo.KeyS)
 	robotgo.KeyPress(robotgo.KeyS)
 	robotgo.KeyPress(robotgo.KeyS)
-	robotgo.Sleep(3)
+	robotgo.Sleep(2)
 	c.press(robotgo.F2, 1)
 	c.multiMove(685, 614, 1, 1, 3)
 	robotgo.Sleep(2)
@@ -2029,7 +2136,6 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[1].SmallMap[8], 6)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.Key3, 2)
-	c.press(robotgo.KeyW, 1)
 	c.multiMove(386, 195, 2, 1, 3)
 	c.press(robotgo.KeyD, 1)
 	robotgo.Sleep(3)
@@ -2110,7 +2216,7 @@ func (c *chaoJiDou) JiZhanYanSuan() {
 	// 开始战斗
 	c.clickButton(c.StartBattleButton, 7)
 
-	c.press(robotgo.KeyS, 2)
+	c.press(robotgo.KeyS, 1)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.KeyQ, 4)
@@ -2325,31 +2431,12 @@ func (c *chaoJiDou) continuedBattle(tm int) {
 }
 
 func (c *chaoJiDou) prestart() {
-	c.press(robotgo.KeyS, 10)
+	c.press(robotgo.KeyS, 2)
 	c.press(robotgo.KeyQ, 4)
 	c.press(robotgo.KeyR, 1)
 	c.press(robotgo.KeyE, 3)
 	c.press(robotgo.F2, 1)
 	c.press(robotgo.KeyW, 1)
-	robotgo.KeyPress(robotgo.KeyS)
-	robotgo.KeyPress(robotgo.KeyS)
-	robotgo.Sleep(3)
-}
-
-func (c *chaoJiDou) refreshD4() {
-	c.press(robotgo.KeyA, 3)
-	c.press(robotgo.KeyS, 2)
-	c.press(robotgo.KeyD, 1)
-	c.press(robotgo.Key3, 2)
-	c.press(robotgo.KeyD, 1)
-	c.press(robotgo.F2, 1)
-	robotgo.Sleep(6)
-	c.press(robotgo.KeyD, 1)
-	robotgo.Sleep(6)
-	c.press(robotgo.F2, 1)
-	c.press(robotgo.KeyD, 1)
-	c.press(robotgo.KeyW, 1)
-	robotgo.KeyPress(robotgo.KeyS)
 	robotgo.KeyPress(robotgo.KeyS)
 	robotgo.KeyPress(robotgo.KeyS)
 	robotgo.Sleep(3)

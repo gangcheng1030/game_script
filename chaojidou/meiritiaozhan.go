@@ -46,6 +46,10 @@ func (c *chaoJiDou) MeiRiTiaoZhan(mt MeiRiType, dt DifficultyType) {
 	c.clickButton(c.EnterDButton, 3) // 点两次确认入场
 	c.clickButton(c.EnterDButton, ReadMapWaitSecs)
 
+	if !c.IsOnline(false) {
+		return
+	}
+
 	// 打怪
 	if mt == MEIRI_TYPE_HEWEIANYING {
 		c.heweianying()
@@ -265,7 +269,7 @@ func (c *chaoJiDou) shengdixunli() {
 
 func (c *chaoJiDou) shenhaiyizuMeiri() {
 	fuben := c.JuQingMap.FuBens[c.MeiRiMap.ShenHaiZhuKe[0]]
-	c.press(robotgo.KeyS, 8)
+	c.press(robotgo.KeyS, 1)
 	c.press(robotgo.KeyQ, 4)
 	c.press(robotgo.KeyR, 1)
 	c.press(robotgo.KeyE, 2)
@@ -435,7 +439,7 @@ func (c *chaoJiDou) shijunzhizuiMeiri() {
 
 func (c *chaoJiDou) tongxiangweiyijieMeiri() {
 	fuben := c.JuQingMap.FuBens[c.MeiRiMap.ShenHaiZhuKe[2]]
-	c.press(robotgo.KeyS, 8)
+	c.press(robotgo.KeyS, 1)
 	c.press(robotgo.KeyQ, 4)
 	c.press(robotgo.KeyR, 1)
 	c.press(robotgo.KeyE, 2)
@@ -499,7 +503,7 @@ func (c *chaoJiDou) tongxiangweiyijieMeiri() {
 
 func (c *chaoJiDou) yexinzhongheMeiri() {
 	fuben := c.JuQingMap.FuBens[c.MeiRiMap.ShenHaiZhuKe[3]]
-	c.press(robotgo.KeyS, 8)
+	c.press(robotgo.KeyS, 1)
 	c.press(robotgo.KeyQ, 4)
 	c.press(robotgo.KeyR, 1)
 	c.press(robotgo.KeyE, 2)
@@ -4862,7 +4866,7 @@ func (c *chaoJiDou) huoyanzhinvMeiri() {
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.Key3, 2)
 	c.move(1054, 130, 3, 4)
-	c.press(robotgo.KeyS, 3)
+	c.press(robotgo.KeyS, 1)
 	c.multiMove(1054, 130, 1, 1, 3)
 	robotgo.Sleep(2)
 	c.press(robotgo.KeyD, 1)
