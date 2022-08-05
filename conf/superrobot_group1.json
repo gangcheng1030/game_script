@@ -3,7 +3,7 @@
     {
       "NodeId": "node4",
       "FollowerNodeIds": [
-        "node5"
+        "node3"
       ],
       "GroupId": "1",
       "Account": {
@@ -24,7 +24,7 @@
     {
       "NodeId": "node4",
       "FollowerNodeIds": [
-        "node5"
+        "node3"
       ],
       "GroupId": "1",
       "Account": {
@@ -45,7 +45,7 @@
     {
       "NodeId": "node4",
       "FollowerNodeIds": [
-        "node5"
+        "node3"
       ],
       "GroupId": "1",
       "Account": {

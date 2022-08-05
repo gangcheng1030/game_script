@@ -1,9 +1,9 @@
 {
   "Events": [
     {
-      "NodeId": "node5",
+      "NodeId": "",
       "GroupId": "1",
-      "MeiRi": "wxhz",
+      "MeiRi": "tbsw",
       "Account": {
         "AccountName": "gangcheng11225@163.com",
         "Password": "Cjdmj112233",
@@ -52,7 +52,8 @@
             "Id": 6,
             "Fubens": [
               {
-                "Name": "meiri"
+                "Name": "meiri",
+                "Difficulty": 1
               }
             ]
           },
