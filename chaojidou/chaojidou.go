@@ -639,8 +639,6 @@ func (c *chaoJiDou) IsOnline(isLeader bool) bool {
 }
 
 func (c *chaoJiDou) isOnlineHelper() bool {
-	c.press(robotgo.KeyF, 6)
-
 	isOnline := false
 	pses, _ := process.Processes()
 	for _, pss := range pses {
@@ -1309,17 +1307,18 @@ func (c *chaoJiDou) laLaiYeHelper() {
 	c.handleFollowersClick(c.ZhuiSuMap.FuBens[ZHUISU_TYPE_LALAIYE].SmallMap[0], 1, 0, 3000, 0)
 	c.clickButtonWithAlt(c.ZhuiSuMap.FuBens[ZHUISU_TYPE_LALAIYE].SmallMap[0], 6)
 	c.press(robotgo.Key3, 1)
-	c.press(robotgo.Key3, 2)
-	c.press(robotgo.KeyS, 1)
+	c.press(robotgo.Key3, 1)
+	c.press(robotgo.Key3, 1)
+	c.press(robotgo.Key3, 1)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.KeyR, 1)
 	c.press(robotgo.KeyE, 3)
 	c.press(robotgo.KeyD, 1)
-	robotgo.Sleep(7)
-	c.press(robotgo.F2, 1)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
+	robotgo.Sleep(3)
+	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.KeyW, 1)
-	robotgo.KeyPress(robotgo.KeyS)
-	robotgo.KeyPress(robotgo.KeyS)
 	robotgo.Sleep(3)
 
 	// 第2张怪物图
