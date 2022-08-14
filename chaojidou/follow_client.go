@@ -2,7 +2,9 @@ package chaojidou
 
 import (
 	"encoding/json"
+	"errors"
 	hook "github.com/robotn/gohook"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -14,6 +16,18 @@ func SendEvent(addr string, e *hook.Event) error {
 	eventBytes, _ := json.Marshal(*e)
 	urlValues.Set("event", string(eventBytes))
 
-	_, err := http.PostForm(url1, urlValues)
-	return err
+	resp, err := http.PostForm(url1, urlValues)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return err
+	}
+	if resp.StatusCode != 200 {
+		return errors.New(string(body))
+	}
+
+	return nil
 }

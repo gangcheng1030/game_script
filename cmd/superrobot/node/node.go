@@ -8,6 +8,7 @@ import (
 	"github.com/gangcheng1030/game_script/cmd/autorobot/server"
 	"github.com/gangcheng1030/game_script/cmd/superrobot/client"
 	"github.com/gangcheng1030/game_script/cmd/superrobot/model"
+	"github.com/gangcheng1030/game_script/cmd/superrobot/node/global"
 	"github.com/gangcheng1030/game_script/utils/robotgoutil"
 	"github.com/go-vgo/robotgo"
 	"log"
@@ -122,7 +123,13 @@ func main() {
 		}
 
 		if event != nil {
-			handleEvent(event)
+			for {
+				res := handleEvent(event)
+				if res {
+					break
+				}
+				captain.ForceQuit(true)
+			}
 			for i := 0; i < 5; i++ {
 				err = client.FinishEvent(*controllerAddr, event)
 				if err != nil {
@@ -139,11 +146,11 @@ func main() {
 	}
 }
 
-func handleEvent(event *model.Event) {
-	account := event.Account
+func handleEvent(event *model.Event) bool {
+	account := &event.Account
+	chaojidou.Follwers = account.FollowerAddrs
 
 	if len(event.FollowerNodeIds) > 0 {
-		chaojidou.Follwers = account.FollowerAddrs
 		for j := range account.FollowerAddrs {
 			accountTmp := server.Account{
 				AccountName: account.FollowerAccountNames[j],
@@ -191,12 +198,18 @@ func handleEvent(event *model.Event) {
 			last = true
 		}
 
-		handleOneRole(account.Roles[j], event.MeiRi, first, last)
+		isOnline := handleOneRole(&account.Roles[j], event.MeiRi, first, last)
 		first = false
+		if !isOnline {
+			account.Roles = account.Roles[j:]
+			return false
+		}
 	}
+
+	return true
 }
 
-func handleOneRole(role model.Role, meiri string, first bool, last bool) {
+func handleOneRole(role *model.Role, meiri string, first bool, last bool) bool {
 	if len(role.FollowerRoleIds) > 0 {
 		for i := range role.FollowerRoleIds {
 			roleTmp := server.Role{
@@ -204,6 +217,7 @@ func handleOneRole(role model.Role, meiri string, first bool, last bool) {
 				First: first,
 				Last:  last,
 
+				DisableCardsUp:     role.DisableCardsUp,
 				DisablePreClearBag: role.DisablePreClearBag,
 				PostClearBag:       role.PostClearBag,
 			}
@@ -226,7 +240,9 @@ func handleOneRole(role model.Role, meiri string, first bool, last bool) {
 		captain.ClearBag(true)
 	}
 	chaojidou.NpcWaitSecs = 30
-	captain.CardsUp()
+	if !role.DisableCardsUp {
+		captain.CardsUp()
+	}
 
 	if len(role.FollowerRoleIds) > 0 {
 		captain.CreateGroup(role.FollowerJunTuanNames, first)
@@ -235,14 +251,55 @@ func handleOneRole(role model.Role, meiri string, first bool, last bool) {
 	if len(role.Fubens) == 0 {
 		chaojidou.NpcWaitSecs = 20
 		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
+		if !captain.IsOnline(true) {
+			role.Fubens = global.DefaultFubens[1:]
+			role.DisableCardsUp = true
+			role.DisablePreClearBag = true
+			return false
+		}
+
 		chaojidou.NpcWaitSecs = 10
 		captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
+		if !captain.IsOnline(true) {
+			role.Fubens = global.DefaultFubens[2:]
+			role.DisableCardsUp = true
+			role.DisablePreClearBag = true
+			return false
+		}
+
 		chaojidou.NpcWaitSecs = 45
 		captain.JinBen(chaojidou.JINBEN_TYPE_SUXING, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
+		if !captain.IsOnline(true) {
+			role.Fubens = global.DefaultFubens[3:]
+			role.DisableCardsUp = true
+			role.DisablePreClearBag = true
+			return false
+		}
+
 		chaojidou.NpcWaitSecs = 10
 		captain.JinBen(chaojidou.JINBEN_TYPE_SUXING, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
+		if !captain.IsOnline(true) {
+			role.Fubens = global.DefaultFubens[4:]
+			role.DisableCardsUp = true
+			role.DisablePreClearBag = true
+			return false
+		}
+
 		captain.JinBen(chaojidou.JINBEN_TYPE_HEIAN, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
+		if !captain.IsOnline(true) {
+			role.Fubens = global.DefaultFubens[5:]
+			role.DisableCardsUp = true
+			role.DisablePreClearBag = true
+			return false
+		}
+
 		captain.JinBen(chaojidou.JINBEN_TYPE_HEIAN, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
+		if !captain.IsOnline(true) {
+			role.Fubens = global.EmptyFubens
+			role.DisableCardsUp = true
+			role.DisablePreClearBag = true
+			return false
+		}
 		chaojidou.NpcWaitSecs = 30
 	} else {
 		chaojidou.NpcWaitSecs = 30
@@ -271,13 +328,32 @@ func handleOneRole(role model.Role, meiri string, first bool, last bool) {
 			} else if fuben.Name == "llt1" {
 				captain.LiuLangTuan(chaojidou.LIULANGTUAN_TYPE_1, chaojidou.DIFFICULTY_TYPE_YINGXIONG)
 			} else if fuben.Name == "sxdcs" {
+				if first {
+					chaojidou.NpcWaitSecs = 40
+				}
 				captain.JinBen(chaojidou.JINBEN_TYPE_SUXING, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
+				chaojidou.NpcWaitSecs = 30
 			} else if fuben.Name == "haqszh" {
+				if first {
+					chaojidou.NpcWaitSecs = 40
+				}
 				captain.JinBen(chaojidou.JINBEN_TYPE_HEIAN, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
+				chaojidou.NpcWaitSecs = 30
 			} else if fuben.Name == "jzys" {
 				captain.JiZhanYanSuan()
 			} else if fuben.Name == "xyb" {
 				captain.XingYunBi(fuben.Difficulty)
+			}
+
+			if !captain.IsOnline(true) {
+				if i < len(role.Fubens)-1 {
+					role.Fubens = role.Fubens[(i + 1):]
+				} else {
+					role.Fubens = global.EmptyFubens
+				}
+				role.DisableCardsUp = true
+				role.DisablePreClearBag = true
+				return false
 			}
 		}
 	}
@@ -315,4 +391,6 @@ func handleOneRole(role model.Role, meiri string, first bool, last bool) {
 	} else {
 		captain.Quit()
 	}
+
+	return true
 }
