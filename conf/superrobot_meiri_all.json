@@ -3,14 +3,15 @@
     {
       "NodeId": "",
       "GroupId": "1",
-      "MeiRi": "hway",
+      "MeiRi": "qzds",
       "Account": {
-        "AccountName": "gangcheng11226@163.com",
+        "AccountName": "gangcheng11224@163.com",
         "Roles": [
           {
             "Id": 1,
             "Fubens": [
               {
+                "Difficulty": 1,
                 "Name": "meiri"
               }
             ]
@@ -19,14 +20,7 @@
             "Id": 2,
             "Fubens": [
               {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 3,
-            "Fubens": [
-              {
+                "Difficulty": 1,
                 "Name": "meiri"
               }
             ]
@@ -35,6 +29,154 @@
             "Id": 4,
             "Fubens": [
               {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 8,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "MeiRi": "qzds",
+      "Account": {
+        "AccountName": "gangcheng11225@163.com",
+        "Password": "Cjdmj112233",
+        "Roles": [
+          {
+            "Id": 1,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 8,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "MeiRi": "qzds",
+      "Account": {
+        "AccountName": "gangcheng11226@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "Fubens": [
+              {
+                "Difficulty": 1,
                 "Name": "meiri"
               }
             ]
@@ -61,7 +203,7 @@
     {
       "NodeId": "",
       "GroupId": "1",
-      "MeiRi": "hway",
+      "MeiRi": "qzds",
       "Account": {
         "AccountName": "gangcheng11227@163.com",
         "Roles": [
@@ -77,6 +219,7 @@
             "Id": 2,
             "Fubens": [
               {
+                "Difficulty": 1,
                 "Name": "meiri"
               }
             ]
@@ -95,14 +238,23 @@
     {
       "NodeId": "",
       "GroupId": "1",
-      "MeiRi": "hway",
+      "MeiRi": "qzds",
       "Account": {
-        "AccountName": "yjh179614936@163.com",
+        "AccountName": "gangcheng11231@163.com",
         "Roles": [
           {
             "Id": 1,
             "Fubens": [
               {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "Fubens": [
+              {
+                "Difficulty": 1,
                 "Name": "meiri"
               }
             ]
@@ -124,14 +276,6 @@
             ]
           },
           {
-            "Id": 5,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
             "Id": 6,
             "Fubens": [
               {
@@ -145,14 +289,42 @@
     {
       "NodeId": "",
       "GroupId": "1",
-      "MeiRi": "hway",
+      "MeiRi": "qzds",
       "Account": {
-        "AccountName": "gangcheng11223@163.com",
+        "AccountName": "yjh179614936@163.com",
         "Roles": [
           {
             "Id": 1,
             "Fubens": [
               {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "Fubens": [
+              {
+                "Difficulty": 1,
                 "Name": "meiri"
               }
             ]
@@ -161,6 +333,35 @@
             "Id": 6,
             "Fubens": [
               {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "MeiRi": "qzds",
+      "Account": {
+        "AccountName": "gangcheng11223@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "Fubens": [
+              {
+                "Difficulty": 1,
                 "Name": "meiri"
               }
             ]
@@ -169,6 +370,7 @@
             "Id": 10,
             "Fubens": [
               {
+                "Difficulty": 1,
                 "Name": "meiri"
               }
             ]
@@ -177,6 +379,7 @@
             "Id": 11,
             "Fubens": [
               {
+                "Difficulty": 1,
                 "Name": "meiri"
               }
             ]
@@ -187,7 +390,7 @@
     {
       "NodeId": "",
       "GroupId": "1",
-      "MeiRi": "hway",
+      "MeiRi": "qzds",
       "Account":  {
         "AccountName": "diandian092301@163.com",
         "Roles": [
@@ -195,6 +398,7 @@
             "Id": 5,
             "Fubens": [
               {
+                "Difficulty": 1,
                 "Name": "meiri"
               }
             ]
@@ -203,6 +407,7 @@
             "Id": 8,
             "Fubens": [
               {
+                "Difficulty": 1,
                 "Name": "meiri"
               }
             ]
@@ -211,6 +416,7 @@
             "Id": 9,
             "Fubens": [
               {
+                "Difficulty": 1,
                 "Name": "meiri"
               }
             ]
@@ -221,7 +427,7 @@
     {
       "NodeId": "",
       "GroupId": "1",
-      "MeiRi": "hway",
+      "MeiRi": "qzds",
       "Account":  {
         "AccountName": "yan7955@126.com",
         "Roles": [
@@ -237,6 +443,7 @@
             "Id": 3,
             "Fubens": [
               {
+                "Difficulty": 1,
                 "Name": "meiri"
               }
             ]
@@ -245,6 +452,7 @@
             "Id": 9,
             "Fubens": [
               {
+                "Difficulty": 1,
                 "Name": "meiri"
               }
             ]
@@ -255,7 +463,7 @@
     {
       "NodeId": "",
       "GroupId": "1",
-      "MeiRi": "hway",
+      "MeiRi": "qzds",
       "Account":  {
         "AccountName": "chenggang092101@163.com",
         "Roles": [
@@ -263,6 +471,7 @@
             "Id": 2,
             "Fubens": [
               {
+                "Difficulty": 1,
                 "Name": "meiri"
               }
             ]
@@ -271,64 +480,7 @@
             "Id": 4,
             "Fubens": [
               {
-                "Name": "meiri"
-              }
-            ]
-          }
-        ]
-      }
-    },
-        {
-      "NodeId": "",
-      "GroupId": "1",
-      "MeiRi": "hway",
-      "Account": {
-        "AccountName": "gangcheng11224@163.com",
-        "Roles": [
-          {
-            "Id": 1,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 2,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 4,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 5,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 6,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 8,
-            "Fubens": [
-              {
+                "Difficulty": 1,
                 "Name": "meiri"
               }
             ]
@@ -339,19 +491,10 @@
     {
       "NodeId": "",
       "GroupId": "1",
-      "MeiRi": "hway",
-      "Account": {
-        "AccountName": "gangcheng11225@163.com",
-        "Password": "Cjdmj112233",
+      "MeiRi": "qzds",
+      "Account":  {
+        "AccountName": "gangcheng11232@163.com",
         "Roles": [
-          {
-            "Id": 1,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
           {
             "Id": 2,
             "Fubens": [
@@ -364,39 +507,7 @@
             "Id": 3,
             "Fubens": [
               {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 4,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 5,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 6,
-            "Fubens": [
-              {
-                "Name": "meiri",
-                "Difficulty": 1
-              }
-            ]
-          },
-          {
-            "Id": 8,
-            "Fubens": [
-              {
+                "Difficulty": 1,
                 "Name": "meiri"
               }
             ]

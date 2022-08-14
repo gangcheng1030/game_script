@@ -1,7 +1,7 @@
 {
   "Events": [
     {
-      "NodeId": "node4",
+      "NodeId": "node2",
       "FollowerNodeIds": [
         "node5"
       ],
@@ -22,7 +22,7 @@
       }
     },
     {
-      "NodeId": "node4",
+      "NodeId": "node2",
       "FollowerNodeIds": [
         "node5"
       ],
@@ -43,7 +43,7 @@
       }
     },
     {
-      "NodeId": "node4",
+      "NodeId": "node2",
       "FollowerNodeIds": [
         "node5"
       ],

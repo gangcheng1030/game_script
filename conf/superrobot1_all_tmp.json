@@ -1,0 +1,527 @@
+{
+  "Events": [
+    {
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11232@163.com",
+        "Roles": [
+          {
+            "Id": 3
+          }
+        ]
+      }
+    },
+    {
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11224@163.com",
+        "Roles": [
+          {
+            "Id": 8,
+            "Fubens": [              
+              {
+                "Name": "glxy"
+              },
+              {
+                "Name": "glxy"
+              },
+              {
+                "Name": "glxy"
+              },
+              {
+                "Name": "glxy"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "Fubens": [
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "Fubens": [
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "Fubens": [
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "haqszh"
+              },
+              {
+                "Name": "haqszh"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11225@163.com",
+        "Roles": [
+          {
+            "Id": 8,
+            "Fubens": [
+              {
+                "Name": "kejyz"
+              },
+              {
+                "Name": "kejyz"
+              },
+              {
+                "Name": "kejyz"
+              },
+              {
+                "Name": "kejyz"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "Fubens": [
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "Fubens": [
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "haqszh"
+              },
+              {
+                "Name": "haqszh"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "Fubens": [
+              {
+                "Name": "lly"
+              },
+              {
+                "Name": "lly"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11226@163.com",
+        "Roles": [
+          {
+            "Id": 4,
+            "Fubens": [
+              {
+                "Name": "glxy"
+              },
+              {
+                "Name": "glxy"
+              },
+              {
+                "Name": "glxy"
+              },
+              {
+                "Name": "glxy"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "Fubens": [
+              {
+                "Name": "lly"
+              },
+              {
+                "Name": "lly"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "Fubens": [
+              {
+                "Name": "lly"
+              },
+              {
+                "Name": "lly"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              }
+            ]
+          },
+          {
+            "Id": 1,
+            "Fubens": [
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11227@163.com",
+        "Roles": [
+          {
+            "Id": 2,
+            "Fubens": [
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "yan7955@126.com",
+        "Roles": [
+          {
+            "Id": 3,
+            "Fubens": [
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "haqszh"
+              },
+              {
+                "Name": "haqszh"
+              }
+            ]
+          },
+          {
+            "Id": 9,
+            "Fubens": [
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "haqszh"
+              },
+              {
+                "Name": "haqszh"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11223@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "Fubens": [
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "diandian092301@163.com",
+        "Roles": [
+          {
+            "Id": 8,
+            "Fubens": [
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "yjh179614936@163.com",
+        "Roles": [
+          {
+            "Id": 5,
+            "Fubens": [
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "haqszh"
+              },
+              {
+                "Name": "haqszh"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "Fubens": [
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "bldx"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11231@163.com",
+        "Roles": [
+          {
+            "Id": 3
+          }
+        ]
+      }
+    }
+  ]
+}

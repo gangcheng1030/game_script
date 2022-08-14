@@ -1,0 +1,89 @@
+{
+  "Events": [
+    {
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11224@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "Fubens": [
+              {
+                "Name": "lly"
+              },
+              {
+                "Name": "lly"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "Fubens": [
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "haqszh"
+              },
+              {
+                "Name": "haqszh"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11225@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "Fubens": [
+              {
+                "Name": "lly"
+              },
+              {
+                "Name": "lly"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
