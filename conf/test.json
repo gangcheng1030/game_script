@@ -1,66 +1,286 @@
 [
   {
-    "Id": 85,
-    "Status": 1,
-    "Type": 1,
-    "NodeId": "node2",
-    "FollowerNodeIds": [
-      "node5"
-    ],
+    "Id": 2,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
     "GroupId": "1",
     "MeiRi": "",
     "Account": {
-      "AccountName": "gangcheng11225@163.com",
-      "Password": "Cjdmj112233",
+      "AccountName": "gangcheng11232@163.com",
+      "Password": "",
       "Roles": [
         {
           "Id": 3,
-          "FollowerRoleIds": [
-            6
-          ],
-          "FollowerJunTuanNames": [
-            "他十二姥爷"
-          ],
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
           "Fubens": null,
           "DisableCardsUp": false,
           "DisablePreClearBag": false,
           "PostClearBag": false
         }
       ],
-      "FollowerAddrs": [
-        "192.168.1.105:6688"
-      ],
-      "FollowerAccountNames": [
-        "yjh179614936@163.com"
-      ],
-      "FollowerPasswords": [
-        "277426225bb"
-      ]
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
     }
   },
   {
-    "Id": 64,
+    "Id": 3,
     "Status": 0,
-    "Type": 1,
-    "NodeId": "node4",
-    "FollowerNodeIds": [
-      "node1",
-      "node3"
-    ],
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
     "GroupId": "1",
     "MeiRi": "",
     "Account": {
-      "AccountName": "yjh179614936@163.com",
+      "AccountName": "gangcheng11224@163.com",
       "Password": "",
       "Roles": [
         {
-          "Id": 3,
-          "FollowerRoleIds": [
-            1,
-            4
-          ],
+          "Id": 8,
+          "FollowerRoleIds": null,
           "FollowerJunTuanNames": null,
           "Fubens": [
+            {
+              "Name": "glxy",
+              "Difficulty": 0
+            },
+            {
+              "Name": "glxy",
+              "Difficulty": 0
+            },
+            {
+              "Name": "glxy",
+              "Difficulty": 0
+            },
+            {
+              "Name": "glxy",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 6,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "bldx",
+              "Difficulty": 0
+            },
+            {
+              "Name": "bldx",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 5,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "bldx",
+              "Difficulty": 0
+            },
+            {
+              "Name": "bldx",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 4,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "haqszh",
+              "Difficulty": 0
+            },
+            {
+              "Name": "haqszh",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 4,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "",
+    "Account": {
+      "AccountName": "gangcheng11225@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 8,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "kejyz",
+              "Difficulty": 0
+            },
+            {
+              "Name": "kejyz",
+              "Difficulty": 0
+            },
+            {
+              "Name": "kejyz",
+              "Difficulty": 0
+            },
+            {
+              "Name": "kejyz",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 6,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "bldx",
+              "Difficulty": 0
+            },
+            {
+              "Name": "bldx",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 5,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "bldx",
+              "Difficulty": 0
+            },
+            {
+              "Name": "bldx",
+              "Difficulty": 0
+            },
+            {
+              "Name": "haqszh",
+              "Difficulty": 0
+            },
+            {
+              "Name": "haqszh",
+              "Difficulty": 0
+            },
             {
               "Name": "llt1",
               "Difficulty": 0
@@ -76,12 +296,77 @@
         },
         {
           "Id": 4,
-          "FollowerRoleIds": [
-            4,
-            5
-          ],
+          "FollowerRoleIds": null,
           "FollowerJunTuanNames": null,
           "Fubens": [
+            {
+              "Name": "lly",
+              "Difficulty": 0
+            },
+            {
+              "Name": "lly",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 5,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "",
+    "Account": {
+      "AccountName": "gangcheng11226@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 4,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "glxy",
+              "Difficulty": 0
+            },
+            {
+              "Name": "glxy",
+              "Difficulty": 0
+            },
+            {
+              "Name": "glxy",
+              "Difficulty": 0
+            },
+            {
+              "Name": "glxy",
+              "Difficulty": 0
+            },
             {
               "Name": "llt1",
               "Difficulty": 0
@@ -94,13 +379,467 @@
           "DisableCardsUp": false,
           "DisablePreClearBag": false,
           "PostClearBag": false
+        },
+        {
+          "Id": 3,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "lly",
+              "Difficulty": 0
+            },
+            {
+              "Name": "lly",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 2,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "lly",
+              "Difficulty": 0
+            },
+            {
+              "Name": "lly",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "bldx",
+              "Difficulty": 0
+            },
+            {
+              "Name": "bldx",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
         }
       ],
       "FollowerAddrs": null,
-      "FollowerAccountNames": [
-        "diandian092301@163.com",
-        "yan7955@126.com"
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 6,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "",
+    "Account": {
+      "AccountName": "gangcheng11227@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 2,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "bldx",
+              "Difficulty": 0
+            },
+            {
+              "Name": "bldx",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
       ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 7,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "",
+    "Account": {
+      "AccountName": "yan7955@126.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 3,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "haqszh",
+              "Difficulty": 0
+            },
+            {
+              "Name": "haqszh",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 9,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "haqszh",
+              "Difficulty": 0
+            },
+            {
+              "Name": "haqszh",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 8,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "",
+    "Account": {
+      "AccountName": "gangcheng11223@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "bldx",
+              "Difficulty": 0
+            },
+            {
+              "Name": "bldx",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 9,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "",
+    "Account": {
+      "AccountName": "diandian092301@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 8,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "bldx",
+              "Difficulty": 0
+            },
+            {
+              "Name": "bldx",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 10,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "",
+    "Account": {
+      "AccountName": "yjh179614936@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 5,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "haqszh",
+              "Difficulty": 0
+            },
+            {
+              "Name": "haqszh",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 6,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "bldx",
+              "Difficulty": 0
+            },
+            {
+              "Name": "bldx",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "llt1",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            },
+            {
+              "Name": "sxdcs",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 11,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "",
+    "Account": {
+      "AccountName": "gangcheng11231@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 3,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": null,
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
       "FollowerPasswords": null
     }
   }

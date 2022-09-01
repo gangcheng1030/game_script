@@ -1,11 +1,11 @@
 {
   "Events": [
     {
-      "MeiRi": "qzds",
+      "MeiRi": "rxgd",
       "NodeId": "",
       "GroupId": "1",
       "Account": {
-        "AccountName": "gangcheng11232@163.com",
+        "AccountName": "gangcheng11231@163.com",
         "Roles": [
           {
             "Id": 2,
@@ -19,7 +19,14 @@
             "Id": 3,
             "Fubens": [
               {
-                "Difficulty": 1,
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "Fubens": [
+              {
                 "Name": "meiri"
               }
             ]

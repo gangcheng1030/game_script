@@ -4,6 +4,123 @@
       "NodeId": "",
       "GroupId": "1",
       "Account": {
+        "AccountName": "gangcheng11231@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 10,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 11,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11232@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
         "AccountName": "gangcheng11224@163.com",
         "Roles": [
           {

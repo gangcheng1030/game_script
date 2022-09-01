@@ -1,13 +1,23 @@
 {
   "Events": [
     {
+      "NodeId": "node2",
+      "FollowerNodeIds": [
+        "node5"
+      ],
       "GroupId": "1",
       "Account": {
-        "AccountName": "gangcheng11224@163.com",
+        "AccountName": "chenggang092101@163.com",
+        "FollowerAccountNames": [
+          "gangcheng11231@163.com"
+        ],
         "Roles": [
           {
             "Id": 2,
-            "Fubens": [              
+            "FollowerRoleIds": [
+              4
+            ],
+            "Fubens": [
               {
                 "Name": "llt1"
               },
