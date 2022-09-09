@@ -305,7 +305,7 @@ func handleOneRole(role *model.Role, meiri string, first bool, last bool) bool {
 		chaojidou.NpcWaitSecs = 30
 		for i, fuben := range role.Fubens {
 			if fuben.Name == "meiri" {
-				captain.MeiRiTiaoZhan(chaojidou.MeiRiType(meiri), chaojidou.DIFFICULTY_TYPE_MAOXIAN)
+				captain.MeiRiTiaoZhan(chaojidou.MeiRiType(meiri), chaojidou.DifficultyType(fuben.Difficulty))
 				if i < len(role.Fubens)-1 {
 					captain.ClearBag(true)
 				}
