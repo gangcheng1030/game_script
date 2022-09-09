@@ -3,285 +3,7 @@
     {
       "NodeId": "",
       "GroupId": "1",
-      "MeiRi": "tbsw",
-      "Account": {
-        "AccountName": "gangcheng11226@163.com",
-        "Roles": [
-          {
-            "Id": 1,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 2,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 3,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 4,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 5,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 6,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "NodeId": "",
-      "GroupId": "1",
-      "MeiRi": "tbsw",
-      "Account": {
-        "AccountName": "gangcheng11227@163.com",
-        "Roles": [
-          {
-            "Id": 1,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 2,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 3,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "NodeId": "",
-      "GroupId": "1",
-      "MeiRi": "tbsw",
-      "Account": {
-        "AccountName": "yjh179614936@163.com",
-        "Roles": [
-          {
-            "Id": 1,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 3,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 4,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 5,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 6,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "NodeId": "",
-      "GroupId": "1",
-      "MeiRi": "tbsw",
-      "Account": {
-        "AccountName": "gangcheng11223@163.com",
-        "Roles": [
-          {
-            "Id": 1,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 6,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 10,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 11,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "NodeId": "",
-      "GroupId": "1",
-      "MeiRi": "tbsw",
-      "Account":  {
-        "AccountName": "diandian092301@163.com",
-        "Roles": [
-          {
-            "Id": 5,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 8,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 9,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "NodeId": "",
-      "GroupId": "1",
-      "MeiRi": "tbsw",
-      "Account":  {
-        "AccountName": "yan7955@126.com",
-        "Roles": [
-          {
-            "Id": 1,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 3,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 9,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "NodeId": "",
-      "GroupId": "1",
-      "MeiRi": "tbsw",
-      "Account":  {
-        "AccountName": "chenggang092101@163.com",
-        "Roles": [
-          {
-            "Id": 2,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          },
-          {
-            "Id": 4,
-            "Fubens": [
-              {
-                "Name": "meiri"
-              }
-            ]
-          }
-        ]
-      }
-    },
-        {
-      "NodeId": "",
-      "GroupId": "1",
-      "MeiRi": "tbsw",
+      "MeiRi": "hzjd",
       "Account": {
         "AccountName": "gangcheng11224@163.com",
         "Roles": [
@@ -339,7 +61,7 @@
     {
       "NodeId": "",
       "GroupId": "1",
-      "MeiRi": "tbsw",
+      "MeiRi": "hzjd",
       "Account": {
         "AccountName": "gangcheng11225@163.com",
         "Password": "Cjdmj112233",
@@ -388,13 +110,374 @@
             "Id": 6,
             "Fubens": [
               {
-                "Name": "meiri",
-                "Difficulty": 1
+                "Name": "meiri"
               }
             ]
           },
           {
             "Id": 8,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "MeiRi": "hzjd",
+      "Account": {
+        "AccountName": "gangcheng11226@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "MeiRi": "hzjd",
+      "Account": {
+        "AccountName": "gangcheng11227@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "MeiRi": "hzjd",
+      "Account": {
+        "AccountName": "gangcheng11231@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "MeiRi": "hzjd",
+      "Account": {
+        "AccountName": "yjh179614936@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "MeiRi": "hzjd",
+      "Account": {
+        "AccountName": "gangcheng11223@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 10,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 11,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "MeiRi": "hzjd",
+      "Account":  {
+        "AccountName": "diandian092301@163.com",
+        "Roles": [
+          {
+            "Id": 5,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 8,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 9,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "MeiRi": "hzjd",
+      "Account":  {
+        "AccountName": "yan7955@126.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 9,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "MeiRi": "hzjd",
+      "Account":  {
+        "AccountName": "chenggang092101@163.com",
+        "Roles": [
+          {
+            "Id": 2,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "MeiRi": "hzjd",
+      "Account":  {
+        "AccountName": "gangcheng11232@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "Fubens": [
+              {
+                "Name": "meiri"
+              }
+            ]
+          },
+          {
+            "Id": 3,
             "Fubens": [
               {
                 "Name": "meiri"

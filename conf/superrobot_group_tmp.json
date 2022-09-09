@@ -1,0 +1,45 @@
+{
+  "Events": [
+    {
+      "NodeId": "node2",
+      "FollowerNodeIds": [
+        "node5"
+      ],
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11225@163.com",
+        "FollowerAccountNames": [
+          "gangcheng11232@163.com"
+        ],
+        "Roles": [
+          {
+            "Id": 1,
+            "FollowerRoleIds": [
+              1
+            ]
+          },
+          {
+            "Id": 3,
+            "FollowerRoleIds": [
+              2
+            ]
+          },
+          {
+            "Id": 4,
+            "FollowerRoleIds": [
+              4
+            ],
+            "Fubens": [
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
