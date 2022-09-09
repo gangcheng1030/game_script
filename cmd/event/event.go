@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/vcaesar/keycode"
 
 	hook "github.com/robotn/gohook"
 )
@@ -19,10 +20,18 @@ func add() {
 		hook.End()
 	})
 
-	fmt.Println("--- Please press w---")
-	hook.Register(hook.KeyDown, []string{"w"}, func(e hook.Event) {
-		fmt.Println("w")
-	})
+	for k := range keycode.Keycode {
+		hook.Register(hook.KeyDown, []string{k}, func(e hook.Event) {
+			c := hook.RawcodetoKeychar(e.Rawcode)
+			fmt.Println(c)
+			//fmt.Printf("KeyCode: %d, Raw: %d, KeyChar: %s\n", e.Keycode, e.Rawcode, hook.RawcodetoKeychar(e.Rawcode))
+		})
+	}
+
+	//fmt.Println("--- Please press w---")
+	//hook.Register(hook.KeyDown, []string{"w"}, func(e hook.Event) {
+	//	fmt.Println("w")
+	//})
 
 	hook.Register(hook.MouseDown, []string{}, func(e hook.Event) {
 		fmt.Println(e)

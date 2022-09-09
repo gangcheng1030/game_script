@@ -10,22 +10,22 @@
       "Account": {
         "AccountName": "gangcheng11223@163.com",
         "FollowerAccountNames": [
-          "gangcheng11226@163.com",
-          "gangcheng11227@163.com"
+          "gangcheng11228@163.com",
+          "gangcheng11229@163.com"
         ],
         "Roles": [
           {
             "Id": 6,
             "FollowerRoleIds": [
-              5,
+              1,
               1
             ]
           },
           {
             "Id": 10,
             "FollowerRoleIds": [
-              6,
-              3
+              2,
+              2
             ]
           }
         ]
@@ -42,7 +42,7 @@
         "AccountName": "gangcheng11223@163.com",
         "FollowerAccountNames": [
           "gangcheng11224@163.com",
-          "yan7955@126.com"
+          "gangcheng11227@163.com"
         ],
         "Roles": [
           {
@@ -211,13 +211,27 @@
           {
             "Id": 5,
             "FollowerRoleIds": [
-              1
+              2
             ]
           },
           {
             "Id": 9,
             "FollowerRoleIds": [
-              2
+              6
+            ]
+          },
+          {
+            "Id": 8,
+            "FollowerRoleIds": [
+              11
+            ],
+            "Fubens": [
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              }
             ]
           }
         ]
@@ -232,19 +246,19 @@
       "Account": {
         "AccountName": "chenggang092101@163.com",
         "FollowerAccountNames": [
-          "gangcheng11231@163.com"
+          "gangcheng11230@163.com"
         ],
         "Roles": [
           {
             "Id": 2,
             "FollowerRoleIds": [
-              4
+              1
             ]
           },
           {
             "Id": 4,
             "FollowerRoleIds": [
-              6
+              2
             ]
           }
         ]
@@ -272,6 +286,20 @@
             "Id": 3,
             "FollowerRoleIds": [
               2
+            ]
+          },
+          {
+            "Id": 4,
+            "FollowerRoleIds": [
+              4
+            ],
+            "Fubens": [
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              }
             ]
           }
         ]

@@ -34,38 +34,6 @@
           }
         ]
       }
-    },
-    {
-      "GroupId": "1",
-      "NodeId": "",
-      "Account": {
-        "AccountName": "gangcheng11225@163.com",
-        "Roles": [
-          {
-            "Id": 2,
-            "Fubens": [
-              {
-                "Name": "bldx"
-              },
-              {
-                "Name": "bldx"
-              },
-              {
-                "Name": "llt1"
-              },
-              {
-                "Name": "llt1"
-              },
-              {
-                "Name": "sxdcs"
-              },
-              {
-                "Name": "sxdcs"
-              }
-            ]
-          }
-        ]
-      }
     }
   ]
 }

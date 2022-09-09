@@ -2,12 +2,13 @@
   "Events": [
     {
       "GroupId": "1",
+      "NodeId": "",
       "Account": {
         "AccountName": "gangcheng11224@163.com",
         "Roles": [
           {
             "Id": 2,
-            "Fubens": [              
+            "Fubens": [
               {
                 "Name": "llt1"
               },

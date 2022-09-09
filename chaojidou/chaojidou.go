@@ -7,6 +7,7 @@ import (
 	"github.com/go-vgo/robotgo"
 	hook "github.com/robotn/gohook"
 	"github.com/shirou/gopsutil/v3/process"
+	"github.com/vcaesar/keycode"
 	"math/rand"
 	"strings"
 	"sync"
@@ -90,6 +91,7 @@ type ChaoJiDou interface {
 	AoDeSai(dt DifficultyType)
 	JinBen(jt JinBenType, dt DifficultyType, times int)
 	JiZhanYanSuan()
+	MiGong(dt DifficultyType)
 
 	GetGameWindow() robotgo.Rect
 	GetPid() int32
@@ -2229,6 +2231,14 @@ func (c *chaoJiDou) JiZhanYanSuan() {
 	robotgo.Sleep(20)
 }
 
+func (c *chaoJiDou) MiGong(dt DifficultyType) {
+	for k := range keycode.Keycode {
+		hook.Register(hook.KeyDown, []string{k}, func(e hook.Event) {
+			c.handleFollowersPressWithSleep(k, 0, 0)
+		})
+	}
+}
+
 func (c *chaoJiDou) GetGameWindow() robotgo.Rect {
 	return c.GameWindow
 }
@@ -2510,9 +2520,10 @@ func (c *chaoJiDou) handleFollowersMove(x int, y int, errors int, preSleepSec in
 			}
 			tmpPoint := utils.GetRandomPointInRect1(x-errors, y-errors, 2*errors, 2*errors)
 			e := &hook.Event{
-				Kind: hook.MouseMove,
+				Kind: hook.MouseDown,
 				X:    int16(tmpPoint.X),
 				Y:    int16(tmpPoint.Y),
+				Button: 2,
 			}
 			err := SendEvent(tmpAddr, e)
 			if err != nil {
@@ -2525,6 +2536,10 @@ func (c *chaoJiDou) handleFollowersMove(x int, y int, errors int, preSleepSec in
 }
 
 func (c *chaoJiDou) handleFollowersPress(key string, st int) {
+	c.handleFollowersPressWithSleep(key, st, 5)
+}
+
+func (c *chaoJiDou) handleFollowersPressWithSleep(key string, st int, st1 int) {
 	if len(Follwers) == 0 {
 		return
 	}
@@ -2538,8 +2553,10 @@ func (c *chaoJiDou) handleFollowersPress(key string, st int) {
 		waitGroup.Add(1)
 		go func() {
 			defer waitGroup.Done()
-			st1 := rand.Intn(5000)
-			robotgo.MilliSleep(st1)
+			if st1 > 0 {
+				st1 = rand.Intn(st1 * 1000)
+				robotgo.MilliSleep(st1)
+			}
 			e := &hook.Event{
 				Kind:    hook.KeyDown,
 				Keychar: []rune(key)[0],

@@ -35,15 +35,15 @@ func (fh *FollowerHandler) handleEvent(e *hook.Event) error {
 	case hook.MouseDown:
 		robotgo.MoveSmooth(int(e.X), int(e.Y), 0.9, 0.9)
 		robotgo.MilliSleep(300)
-		robotgo.Click()
+		if e.Button == 2 {
+			robotgo.Click("right")
+		} else {
+			robotgo.Click()
+		}
 		for i := 1; i < int(e.Clicks); i++ {
 			robotgo.Sleep(2)
 			robotgo.Click()
 		}
-	case hook.MouseMove:
-		robotgo.MoveSmooth(int(e.X), int(e.Y), 0.9, 0.9)
-		robotgo.MilliSleep(300)
-		robotgo.Click("right")
 	case 101: // 老爹
 		DefaultCaptain.LaoDie()
 	case 102: // isOnline

@@ -7,13 +7,25 @@
       ],
       "GroupId": "1",
       "Account": {
-        "AccountName": "chenggang092101@163.com",
+        "AccountName": "gangcheng11225@163.com",
         "FollowerAccountNames": [
-          "gangcheng11231@163.com"
+          "gangcheng11232@163.com"
         ],
         "Roles": [
           {
-            "Id": 2,
+            "Id": 1,
+            "FollowerRoleIds": [
+              1
+            ]
+          },
+          {
+            "Id": 3,
+            "FollowerRoleIds": [
+              2
+            ]
+          },
+          {
+            "Id": 4,
             "FollowerRoleIds": [
               4
             ],

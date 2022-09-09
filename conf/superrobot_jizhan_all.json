@@ -4,6 +4,87 @@
       "NodeId": "",
       "GroupId": "1",
       "Account": {
+        "AccountName": "gangcheng11228@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11229@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11230@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
         "AccountName": "gangcheng11231@163.com",
         "Roles": [
           {
