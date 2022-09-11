@@ -12,13 +12,13 @@
             "Id": 6,
             "Fubens": [
               {
-                "Name": "bldx"
+                "Name": "lly"
               },
               {
                 "Name": "llt1"
               },
               {
-                "Name": "bldx"
+                "Name": "lly"
               },
               {
                 "Name": "llt1"
@@ -77,10 +77,10 @@
             "Id": 6,
             "Fubens": [
               {
-                "Name": "kejyz"
+                "Name": "glxy"
               },
               {
-                "Name": "kejyz"
+                "Name": "glxy"
               },
               {
                 "Name": "llt1"
@@ -195,36 +195,22 @@
         "AccountName": "gangcheng11227@163.com",
         "Roles": [
           {
-            "Id": 2,
-            "Fubens": [
-              {
-                "Name": "lly"
-              },
-              {
-                "Name": "lly"
-              },
-              {
-                "Name": "llt1"
-              },
-              {
-                "Name": "llt1"
-              }
-            ]
+            "Id": 2
           },
           {
             "Id": 3,
             "Fubens": [
               {
-                "Name": "bldx"
+                "Name": "lly"
               },
               {
-                "Name": "bldx"
+                "Name": "lly"
               },
               {
-                "Name": "bldx"
+                "Name": "lly"
               },
               {
-                "Name": "bldx"
+                "Name": "lly"
               },
               {
                 "Name": "llt1"
@@ -280,27 +266,7 @@
         "AccountName": "gangcheng11231@163.com",
         "Roles": [
           {
-            "Id": 1,
-            "Fubens": [
-              {
-                "Name": "lly"
-              },
-              {
-                "Name": "lly"
-              },
-              {
-                "Name": "lly"
-              },
-              {
-                "Name": "lly"
-              },
-              {
-                "Name": "llt1"
-              },
-              {
-                "Name": "llt1"
-              }
-            ]
+            "Id": 1
           },
           {
             "Id": 3

@@ -106,4 +106,28 @@ var NodeConfigCache = map[string]*model.NodeConfig{
 		FullScreenMode: 0,
 		DirName:        "D:\\Netease\\CJDMJ",
 	},
+	"node6": {
+		Group:          "1",
+		CanNotBeLeader: false,
+		FullScreenMode: 0,
+		DirName:        "D:\\Netease\\CJDMJ",
+	},
+	"node7": {
+		Group:          "1",
+		CanNotBeLeader: false,
+		FullScreenMode: 0,
+		DirName:        "D:\\Netease\\CJDMJ",
+	},
+	"node8": {
+		Group:          "1",
+		CanNotBeLeader: false,
+		FullScreenMode: 0,
+		DirName:        "D:\\Netease\\CJDMJ",
+	},
+	"node9": {
+		Group:          "1",
+		CanNotBeLeader: false,
+		FullScreenMode: 0,
+		DirName:        "D:\\Netease\\CJDMJ",
+	},
 }

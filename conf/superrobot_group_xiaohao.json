@@ -3,23 +3,23 @@
     {
       "NodeId": "node2",
       "FollowerNodeIds": [
-        "node5",
+        "node1",
         "node3",
         "node4"
       ],
       "GroupId": "1",
       "Account": {
-        "AccountName": "chenggang092101@163.com",
+        "AccountName": "gangcheng11227@163.com",
         "FollowerAccountNames": [
-          "gangcheng11232@163.com",
-          "diandian092301@163.com",
-          "yan7955@126.com"
+          "gangcheng11223@163.com",
+          "chenggang092101@163.com",
+          "gangcheng11232@163.com"
         ],
         "Roles": [
           {
-            "Id": 2,
+            "Id": 6,
             "FollowerRoleIds": [
-              3,
+              6,
               9,
               9
             ],
