@@ -4,8 +4,10 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/gangcheng1030/game_script/utils"
 	"github.com/go-vgo/robotgo"
 	hook "github.com/robotn/gohook"
+	"log"
 	"net/http"
 )
 
@@ -31,17 +33,18 @@ func (fh *FollowerHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func (fh *FollowerHandler) handleEvent(e *hook.Event) error {
 	switch e.Kind {
 	case hook.KeyDown:
-		robotgo.KeyPress(string(e.Keychar))
+		k, ok := utils.Raw2key[e.Rawcode]
+		if !ok {
+			log.Printf("wrong rawCode: %d", e.Rawcode)
+			return nil
+		}
+		robotgo.KeyPress(k)
 	case hook.MouseDown:
 		robotgo.MoveSmooth(int(e.X), int(e.Y), 0.9, 0.9)
-		robotgo.MilliSleep(300)
+		robotgo.MilliSleep(100)
 		if e.Button == 2 {
 			robotgo.Click("right")
 		} else {
-			robotgo.Click()
-		}
-		for i := 1; i < int(e.Clicks); i++ {
-			robotgo.Sleep(2)
 			robotgo.Click()
 		}
 	case 101: // 老爹

@@ -21,7 +21,7 @@ func initComponent() {
 	flag.Parse()
 	var err error
 
-	eventFile, err = os.OpenFile(*eventFileName, os.O_CREATE | os.O_WRONLY | os.O_TRUNC, 0644)
+	eventFile, err = os.OpenFile(*eventFileName, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0644)
 	if err != nil {
 		panic(err)
 	}

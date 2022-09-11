@@ -343,6 +343,8 @@ func handleOneRole(role *model.Role, meiri string, first bool, last bool) bool {
 				captain.JiZhanYanSuan()
 			} else if fuben.Name == "xyb" {
 				captain.XingYunBi(fuben.Difficulty)
+			} else if fuben.Name == "migong" {
+				captain.MiGong(fuben.Difficulty)
 			}
 
 			if !captain.IsOnline(true) {

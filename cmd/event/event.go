@@ -2,14 +2,14 @@ package main
 
 import (
 	"fmt"
-	"github.com/vcaesar/keycode"
-
+	"github.com/gangcheng1030/game_script/utils"
 	hook "github.com/robotn/gohook"
+	"github.com/vcaesar/keycode"
 )
 
 func main() {
-	add()
-	//low()
+	//add()
+	low()
 	//event()
 }
 
@@ -21,10 +21,9 @@ func add() {
 	})
 
 	for k := range keycode.Keycode {
-		hook.Register(hook.KeyDown, []string{k}, func(e hook.Event) {
-			c := hook.RawcodetoKeychar(e.Rawcode)
-			fmt.Println(c)
-			//fmt.Printf("KeyCode: %d, Raw: %d, KeyChar: %s\n", e.Keycode, e.Rawcode, hook.RawcodetoKeychar(e.Rawcode))
+		hook.Register(hook.KeyDown, []string{k}, func(ev hook.Event) {
+			c := utils.Raw2key[ev.Rawcode]
+			fmt.Printf("KeyCode: %d, Raw: %d, KeyChar: %s, Char: %s\n", ev.Keycode, ev.Rawcode, ev.Keychar, c)
 		})
 	}
 
@@ -44,9 +43,11 @@ func add() {
 func low() {
 	evChan := hook.Start()
 	defer hook.End()
-
 	for ev := range evChan {
-		fmt.Println("hook: ", ev)
+		if ev.Kind == hook.KeyDown {
+			c := utils.Raw2key[ev.Rawcode]
+			fmt.Printf("KeyCode: %d, Raw: %d, KeyChar: %s, Char: %s\n", ev.Keycode, ev.Rawcode, ev.Keychar, c)
+		}
 	}
 }
 

@@ -5,8 +5,6 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"github.com/gangcheng1030/game_script/utils"
-	"github.com/go-vgo/robotgo"
 	hook "github.com/robotn/gohook"
 	"io"
 	"os"
@@ -71,19 +69,19 @@ func main() {
 
 		switch event.Kind {
 		case hook.KeyUp:
-			err = robotgo.KeyUp(utils.CodeToKey[event.Keycode])
-			if err != nil {
-				fmt.Printf("KeyUp err: %v", event)
-			}
+			//err = robotgo.KeyUp(utils.CodeToKey[event.Keycode])
+			//if err != nil {
+			//	fmt.Printf("KeyUp err: %v", event)
+			//}
 		case hook.KeyDown:
-			if event.Keychar == 65535 {
-				robotgo.KeyDown(utils.CodeToKey[event.Keycode])
-			} else {
-				fmt.Println(event)
-				fmt.Println(string(event.Keychar))
-				//err = robotgo.KeyDown(string(event.Keychar))
-				robotgo.KeyToggle("enter")
-			}
+			//if event.Keychar == 65535 {
+			//	robotgo.KeyDown(utils.CodeToKey[event.Keycode])
+			//} else {
+			//	fmt.Println(event)
+			//	fmt.Println(string(event.Keychar))
+			//	//err = robotgo.KeyDown(string(event.Keychar))
+			//	robotgo.KeyToggle("enter")
+			//}
 		default:
 			// do nothing
 		}
