@@ -24,8 +24,9 @@ func NewOfficialClientChaoJiDou() ChaoJiDou {
 			Point: robotgo.Point{X: 1448, Y: 572},
 			Size:  robotgo.Size{W: 4, H: 4},
 		},
+		// 1920 * 1080
 		GameWindow: robotgo.Rect{
-			Point: robotgo.Point{X: 0, Y: 0},
+			Point: robotgo.Point{X: 280, Y: 156},
 			Size:  robotgo.Size{W: 1360, H: 768},
 		},
 		RoleMap: RoleMap{

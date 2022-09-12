@@ -199,31 +199,36 @@
     {
       "NodeId": "node2",
       "FollowerNodeIds": [
-        "node5"
+        "node5",
+        "node6"
       ],
       "GroupId": "1",
       "Account": {
         "AccountName": "diandian092301@163.com",
         "FollowerAccountNames": [
-          "gangcheng11231@163.com"
+          "gangcheng11231@163.com",
+          "gangcheng11232@163.com"
         ],
         "Roles": [
           {
             "Id": 5,
             "FollowerRoleIds": [
-              2
+              2,
+              1
             ]
           },
           {
             "Id": 9,
             "FollowerRoleIds": [
-              6
+              6,
+              2
             ]
           },
           {
             "Id": 8,
             "FollowerRoleIds": [
-              11
+              11,
+              4
             ],
             "Fubens": [
               {
@@ -259,47 +264,6 @@
             "Id": 4,
             "FollowerRoleIds": [
               2
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "NodeId": "node2",
-      "FollowerNodeIds": [
-        "node5"
-      ],
-      "GroupId": "1",
-      "Account": {
-        "AccountName": "gangcheng11225@163.com",
-        "FollowerAccountNames": [
-          "gangcheng11232@163.com"
-        ],
-        "Roles": [
-          {
-            "Id": 1,
-            "FollowerRoleIds": [
-              1
-            ]
-          },
-          {
-            "Id": 3,
-            "FollowerRoleIds": [
-              2
-            ]
-          },
-          {
-            "Id": 4,
-            "FollowerRoleIds": [
-              4
-            ],
-            "Fubens": [
-              {
-                "Name": "llt1"
-              },
-              {
-                "Name": "llt1"
-              }
             ]
           }
         ]
