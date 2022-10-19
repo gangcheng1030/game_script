@@ -90,7 +90,7 @@ type ChaoJiDou interface {
 	LiuLangTuan(lt LiuLangTuanType, dt DifficultyType)
 	AoDeSai(dt DifficultyType)
 	JinBen(jt JinBenType, dt DifficultyType, times int)
-	JiZhanYanSuan()
+	JiZhanYanSuan(dt int)
 	MiGong(dt int)
 
 	GetGameWindow() robotgo.Rect
@@ -336,7 +336,7 @@ func (c *chaoJiDou) SelectRole(n int, first bool, fullScreenMode int) {
 		c.press(robotgo.F7, 3)
 
 		//// 调整窗口位置和大小
-		//c.press(robotgo.F8, 3)
+		c.press(robotgo.F8, 3)
 		//robotgo.MoveSmooth(942, 349, mouseSpeedX, mouseSpeedY)
 		//robotgo.Click()
 		//robotgo.Sleep(2)
@@ -383,13 +383,13 @@ func (c *chaoJiDou) SelectRole(n int, first bool, fullScreenMode int) {
 		//}
 
 		// 调整移动方式
-		robotgo.MoveSmooth(621, 134, mouseSpeedX, mouseSpeedY)
+		robotgo.MoveSmooth(621+c.GameWindow.X, 134+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 		robotgo.Click()
 		robotgo.Sleep(2)
-		robotgo.MoveSmooth(658, 225, mouseSpeedX, mouseSpeedY)
+		robotgo.MoveSmooth(658+c.GameWindow.X, 225+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 		robotgo.Click()
 		robotgo.Sleep(2)
-		robotgo.MoveSmooth(679, 565, mouseSpeedX, mouseSpeedY)
+		robotgo.MoveSmooth(679+c.GameWindow.X, 565+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 		robotgo.Click()
 		robotgo.Sleep(2)
 
@@ -407,7 +407,7 @@ func (c *chaoJiDou) SelectRole(n int, first bool, fullScreenMode int) {
 
 func (c *chaoJiDou) RepairEquipment() {
 	// 修理装备
-	robotgo.MoveSmooth(999 + c.GameWindow.X, 612 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(999+c.GameWindow.X, 612+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click()
 	robotgo.Sleep(3)
 	c.press(robotgo.KeyF, 3)
@@ -416,29 +416,29 @@ func (c *chaoJiDou) RepairEquipment() {
 func (c *chaoJiDou) ClearBag(sellToDaiXi bool) {
 	// 排序背包
 	c.press(robotgo.KeyI, 3)
-	robotgo.MoveSmooth(1307 + c.GameWindow.X, 457 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(1307+c.GameWindow.X, 457+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click()
 	robotgo.Sleep(3)
 	// 如果有过期物品需要点“确定”
-	robotgo.MoveSmooth(626 + c.GameWindow.X, 423 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(626+c.GameWindow.X, 423+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click()
 	robotgo.Sleep(3)
-	robotgo.MoveSmooth(1330 + c.GameWindow.X, 102 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(1330+c.GameWindow.X, 102+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click()
 	robotgo.Sleep(3)
 
 	// 分解装备
 	c.press(robotgo.KeyM, 3)
 	c.clickButton(c.BigMap.ZhuangBeiFenJie, NpcWaitSecs)
-	robotgo.MoveSmooth(875 + c.GameWindow.X, 424 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(875+c.GameWindow.X, 424+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click()
 	robotgo.Sleep(3)
-	robotgo.MoveSmooth(724 + c.GameWindow.X, 582 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(724+c.GameWindow.X, 582+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click()
 	robotgo.Sleep(3)
 	c.press(robotgo.KeyF, 4)
 	c.press(robotgo.KeyF, 3)
-	robotgo.MoveSmooth(1292 + c.GameWindow.X, 737 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(1292+c.GameWindow.X, 737+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click()
 	robotgo.Sleep(3)
 
@@ -466,35 +466,35 @@ func (c *chaoJiDou) ClearBag(sellToDaiXi bool) {
 	}
 	robotgo.KeyUp(robotgo.Shift)
 	robotgo.Sleep(3)
-	robotgo.MoveSmooth(1292 + c.GameWindow.X, 737 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(1292+c.GameWindow.X, 737+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click()
 	robotgo.Sleep(3)
 }
 
 func (c *chaoJiDou) CardsUp() {
 	c.press(robotgo.KeyJ, 3)
-	robotgo.MoveSmooth(430 + c.GameWindow.X, 150 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(430+c.GameWindow.X, 150+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click("right")
 	robotgo.Sleep(1)
-	robotgo.MoveSmooth(510 + c.GameWindow.X, 150 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(510+c.GameWindow.X, 150+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click("right")
 	robotgo.Sleep(1)
-	robotgo.MoveSmooth(590 + c.GameWindow.X, 150 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(590+c.GameWindow.X, 150+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click("right")
 	robotgo.Sleep(1)
-	robotgo.MoveSmooth(670 + c.GameWindow.X, 150 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(670+c.GameWindow.X, 150+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click("right")
 	robotgo.Sleep(1)
-	robotgo.MoveSmooth(750 + c.GameWindow.X, 150 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(750+c.GameWindow.X, 150+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click("right")
 	robotgo.Sleep(1)
-	robotgo.MoveSmooth(430 + c.GameWindow.X, 230 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(430+c.GameWindow.X, 230+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click("right")
 	robotgo.Sleep(1)
-	robotgo.MoveSmooth(510 + c.GameWindow.X, 230 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(510+c.GameWindow.X, 230+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click("right")
 	robotgo.Sleep(1)
-	robotgo.MoveSmooth(590 + c.GameWindow.X, 230 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(590+c.GameWindow.X, 230+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click("right")
 	robotgo.Sleep(1)
 	c.press(robotgo.KeyJ, 3)
@@ -502,19 +502,19 @@ func (c *chaoJiDou) CardsUp() {
 
 func (c *chaoJiDou) CreateGroup(followerFunTuanNames []string, first bool) {
 	c.press(robotgo.KeyP, 3)
-	robotgo.MoveSmooth(621 + c.GameWindow.X, 561 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(621+c.GameWindow.X, 561+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click()
 	robotgo.Sleep(2)
 	if first {
-		robotgo.MoveSmooth(158 + c.GameWindow.X, 461 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+		robotgo.MoveSmooth(158+c.GameWindow.X, 461+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 		robotgo.Click()
 		robotgo.Sleep(2)
 
-		robotgo.MoveSmooth(163 + c.GameWindow.X, 481 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+		robotgo.MoveSmooth(163+c.GameWindow.X, 481+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 		robotgo.Click()
 		robotgo.Sleep(2)
 	}
-	robotgo.MoveSmooth(172 + c.GameWindow.X, 522 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(172+c.GameWindow.X, 522+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click()
 	robotgo.Sleep(2)
 
@@ -535,17 +535,17 @@ func (c *chaoJiDou) CreateGroup(followerFunTuanNames []string, first bool) {
 	c.clickButton(rects[0], 2)
 
 	for i := range followerFunTuanNames {
-		robotgo.MoveSmooth(1001 + c.GameWindow.X, 569 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+		robotgo.MoveSmooth(1001+c.GameWindow.X, 569+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 		robotgo.Click()
 		robotgo.Sleep(1)
-		robotgo.MoveSmooth(1001 + c.GameWindow.X, 569 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+		robotgo.MoveSmooth(1001+c.GameWindow.X, 569+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 		robotgo.Click()
 		robotgo.Sleep(1)
 
 		robotgo.TypeStr(followerFunTuanNames[i])
 		robotgo.Sleep(1)
 
-		robotgo.MoveSmooth(1152 + c.GameWindow.X, 567 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+		robotgo.MoveSmooth(1152+c.GameWindow.X, 567+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 		robotgo.Click()
 		robotgo.Sleep(5)
 
@@ -568,16 +568,16 @@ func (c *chaoJiDou) CreateGroup(followerFunTuanNames []string, first bool) {
 
 func (c *chaoJiDou) CardsDown() {
 	c.press(robotgo.KeyJ, 3)
-	robotgo.MoveSmooth(186 + c.GameWindow.X, 240 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(186+c.GameWindow.X, 240+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click("right")
 	robotgo.Sleep(1)
-	robotgo.MoveSmooth(100 + c.GameWindow.X, 328 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(100+c.GameWindow.X, 328+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click("right")
 	robotgo.Sleep(1)
-	robotgo.MoveSmooth(270 + c.GameWindow.X, 325 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(270+c.GameWindow.X, 325+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click("right")
 	robotgo.Sleep(1)
-	robotgo.MoveSmooth(185 + c.GameWindow.X, 415 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(185+c.GameWindow.X, 415+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click("right")
 	robotgo.Sleep(1)
 	c.press(robotgo.KeyJ, 3)
@@ -1117,13 +1117,13 @@ func (c *chaoJiDou) geLaXiYaHelper() {
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.Key3, 2)
 	c.move(110, 386, 10, 3)
-	robotgo.MoveSmooth(110 + c.GameWindow.X, 286 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(110+c.GameWindow.X, 286+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	c.press(robotgo.KeyD, 1)
 	c.move(110, 386, 3, 3)
-	robotgo.MoveSmooth(110 + c.GameWindow.X, 286 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(110+c.GameWindow.X, 286+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	c.press(robotgo.KeyD, 1)
 	c.move(110, 386, 3, 3)
-	robotgo.MoveSmooth(110 + c.GameWindow.X, 286, mouseSpeedX + c.GameWindow.Y, mouseSpeedY)
+	robotgo.MoveSmooth(110+c.GameWindow.X, 286+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	c.press(robotgo.KeyD, 1)
 	robotgo.Sleep(4)
 
@@ -1189,7 +1189,7 @@ func (c *chaoJiDou) buLinDiXiHelper() {
 	// 第2张怪物图
 	c.handleFollowersClick(c.ZhuiSuMap.FuBens[ZHUISU_TYPE_BULINDIXI].SmallMap[1], 1, 0, 3000, 0)
 	c.clickButtonWithAlt(c.ZhuiSuMap.FuBens[ZHUISU_TYPE_BULINDIXI].SmallMap[1], 8)
-	robotgo.MoveSmooth(321 + c.GameWindow.X, 351 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(321+c.GameWindow.X, 351+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyQ, 4)
 	c.press(robotgo.KeyD, 1)
@@ -1240,7 +1240,7 @@ func (c *chaoJiDou) buLinDiXiHelper() {
 	c.clickButtonWithAlt(c.ZhuiSuMap.FuBens[ZHUISU_TYPE_BULINDIXI].SmallMap[4], 8)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.Key3, 2)
-	robotgo.MoveSmooth(394 + c.GameWindow.X, 173 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(394+c.GameWindow.X, 173+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	c.press(robotgo.Key1, 4)
 	c.press(robotgo.KeyD, 1)
 	robotgo.Sleep(6)
@@ -1322,12 +1322,14 @@ func (c *chaoJiDou) laLaiYeHelper() {
 	c.press(robotgo.KeyD, 1)
 	c.multiMove(1080, 361, 1, 1, 2)
 	robotgo.Sleep(2)
-	robotgo.MoveSmooth(1080 + c.GameWindow.X, 500 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(1080+c.GameWindow.X, 500+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	c.press(robotgo.KeyD, 1)
+	c.move(900, 400, 1, 2)
 	c.press(robotgo.KeyD, 1)
 	for i := 0; i < len(Follwers); i += 3 {
 		c.press(robotgo.KeyD, 4)
 	}
-	robotgo.Sleep(6)
+	robotgo.Sleep(4)
 
 	// 第3张怪物图
 	c.handleFollowersClick(c.ZhuiSuMap.FuBens[ZHUISU_TYPE_LALAIYE].SmallMap[2], 1, 0, 3000, 4)
@@ -1615,7 +1617,7 @@ func (c *chaoJiDou) liuLangTuan1Helper() {
 	for i := 0; i < 5; i++ {
 		c.move(1077, 534, 1, 1)
 	}
-	for i := 0; i < 6; i++ {
+	for i := 0; i < 7; i++ {
 		c.move(931, 111, 1, 1)
 	}
 	c.press(robotgo.Key3, 2)
@@ -1647,11 +1649,11 @@ func (c *chaoJiDou) liuLangTuan1Helper() {
 		}
 		c.handleFollowersMove(401, 41, 3, 0, 3000)
 	}()
-	for i := 0; i < 9; i++ {
+	for i := 0; i < 10; i++ {
 		c.move(260, 711, 1, 1)
 	}
 	c.move(401, 41, 2, 4)
-	robotgo.MoveSmooth(680 + c.GameWindow.X, 258 + c.GameWindow.Y, 0.9, 0.9)
+	robotgo.MoveSmooth(680+c.GameWindow.X, 258+c.GameWindow.Y, 0.9, 0.9)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.KeyQ, 4)
@@ -1712,7 +1714,7 @@ func (c *chaoJiDou) aoDeSaiHelper() {
 	c.handleFollowersPress(robotgo.KeyF, 5)
 	robotgo.Sleep(11)
 
-	robotgo.MoveSmooth(904 + c.GameWindow.X, 518 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(904+c.GameWindow.X, 518+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	c.press(robotgo.KeyS, 1)
 	c.press(robotgo.KeyR, 1)
 	c.press(robotgo.KeyE, 3)
@@ -1724,13 +1726,13 @@ func (c *chaoJiDou) aoDeSaiHelper() {
 	robotgo.Sleep(3)
 	c.move(632, 132, 1, 6)
 
-	robotgo.MoveSmooth(1001 + c.GameWindow.X, 175 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(1001+c.GameWindow.X, 175+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.KeyQ, 4)
 	c.press(robotgo.KeyW, 1)
 	c.move(1001, 175, 3, 4)
-	robotgo.MoveSmooth(650 + c.GameWindow.X, 340 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(650+c.GameWindow.X, 340+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	ts := 15 + len(Follwers)*3
 	c.continuedBattle(ts)
 	c.press(robotgo.KeyD, 1)
@@ -1831,7 +1833,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[0], 1, 0, 3000, 0)
 	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[0], 10)
 	c.press(robotgo.KeyD, 1)
-	robotgo.MoveSmooth(336 + c.GameWindow.X, 345 + c.GameWindow.Y, 0.9, 0.9)
+	robotgo.MoveSmooth(336+c.GameWindow.X, 345+c.GameWindow.Y, 0.9, 0.9)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyR, 1)
 	c.multiMove(336, 345, 2, 1, 3)
@@ -1852,7 +1854,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[1], 1, 0, 3000, 5)
 	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[1], 6)
 	c.press(robotgo.KeyD, 1)
-	robotgo.MoveSmooth(325 + c.GameWindow.X, 314 + c.GameWindow.Y, 0.9, 0.9)
+	robotgo.MoveSmooth(325+c.GameWindow.X, 314+c.GameWindow.Y, 0.9, 0.9)
 	c.press(robotgo.Key1, 4)
 	c.press(robotgo.KeyE, 3)
 	c.press(robotgo.KeyQ, 4)
@@ -1865,7 +1867,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[2], 6)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.KeyW, 1)
-	robotgo.MoveSmooth(1055 + c.GameWindow.X, 299 + c.GameWindow.Y, 0.9, 0.9)
+	robotgo.MoveSmooth(1055+c.GameWindow.X, 299+c.GameWindow.Y, 0.9, 0.9)
 	c.press(robotgo.Key3, 2)
 	c.multiMove(1055, 299, 2, 1, 3)
 	robotgo.Sleep(2)
@@ -1880,7 +1882,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[3], 1, 0, 3000, 2)
 	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[3], 8)
 	c.press(robotgo.KeyD, 1)
-	robotgo.MoveSmooth(957 + c.GameWindow.X, 200 + c.GameWindow.Y, 0.9, 0.9)
+	robotgo.MoveSmooth(957+c.GameWindow.X, 200+c.GameWindow.Y, 0.9, 0.9)
 	c.press(robotgo.Key3, 2)
 	c.multiMove(957, 200, 2, 1, 3)
 	robotgo.Sleep(3)
@@ -1890,7 +1892,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[4], 1, 0, 3000, 5)
 	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[4], 6)
 	c.press(robotgo.KeyD, 1)
-	robotgo.MoveSmooth(1057 + c.GameWindow.X, 319 + c.GameWindow.Y, 0.9, 0.9)
+	robotgo.MoveSmooth(1057+c.GameWindow.X, 319+c.GameWindow.Y, 0.9, 0.9)
 	c.multiMove(1057, 319, 2, 1, 3)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyD, 1)
@@ -1909,7 +1911,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[5], 1, 0, 3000, 6)
 	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[5], 6)
 	c.press(robotgo.KeyD, 1)
-	robotgo.MoveSmooth(841 + c.GameWindow.X, 496 + c.GameWindow.Y, 0.9, 0.9)
+	robotgo.MoveSmooth(841+c.GameWindow.X, 496+c.GameWindow.Y, 0.9, 0.9)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyW, 1)
 	c.multiMove(841, 496, 2, 1, 3)
@@ -1921,7 +1923,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	// 第7张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[6], 1, 0, 3000, 4)
 	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[6], 4)
-	robotgo.MoveSmooth(216 + c.GameWindow.X, 389 + c.GameWindow.Y, 0.9, 0.9)
+	robotgo.MoveSmooth(216+c.GameWindow.X, 389+c.GameWindow.Y, 0.9, 0.9)
 	c.press(robotgo.KeyT, 1)
 	c.press(robotgo.KeyT, 1)
 	c.press(robotgo.KeyT, 1)
@@ -1940,7 +1942,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[7], 8)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.Key3, 2)
-	robotgo.MoveSmooth(673 + c.GameWindow.X, 550 + c.GameWindow.Y, 0.9, 0.9)
+	robotgo.MoveSmooth(673+c.GameWindow.X, 550+c.GameWindow.Y, 0.9, 0.9)
 	c.multiMove(673, 550, 2, 1, 5)
 	c.press(robotgo.KeyD, 5)
 	c.press(robotgo.KeyD, 5)
@@ -1951,7 +1953,7 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[8], 1, 0, 3000, 4)
 	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[8], 6)
 	c.press(robotgo.KeyD, 1)
-	robotgo.MoveSmooth(942 + c.GameWindow.X, 242 + c.GameWindow.Y, 0.9, 0.9)
+	robotgo.MoveSmooth(942+c.GameWindow.X, 242+c.GameWindow.Y, 0.9, 0.9)
 	c.press(robotgo.Key3, 2)
 	c.multiMove(942, 242, 2, 1, 3)
 	robotgo.Sleep(3)
@@ -1966,9 +1968,11 @@ func (c *chaoJiDou) suXingDeChuanShuoHelper() {
 	// 第11张怪物图：boss
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[0].SmallMap[10], 1, 0, 3000, 1)
 	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[0].SmallMap[10], 13)
-	robotgo.MoveSmooth(490 + c.GameWindow.X, 320 + c.GameWindow.Y, 0.9, 0.9)
+	robotgo.MoveSmooth(490+c.GameWindow.X, 320+c.GameWindow.Y, 0.9, 0.9)
 	c.press(robotgo.KeyD, 1)
-	c.press(robotgo.KeyS, 1)
+	c.press(robotgo.KeyQ, 1)
+	c.press(robotgo.KeyQ, 1)
+	c.press(robotgo.KeyQ, 1)
 	c.press(robotgo.KeyQ, 4)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyD, 1)
@@ -1991,7 +1995,7 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.Key3, 2)
 	c.multiMove(1090, 345, 2, 1, 3)
-	robotgo.MoveSmooth(956 + c.GameWindow.X, 121 + c.GameWindow.Y, 0.9, 0.9)
+	robotgo.MoveSmooth(956+c.GameWindow.X, 121+c.GameWindow.Y, 0.9, 0.9)
 	c.press(robotgo.KeyR, 1)
 	c.press(robotgo.KeyD, 1)
 	c.multiMove(956, 121, 2, 1, 3)
@@ -2032,7 +2036,7 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	c.press(robotgo.KeyD, 1)
 	c.multiMove(314, 159, 2, 1, 3)
 	robotgo.Sleep(3)
-	robotgo.MoveSmooth(204 + c.GameWindow.X, 159 + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(204+c.GameWindow.X, 159+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	c.press(robotgo.KeyD, 1)
 	for i := 0; i < len(Follwers); i += 1 {
 		robotgo.Sleep(1)
@@ -2046,7 +2050,7 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	// 第3张怪物图
 	c.handleFollowersClick(c.JinBenMap.FuBenArray[1].SmallMap[2], 1, 0, 3000, 6)
 	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[1].SmallMap[2], 4)
-	robotgo.MoveSmooth(392 + c.GameWindow.X, 370 + c.GameWindow.Y, 0.9, 0.9)
+	robotgo.MoveSmooth(392+c.GameWindow.X, 370+c.GameWindow.Y, 0.9, 0.9)
 	c.press(robotgo.KeyQ, 4)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.Key3, 2)
@@ -2111,7 +2115,7 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	c.clickButtonWithAlt(c.JinBenMap.FuBenArray[1].SmallMap[7], 10)
 	c.press(robotgo.KeyD, 1)
 	c.press(robotgo.F1, 1)
-	robotgo.MoveSmooth(433 + c.GameWindow.X, 143 + c.GameWindow.Y, 0.9, 0.9)
+	robotgo.MoveSmooth(433+c.GameWindow.X, 143+c.GameWindow.Y, 0.9, 0.9)
 	c.press(robotgo.Key1, 3)
 	c.press(robotgo.Key3, 2)
 	c.press(robotgo.KeyD, 1)
@@ -2179,10 +2183,10 @@ func (c *chaoJiDou) heiAnQinShiZhiHuanHelper() {
 	}
 }
 
-func (c *chaoJiDou) JiZhanYanSuan() {
+func (c *chaoJiDou) JiZhanYanSuan(dt int) {
 	c.press(robotgo.KeyM, 2)
 
-	// 大地图点金本
+	// 大地图点NPC
 	c.clickButton(c.BigMap.BeiYi, NpcWaitSecs)
 
 	// 对话
@@ -2192,6 +2196,13 @@ func (c *chaoJiDou) JiZhanYanSuan() {
 	robotgo.Sleep(5)
 	robotgo.KeyPress(robotgo.KeyF)
 	robotgo.Sleep(4)
+
+	if dt > 0 { // 赛季结束时不需要打，只要领奖励即可
+		robotgo.MoveSmooth(1292+c.GameWindow.X, 737+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+		robotgo.Click()
+		robotgo.Sleep(3)
+		return
+	}
 
 	// 选中地图
 	c.clickButton(c.JiZhanYanSuanMap.JiZhanYanSuanFuBen.Window, 2)
@@ -2228,7 +2239,7 @@ func (c *chaoJiDou) MiGong(dt int) {
 	defer hook.End()
 	for ev := range evChan {
 		if ev.Kind == hook.KeyDown {
-			if ev.Rawcode == 110 { // decimal point
+			if ev.Rawcode == 110 || ev.Rawcode == 40 { // decimal point
 				break
 			}
 			c.handleFollowersPressWithEvent(&ev, 0, 0)
@@ -2301,7 +2312,7 @@ func (c *chaoJiDou) esc() {
 
 // tm单位：秒
 func (c *chaoJiDou) click(x, y int, tm int) {
-	robotgo.MoveSmooth(x + c.GameWindow.X, y + c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
+	robotgo.MoveSmooth(x+c.GameWindow.X, y+c.GameWindow.Y, mouseSpeedX, mouseSpeedY)
 	robotgo.Click()
 	if tm > 0 {
 		robotgo.Sleep(tm)

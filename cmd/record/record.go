@@ -49,8 +49,8 @@ func main() {
 		}
 	}()
 
-	fmt.Println("5秒后开始录制.")
-	time.Sleep(5 * time.Second)
+	fmt.Println("10秒后开始录制.")
+	time.Sleep(10 * time.Second)
 	fmt.Println("开始录制.")
 	defer func() {
 		eventWriter.Flush()
@@ -62,8 +62,15 @@ func main() {
 	defer hook.End()
 
 	for ev := range evChan {
-		data, _ := json.Marshal(ev)
-		eventWriter.WriteString(string(data))
-		eventWriter.WriteString("\n")
+		if ev.Kind == hook.KeyDown {
+			if ev.Rawcode == 110 || ev.Rawcode == 40 { // decimal point
+				break
+			}
+		}
+		if ev.Kind == hook.KeyDown || ev.Kind == hook.MouseDown {
+			data, _ := json.Marshal(ev)
+			eventWriter.WriteString(string(data))
+			eventWriter.WriteString("\n")
+		}
 	}
 }

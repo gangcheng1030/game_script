@@ -5,8 +5,11 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"github.com/gangcheng1030/game_script/utils"
+	"github.com/go-vgo/robotgo"
 	hook "github.com/robotn/gohook"
 	"io"
+	"log"
 	"os"
 	"os/signal"
 	"syscall"
@@ -49,14 +52,16 @@ func main() {
 		}
 	}()
 
-	fmt.Println("5秒后开始回放.")
-	time.Sleep(5 * time.Second)
+	fmt.Println("10秒后开始回放.")
+	time.Sleep(10 * time.Second)
 	fmt.Println("开始回放.")
 	defer func() {
 		eventFile.Close()
 		fmt.Println("回放结束.")
 	}()
 
+	var preTime time.Time
+	first := true
 	for {
 		event, err := getNextEvent(eventReader)
 		if err != nil {
@@ -67,21 +72,27 @@ func main() {
 			break
 		}
 
+		if first {
+			first = false
+		} else {
+			time.Sleep(event.When.Sub(preTime))
+		}
+		preTime = event.When
 		switch event.Kind {
-		case hook.KeyUp:
-			//err = robotgo.KeyUp(utils.CodeToKey[event.Keycode])
-			//if err != nil {
-			//	fmt.Printf("KeyUp err: %v", event)
-			//}
 		case hook.KeyDown:
-			//if event.Keychar == 65535 {
-			//	robotgo.KeyDown(utils.CodeToKey[event.Keycode])
-			//} else {
-			//	fmt.Println(event)
-			//	fmt.Println(string(event.Keychar))
-			//	//err = robotgo.KeyDown(string(event.Keychar))
-			//	robotgo.KeyToggle("enter")
-			//}
+			k, ok := utils.Raw2key[event.Rawcode]
+			if !ok {
+				log.Printf("wrong rawCode: %d", event.Rawcode)
+				continue
+			}
+			robotgo.KeyPress(k)
+		case hook.MouseDown:
+			robotgo.Move(int(event.X), int(event.Y))
+			if event.Button == 2 {
+				robotgo.Click("right")
+			} else {
+				robotgo.Click()
+			}
 		default:
 			// do nothing
 		}
