@@ -67,7 +67,7 @@ func main() {
 				break
 			}
 		}
-		if ev.Kind == hook.KeyDown || ev.Kind == hook.MouseDown {
+		if ev.Kind == hook.KeyDown || ev.Kind == hook.KeyUp || ev.Kind == hook.MouseDown || ev.Kind == hook.MouseUp || ev.Kind == hook.MouseMove {
 			data, _ := json.Marshal(ev)
 			eventWriter.WriteString(string(data))
 			eventWriter.WriteString("\n")

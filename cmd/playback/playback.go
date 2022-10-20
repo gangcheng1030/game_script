@@ -16,7 +16,7 @@ import (
 	"time"
 )
 
-var eventFileName = flag.String("-i", "event.txt", "input: event file name")
+var eventFileName = flag.String("i", "event.txt", "input: event file name")
 
 var eventFile *os.File
 var eventReader *bufio.Reader
@@ -74,10 +74,7 @@ func main() {
 
 		if first {
 			first = false
-		} else {
-			time.Sleep(event.When.Sub(preTime))
 		}
-		preTime = event.When
 		switch event.Kind {
 		case hook.KeyDown:
 			k, ok := utils.Raw2key[event.Rawcode]
@@ -85,14 +82,44 @@ func main() {
 				log.Printf("wrong rawCode: %d", event.Rawcode)
 				continue
 			}
-			robotgo.KeyPress(k)
+			fmt.Println(k)
+			time.Sleep(event.When.Sub(preTime))
+			robotgo.KeyDown(k)
+			preTime = event.When
+		case hook.KeyUp:
+			k, ok := utils.Raw2key[event.Rawcode]
+			if !ok {
+				log.Printf("wrong rawCode: %d", event.Rawcode)
+				continue
+			}
+			time.Sleep(event.When.Sub(preTime))
+			robotgo.KeyUp(k)
+			preTime = event.When
+		case hook.MouseMove:
+			dur := event.When.Sub(preTime)
+			if dur.Milliseconds() > 100 {
+				time.Sleep(event.When.Sub(preTime))
+				robotgo.Move(int(event.X), int(event.Y))
+				preTime = event.When
+			}
 		case hook.MouseDown:
 			robotgo.Move(int(event.X), int(event.Y))
+			time.Sleep(event.When.Sub(preTime))
 			if event.Button == 2 {
-				robotgo.Click("right")
+				robotgo.MouseDown("right")
 			} else {
-				robotgo.Click()
+				robotgo.MouseDown()
 			}
+			preTime = event.When
+		case hook.MouseUp:
+			robotgo.Move(int(event.X), int(event.Y))
+			time.Sleep(event.When.Sub(preTime))
+			if event.Button == 2 {
+				robotgo.MouseUp("right")
+			} else {
+				robotgo.MouseUp()
+			}
+			preTime = event.When
 		default:
 			// do nothing
 		}
