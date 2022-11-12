@@ -1,38 +1,35 @@
 package main
 
+import (
+	"fmt"
+	"github.com/go-vgo/robotgo"
+	"github.com/vcaesar/gcv"
+	"time"
+)
+
 func main() {
-	//opencv()
+	opencv()
 }
 
 func opencv() {
-	//name := "test.png"
-	//name1 := "test_001.png"
-	//robotgo.SaveCapture(name1, 10, 10, 30, 30)
-	//robotgo.SaveCapture(name)
-	//
+	time.Sleep(5 * time.Second)
+	img := robotgo.CaptureImg(578, 414, 240, 47)
+	err := robotgo.Save(img, "img.png")
+	if err != nil {
+		fmt.Println(err)
+	}
+	img1 := robotgo.CaptureImg(393, 468, 35, 35)
+	err = robotgo.Save(img1, "chuhuoyuanzhi.png")
+	if err != nil {
+		fmt.Println(err)
+	}
+
 	//fmt.Print("gcv find image: ")
-	//fmt.Println(gcv.FindImgFile(name1, name))
-	//fmt.Println(gcv.FindAllImgFile(name1, name))
-	//
-	//bit := bitmap.Open(name1)
-	//defer robotgo.FreeBitmap(bit)
-	//fmt.Print("find bitmap: ")
-	//fmt.Println(bitmap.Find(bit))
-	//
-	//// bit0 := robotgo.CaptureScreen()
-	//// img := robotgo.ToImage(bit0)
-	//// bit1 := robotgo.CaptureScreen(10, 10, 30, 30)
-	//// img1 := robotgo.ToImage(bit1)
-	//// defer robotgo.FreeBitmapArr(bit0, bit1)
-	//img := robotgo.CaptureImg()
-	//img1 := robotgo.CaptureImg(10, 10, 30, 30)
-	//
-	//fmt.Print("gcv find image: ")
-	//fmt.Println(gcv.FindImg(img1, img))
+	//gcv.FindImg(img1, img)
 	//fmt.Println()
 	//
-	//res := gcv.FindAllImg(img1, img)
-	//fmt.Println(res[0].TopLeft.Y, res[0].Rects.TopLeft.X, res)
+	res := gcv.FindAllImg(img1, img)
+	fmt.Println(res)
 	//x, y := res[0].TopLeft.X, res[0].TopLeft.Y
 	//robotgo.Move(x, y-rand.Intn(5))
 	//robotgo.MilliSleep(100)

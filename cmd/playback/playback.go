@@ -72,9 +72,6 @@ func main() {
 			break
 		}
 
-		if first {
-			first = false
-		}
 		switch event.Kind {
 		case hook.KeyDown:
 			k, ok := utils.Raw2key[event.Rawcode]
@@ -83,7 +80,9 @@ func main() {
 				continue
 			}
 			fmt.Println(k)
-			time.Sleep(event.When.Sub(preTime))
+			if !first {
+				time.Sleep(event.When.Sub(preTime))
+			}
 			robotgo.KeyDown(k)
 			preTime = event.When
 		case hook.KeyUp:
@@ -92,19 +91,28 @@ func main() {
 				log.Printf("wrong rawCode: %d", event.Rawcode)
 				continue
 			}
-			time.Sleep(event.When.Sub(preTime))
+			if !first {
+				time.Sleep(event.When.Sub(preTime))
+			}
 			robotgo.KeyUp(k)
 			preTime = event.When
-		case hook.MouseMove:
-			dur := event.When.Sub(preTime)
-			if dur.Milliseconds() > 100 {
-				time.Sleep(event.When.Sub(preTime))
-				robotgo.Move(int(event.X), int(event.Y))
-				preTime = event.When
-			}
+		//case hook.MouseMove:
+		//	if !first {
+		//		dur := event.When.Sub(preTime)
+		//		if dur.Milliseconds() > 100 {
+		//			time.Sleep(event.When.Sub(preTime))
+		//			robotgo.Move(int(event.X), int(event.Y))
+		//			preTime = event.When
+		//		}
+		//	} else {
+		//		robotgo.Move(int(event.X), int(event.Y))
+		//		preTime = event.When
+		//	}
 		case hook.MouseDown:
 			robotgo.Move(int(event.X), int(event.Y))
-			time.Sleep(event.When.Sub(preTime))
+			if !first {
+				time.Sleep(event.When.Sub(preTime))
+			}
 			if event.Button == 2 {
 				robotgo.MouseDown("right")
 			} else {
@@ -113,7 +121,9 @@ func main() {
 			preTime = event.When
 		case hook.MouseUp:
 			robotgo.Move(int(event.X), int(event.Y))
-			time.Sleep(event.When.Sub(preTime))
+			if !first {
+				time.Sleep(event.When.Sub(preTime))
+			}
 			if event.Button == 2 {
 				robotgo.MouseUp("right")
 			} else {
@@ -123,6 +133,8 @@ func main() {
 		default:
 			// do nothing
 		}
+
+		first = false
 	}
 }
 
