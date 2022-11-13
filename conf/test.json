@@ -1,49 +1,1658 @@
-{
-  "Events": [
-    {
-      "NodeId": "node2",
-      "FollowerNodeIds": [
-        "node1",
-        "node3",
-        "node4"
+[
+  {
+    "Id": 19,
+    "Status": 1,
+    "Type": 2,
+    "NodeId": "node5",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "gangcheng11224@163.com",
+      "Password": "Cjdmj112233",
+      "Roles": [
+        {
+          "Id": 6,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 8,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
       ],
-      "GroupId": "1",
-      "Account": {
-        "AccountName": "gangcheng11227@163.com",
-        "FollowerAccountNames": [
-          "gangcheng11223@163.com",
-          "chenggang092101@163.com",
-          "gangcheng11232@163.com"
-        ],
-        "Roles": [
-          {
-            "Id": 4,
-            "FollowerRoleIds": [
-              1,
-              7,
-              7
-            ],
-            "Fubens": [
-              {
-                "Name": "migong"
-              }
-            ]
-          },
-          {
-            "Id": 5,
-            "FollowerRoleIds": [
-              10,
-              8,
-              8
-            ],
-            "Fubens": [
-              {
-                "Name": "migong"
-              }
-            ]
-          }
-        ]
-      }
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
     }
-  ]
-}
+  },
+  {
+    "Id": 20,
+    "Status": 1,
+    "Type": 2,
+    "NodeId": "node6",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "gangcheng11225@163.com",
+      "Password": "Cjdmj112233",
+      "Roles": [
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 2,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 3,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 4,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 5,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 6,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 8,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 21,
+    "Status": 1,
+    "Type": 2,
+    "NodeId": "node1",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "gangcheng11226@163.com",
+      "Password": "Cjdmj112233",
+      "Roles": [
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 2,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 3,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 4,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 5,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 6,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 22,
+    "Status": 1,
+    "Type": 2,
+    "NodeId": "node3",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "gangcheng11227@163.com",
+      "Password": "Cjdmj112233",
+      "Roles": [
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 2,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 3,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 23,
+    "Status": 1,
+    "Type": 2,
+    "NodeId": "node2",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "gangcheng11231@163.com",
+      "Password": "Cjdmj092301",
+      "Roles": [
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 2,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 3,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 4,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 6,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 24,
+    "Status": 1,
+    "Type": 2,
+    "NodeId": "node4",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "yjh179614936@163.com",
+      "Password": "277426225bb",
+      "Roles": [
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 3,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 4,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 5,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 6,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 25,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "gangcheng11223@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 6,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 10,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 11,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 26,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "diandian092301@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 5,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 8,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 9,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 27,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "yan7955@126.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 3,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 9,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 28,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "chenggang092101@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 2,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 4,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 29,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "gangcheng11232@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 2,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 3,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 30,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "gangcheng11224@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 2,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 4,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 5,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 6,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 8,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 31,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "gangcheng11225@163.com",
+      "Password": "Cjdmj112233",
+      "Roles": [
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 2,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 3,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 4,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 5,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 6,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 8,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 32,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "gangcheng11226@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 2,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 3,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 4,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 5,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 6,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 33,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "gangcheng11227@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 2,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 3,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 34,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "gangcheng11231@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 2,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 3,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 4,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 6,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 35,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "yjh179614936@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 3,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 4,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 5,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 6,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 36,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "gangcheng11223@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 6,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 10,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 11,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 37,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "diandian092301@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 5,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 8,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 9,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 38,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "yan7955@126.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 3,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 9,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 39,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "chenggang092101@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 2,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 4,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  },
+  {
+    "Id": 40,
+    "Status": 0,
+    "Type": 2,
+    "NodeId": "",
+    "FollowerNodeIds": null,
+    "GroupId": "1",
+    "MeiRi": "shzk",
+    "Account": {
+      "AccountName": "gangcheng11232@163.com",
+      "Password": "",
+      "Roles": [
+        {
+          "Id": 1,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 2,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        },
+        {
+          "Id": 3,
+          "FollowerRoleIds": null,
+          "FollowerJunTuanNames": null,
+          "Fubens": [
+            {
+              "Name": "meiri",
+              "Difficulty": 0
+            }
+          ],
+          "DisableCardsUp": false,
+          "DisablePreClearBag": false,
+          "PostClearBag": false
+        }
+      ],
+      "FollowerAddrs": null,
+      "FollowerAccountNames": null,
+      "FollowerPasswords": null
+    }
+  }
+]

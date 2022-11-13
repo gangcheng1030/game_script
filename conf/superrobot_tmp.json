@@ -1,14 +1,14 @@
 {
   "Events": [
     {
-      "MeiRi": "zqjs",
       "NodeId": "",
       "GroupId": "1",
+      "MeiRi": "shzk",
       "Account": {
-        "AccountName": "gangcheng11227@163.com",
+        "AccountName": "yjh179614936@163.com",
         "Roles": [
           {
-            "Id": 2,
+            "Id": 1,
             "Fubens": [
               {
                 "Name": "meiri"

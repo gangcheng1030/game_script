@@ -1,27 +1,25 @@
 {
   "Events": [
     {
-      "NodeId": "node2",
+      "NodeId": "node1",
       "FollowerNodeIds": [
-        "node5",
         "node3",
         "node4"
       ],
       "GroupId": "1",
       "Account": {
-        "AccountName": "chenggang092101@163.com",
+        "AccountName": "gangcheng11223@163.com",
         "FollowerAccountNames": [
-          "gangcheng11232@163.com",
-          "diandian092301@163.com",
-          "yan7955@126.com"
+          "gangcheng11224@163.com",
+          "gangcheng11227@163.com"
         ],
         "Roles": [
           {
-            "Id": 2,
+            "Id": 9,
+            "DisablePreClearBag": true,
             "FollowerRoleIds": [
-              3,
-              9,
-              9
+              6,
+              2
             ],
             "Fubens": [
               {
