@@ -277,7 +277,7 @@ func add() {
 
 		chaojidou.NpcWaitSecs = 30
 		chaojidou.ReadMapWaitSecs = 30
-		captain.JiZhanYanSuan()
+		captain.JiZhanYanSuan(0)
 		fmt.Println("shift-3 end")
 		endTime = time.Now()
 	})

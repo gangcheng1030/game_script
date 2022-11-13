@@ -4,12 +4,11 @@ import (
 	"fmt"
 	"github.com/gangcheng1030/game_script/utils"
 	hook "github.com/robotn/gohook"
-	"github.com/vcaesar/keycode"
 )
 
 func main() {
-	//add()
-	low()
+	add()
+	//low()
 	//event()
 }
 
@@ -20,12 +19,12 @@ func add() {
 		hook.End()
 	})
 
-	for k := range keycode.Keycode {
-		hook.Register(hook.KeyDown, []string{k}, func(ev hook.Event) {
-			c := utils.Raw2key[ev.Rawcode]
-			fmt.Printf("KeyCode: %d, Raw: %d, KeyChar: %s, Char: %s\n", ev.Keycode, ev.Rawcode, ev.Keychar, c)
-		})
-	}
+	//for k := range keycode.Keycode {
+	//	hook.Register(hook.KeyDown, []string{k}, func(ev hook.Event) {
+	//		c := utils.Raw2key[ev.Rawcode]
+	//		fmt.Printf("KeyCode: %d, Raw: %d, KeyChar: %s, Char: %s\n", ev.Keycode, ev.Rawcode, ev.Keychar, c)
+	//	})
+	//}
 
 	//fmt.Println("--- Please press w---")
 	//hook.Register(hook.KeyDown, []string{"w"}, func(e hook.Event) {

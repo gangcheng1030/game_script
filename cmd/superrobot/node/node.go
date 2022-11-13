@@ -340,7 +340,7 @@ func handleOneRole(role *model.Role, meiri string, first bool, last bool) bool {
 				captain.JinBen(chaojidou.JINBEN_TYPE_HEIAN, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
 				chaojidou.NpcWaitSecs = 30
 			} else if fuben.Name == "jzys" {
-				captain.JiZhanYanSuan()
+				captain.JiZhanYanSuan(fuben.Difficulty)
 			} else if fuben.Name == "xyb" {
 				captain.XingYunBi(fuben.Difficulty)
 			} else if fuben.Name == "migong" {

@@ -5,15 +5,18 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"github.com/gangcheng1030/game_script/utils"
+	"github.com/go-vgo/robotgo"
 	hook "github.com/robotn/gohook"
 	"io"
+	"log"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
 )
 
-var eventFileName = flag.String("-i", "event.txt", "input: event file name")
+var eventFileName = flag.String("i", "event.txt", "input: event file name")
 
 var eventFile *os.File
 var eventReader *bufio.Reader
@@ -49,14 +52,16 @@ func main() {
 		}
 	}()
 
-	fmt.Println("5秒后开始回放.")
-	time.Sleep(5 * time.Second)
+	fmt.Println("10秒后开始回放.")
+	time.Sleep(10 * time.Second)
 	fmt.Println("开始回放.")
 	defer func() {
 		eventFile.Close()
 		fmt.Println("回放结束.")
 	}()
 
+	var preTime time.Time
+	first := true
 	for {
 		event, err := getNextEvent(eventReader)
 		if err != nil {
@@ -68,23 +73,68 @@ func main() {
 		}
 
 		switch event.Kind {
-		case hook.KeyUp:
-			//err = robotgo.KeyUp(utils.CodeToKey[event.Keycode])
-			//if err != nil {
-			//	fmt.Printf("KeyUp err: %v", event)
-			//}
 		case hook.KeyDown:
-			//if event.Keychar == 65535 {
-			//	robotgo.KeyDown(utils.CodeToKey[event.Keycode])
-			//} else {
-			//	fmt.Println(event)
-			//	fmt.Println(string(event.Keychar))
-			//	//err = robotgo.KeyDown(string(event.Keychar))
-			//	robotgo.KeyToggle("enter")
-			//}
+			k, ok := utils.Raw2key[event.Rawcode]
+			if !ok {
+				log.Printf("wrong rawCode: %d", event.Rawcode)
+				continue
+			}
+			fmt.Println(k)
+			if !first {
+				time.Sleep(event.When.Sub(preTime))
+			}
+			robotgo.KeyDown(k)
+			preTime = event.When
+		case hook.KeyUp:
+			k, ok := utils.Raw2key[event.Rawcode]
+			if !ok {
+				log.Printf("wrong rawCode: %d", event.Rawcode)
+				continue
+			}
+			if !first {
+				time.Sleep(event.When.Sub(preTime))
+			}
+			robotgo.KeyUp(k)
+			preTime = event.When
+		//case hook.MouseMove:
+		//	if !first {
+		//		dur := event.When.Sub(preTime)
+		//		if dur.Milliseconds() > 100 {
+		//			time.Sleep(event.When.Sub(preTime))
+		//			robotgo.Move(int(event.X), int(event.Y))
+		//			preTime = event.When
+		//		}
+		//	} else {
+		//		robotgo.Move(int(event.X), int(event.Y))
+		//		preTime = event.When
+		//	}
+		case hook.MouseDown:
+			robotgo.Move(int(event.X), int(event.Y))
+			if !first {
+				time.Sleep(event.When.Sub(preTime))
+			}
+			if event.Button == 2 {
+				robotgo.MouseDown("right")
+			} else {
+				robotgo.MouseDown()
+			}
+			preTime = event.When
+		case hook.MouseUp:
+			robotgo.Move(int(event.X), int(event.Y))
+			if !first {
+				time.Sleep(event.When.Sub(preTime))
+			}
+			if event.Button == 2 {
+				robotgo.MouseUp("right")
+			} else {
+				robotgo.MouseUp()
+			}
+			preTime = event.When
 		default:
 			// do nothing
 		}
+
+		first = false
 	}
 }
 

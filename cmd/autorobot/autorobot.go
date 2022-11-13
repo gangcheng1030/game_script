@@ -234,7 +234,7 @@ func handleOneRole(role config.Role, first bool, last bool) {
 			} else if fuben.Name == "haqszh" {
 				captain.JinBen(chaojidou.JINBEN_TYPE_HEIAN, chaojidou.DIFFICULTY_TYPE_MAOXIAN, 1)
 			} else if fuben.Name == "jzys" {
-				captain.JiZhanYanSuan()
+				captain.JiZhanYanSuan(0)
 			}
 		}
 	}
