@@ -1,0 +1,134 @@
+{
+  "Events": [
+    {
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11224@163.com",
+        "Roles": [
+          {
+            "Id": 8
+          },
+          {
+            "Id": 6,
+            "Fubens": [
+              {
+                "Name": "lly"
+              },
+              {
+                "Name": "lly"
+              },
+              {
+                "Name": "lly"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "lly"
+              },
+              {
+                "Name": "llt1"
+              }
+            ]
+          },
+          {
+            "Id": 5
+          },
+          {
+            "Id": 4
+          }
+        ]
+      }
+    },
+    {
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "yan7955@126.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "Fubens": [
+              {
+                "Name": "glxy"
+              },
+              {
+                "Name": "glxy"
+              },
+              {
+                "Name": "glxy"
+              },
+              {
+                "Name": "glxy"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              }
+            ]
+          },
+          {
+            "Id": 3
+          },
+          {
+            "Id": 9
+          }
+        ]
+      }
+    },
+    {
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11231@163.com",
+        "Roles": [
+          {
+            "Id": 1
+          },
+          {
+            "Id": 3
+          },
+          {
+            "Id": 4,
+            "Fubens": [
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "llt1"
+              },
+              {
+                "Name": "sxdcs"
+              },
+              {
+                "Name": "sxdcs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11232@163.com",
+        "Roles": [
+          {
+            "Id": 3
+          }
+        ]
+      }
+    },
+    {
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11223@163.com",
+        "Roles": [
+          {
+            "Id": 1
+          }
+        ]
+      }
+    }
+  ]
+}

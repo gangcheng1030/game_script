@@ -1,0 +1,810 @@
+{
+  "Events": [
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11228@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11229@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11230@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11231@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 10,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 11,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11232@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11224@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 8,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11225@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 8,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11226@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11227@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "gangcheng11223@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 10,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 11,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "diandian092301@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 8,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 9,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "yan7955@126.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 9,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "yjh179614936@163.com",
+        "Roles": [
+          {
+            "Id": 1,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "NodeId": "",
+      "GroupId": "1",
+      "Account": {
+        "AccountName": "chenggang092101@163.com",
+        "Roles": [
+          {
+            "Id": 2,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "DisablePreClearBag": true,
+            "Fubens": [
+              {
+                "Difficulty": 1,
+                "Name": "jzys"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
